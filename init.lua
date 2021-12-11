@@ -20,6 +20,7 @@ require('whichkeys-config')
 require('toggleterm-config')
 require('blankline-config')
 require('gitsigns-config')
+require('dashboard-config')
 
 --tema
 --vim.cmd[[colorscheme nord]]
