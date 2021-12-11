@@ -9,6 +9,7 @@ o.whichwrap = 'b,s,<,>,[,],h,l'
 o.ignorecase = true
 wo.signcolumn = "yes"
 wo.relativenumber = true
+wo.number = true
 o.clipboard = "unnamedplus"
 o.hidden = true
 o.lazyredraw = true
