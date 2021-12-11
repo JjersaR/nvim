@@ -16,6 +16,8 @@ vim.g.dashboard_custom_header = {
   [[]],
   [[]],
   [[]],
+  [[]],
+  [[]],
 }
 
 vim.g.dashboard_custom_section = {
@@ -23,7 +25,10 @@ vim.g.dashboard_custom_section = {
   a = {description = {'  Find File          '}, command = 'Telescope find_files'},
   d = {description = {'  Search Text        '}, command = 'Telescope live_grep'},
   b = {description = {'  Recent Files       '}, command = 'Telescope oldfiles'},
+  c = {description = {'  New File           '}, command = 'NvimTreeOpen'},
   e = {description = {'  Config             '}, command = 'edit ~/.config/nvim/init.lua'},
+  f = {description = {'ﮮ  Update Plugin      '}, command = 'PackerUpdate'},
+  g = {description = {'  Exit               '}, command = 'q'},
 }
 
 
@@ -37,5 +42,6 @@ vim.g.dashboard_custom_footer = {
   [[]],
   [[]],
   [[]],
-  'Bienvenido, Ricardo'
+  'Si no sabes que pedo pon :h y ya te daras una idea'
 }
+
