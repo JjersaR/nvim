@@ -83,6 +83,8 @@ return require('packer').startup(function(use)
       require('gitsigns').setup{current_line_blame = true}
     end
   }
+  --pantalla de inicio
+  use 'glepnir/dashboard-nvim'
 
 
   if packer_bootstrap then
