@@ -21,7 +21,7 @@ mapper("n","<Leader>qq", ":q!<CR>")
 mapper("i","jj", "<Esc>")
 
 --ranger
-mapper("n","rn", ":RnvimrToggle<CR>")
+mapper("n","fn", ":RnvimrToggle<CR>")
 
 --duplicar lineas
 mapper("n","tt", ":t.<CR>")
