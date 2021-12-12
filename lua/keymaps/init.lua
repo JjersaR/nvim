@@ -40,12 +40,3 @@ mapper("n","fr", ":Telescope file_browser<CR>")
 --mover lineas
 mapper('v','<', '<gv')
 mapper('v','>', '>gv')
-
---lspsaga
-mapper('n','gh', ':Lspsaga lsp_finder<CR>')
-mapper('n','ca', ':Lspsaga code_action<CR>')
-mapper('n','K', ':Lspsaga hover_doc<CR>')
-mapper('n','gs', ':Lspsaga signature_help<CR>')
-mapper('n','gd', ':Lspsaga preview_definition<CR>')
-mapper('n','dn', ':Lspsaga diagnostic_jump_next<CR>')
-mapper('n','dp', ':Lspsaga diagnostic_jump_prev<CR>')
