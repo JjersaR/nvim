@@ -47,8 +47,7 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
   use 'williamboman/nvim-lsp-installer'
-  use 'glepnir/lspsaga.nvim'
-
+  use { 'tami5/lspsaga.nvim' }
 
   --para java
   use 'mfussenegger/nvim-jdtls'
