@@ -20,26 +20,24 @@ local mappings = {
 
   l = {
     name = "LSP",
-    i = {":LspInfo<cr>", "Conectar servidor"},
-    A = {'<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', "Añadir workspace"},
-    R = {'<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', "Remover workspace"},
-    l = {'<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', "Listar workspace"},
-    D = {'<cmd>lua vim.lsp.buf.type_definition()<CR>', "Tipo de definicion"},
-    r = {'<cmd>lua vim.lsp.buf.rename()<CR>', "Renombrar"},
-    a = {'<cmd>lua vim.lsp.buf.code_action()<CR>', "Code actions"},
-    e = {'<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', "Show line diagnostics"},
-    q = {'<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', "Show loclist"}
+    i = {":LspInfo<cr>", "Connected Language Servers"},
+    k = {"<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help"},
+    K = {"<cmd>Lspsaga hover_doc<cr>", "Hover Commands"},
+    w = {'<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>', "Add Workspace Folder"},
+    W = {'<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>', "Remove Workspace Folder"},
+    l = {'<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>', "List Workspace Folders"},
+    t = {'<cmd>lua vim.lsp.buf.type_definition()<cr>', "Type Definition"},
+    d = {'<cmd>lua vim.lsp.buf.definition()<cr>', "Go To Definition"},
+    D = {'<cmd>lua vim.lsp.buf.declaration()<cr>', "Go To Declaration"},
+    r = {'<cmd>lua vim.lsp.buf.references()<cr>', "References"},
+    R = {'<cmd>Lspsaga rename<cr>', "Rename"},
+    a = {'<cmd>Lspsaga code_action<cr>', "Code Action"},
+    e = {'<cmd>Lspsaga show_line_diagnostics<cr>', "Show Line Diagnostics"},
+    n = {'<cmd>Lspsaga diagnostic_jump_next<cr>', "Go To Next Diagnostic"},
+    N = {'<cmd>Lspsaga diagnostic_jump_prev<cr>', "Go To Previous Diagnostic"},
+
   },
   t = { t = {":ToggleTerm<CR>", "Split Below"}, f = {toggle_float, "Floating Terminal"}, l = {toggle_lazygit, "LazyGit"} },
-  s ={
-    name = "Saga",
-    l = {'', "Buscador"},
-    c = {'', "code action"},
-    h = {'', "Hover doc"},
-    s = {'', "Que hace?"},
-    p = {'', "Def. Vista previa"},
-    d = {'', "Diagnostico"},
-  }
 }
 local opts = {prefix = '<leader>'}
 
