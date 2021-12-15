@@ -44,3 +44,9 @@ mapper('v','>', '>gv')
 --para moverse en lspsaga
 map("n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>", {noremap = true, silent = true})
 map("n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>", {noremap = true, silent = true})
+
+--problemas en codigo
+mapper('n','xx', ':TroubleToggle<CR>')
+mapper('n','xf', ':TroubleRefresh<CR>')
+mapper('n','xd', ':TroubleToggle document_diagnostics<CR>')
+mapper('n','xl', ':TroubleToggle loclist<CR>')
