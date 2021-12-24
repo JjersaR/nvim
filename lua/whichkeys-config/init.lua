@@ -38,6 +38,12 @@ local mappings = {
 
   },
   t = { t = {":ToggleTerm<CR>", "Split Below"}, f = {toggle_float, "Floating Terminal"}, l = {toggle_lazygit, "LazyGit"} },
+  e = {
+    x = {":TroubleToggle<CR>", "Errores"}, 
+    f = {":TroubleRefresh<CR>", "Actualizar errores"}, 
+    d = {":TroubleToggle document_diagnostics<CR>", "Documentacion de errores"}, 
+    l = {":TroubleToggle loclist<CR>", "Localizar errores"}, 
+  }
 }
 local opts = {prefix = '<leader>'}
 
