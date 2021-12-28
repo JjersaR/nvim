@@ -41,5 +41,8 @@ vim.g.dashboard_custom_footer = {
   [[]],
   [[]],
   [[]],
-  'Si no sabes que pedo pon :h y ya te daras una idea'
+  [[]],
+  [[]],
+  [[]],
+  'Hola. bienvenido.'
 }
