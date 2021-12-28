@@ -48,6 +48,7 @@ return require('packer').startup(function()
   use 'hrsh7th/vim-vsnip'
   use 'williamboman/nvim-lsp-installer'
   use { 'tami5/lspsaga.nvim' }
+  use "jose-elias-alvarez/null-ls.nvim"
 
   --para java
   use 'mfussenegger/nvim-jdtls'
