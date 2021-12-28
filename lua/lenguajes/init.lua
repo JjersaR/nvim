@@ -10,7 +10,20 @@ require'lspconfig'.pyright.setup{
   capabilities = capabilities,
 }
 
+--css
+require'lspconfig'.cssls.setup {
+  capabilities = capabilities,
+}
+
+-- emmet html y css
+require'lspconfig'.emmet_ls.setup{
+  capabilities = capabilities,
+}
+
 --tsserver
+require'lspconfig'.tsserver.setup{
+  capabilities = capabilities,
+}
 
 --lua
 local system_name
@@ -24,7 +37,7 @@ else
   print("Unsupported system for sumneko")
 end
 
-local sumneko_root_path = '/home/ricardo/Descargas/lua-language-server'
+local sumneko_root_path = '/home/r/Descargas/lua-language-server'
 local sumneko_binary = sumneko_root_path .. "/bin/" .. system_name .. "/lua-language-server"
 
 local runtime_path = vim.split(package.path, ';')
