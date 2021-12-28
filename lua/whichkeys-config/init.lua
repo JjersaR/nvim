@@ -35,10 +35,12 @@ local mappings = {
     e = {'<cmd>Lspsaga show_line_diagnostics<cr>', "Show Line Diagnostics"},
     n = {'<cmd>Lspsaga diagnostic_jump_next<cr>', "Go To Next Diagnostic"},
     N = {'<cmd>Lspsaga diagnostic_jump_prev<cr>', "Go To Previous Diagnostic"},
+    f = {':lua vim.lsp.buf.formatting()<CR>', "Format"},
 
   },
-  t = { t = {":ToggleTerm<CR>", "Split Below"}, f = {toggle_float, "Floating Terminal"}, l = {toggle_lazygit, "LazyGit"} },
+  t = { name = "Terminal", t = {":ToggleTerm<CR>", "Split Below"}, f = {toggle_float, "Floating Terminal"}, l = {toggle_lazygit, "LazyGit"} },
   e = {
+    name = "Errores",
     x = {":TroubleToggle<CR>", "Errores"}, 
     f = {":TroubleRefresh<CR>", "Actualizar errores"}, 
     d = {":TroubleToggle document_diagnostics<CR>", "Documentacion de errores"}, 
