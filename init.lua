@@ -23,6 +23,7 @@ require('gitsigns-config')
 require('dashboard-config')
 require('rnvimr-config')
 require('trouble-config')
+require('nulls-ls-config')
 
 --tema
 --vim.cmd[[colorscheme nord]]
