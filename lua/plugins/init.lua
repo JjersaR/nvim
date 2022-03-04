@@ -97,5 +97,11 @@ return require('packer').startup(function()
       }
     end
   }
+		
+--tema chido
+ use({
+	 "catppuccin/nvim",
+	 as = "catppuccin"
+ })
 
 end)
