@@ -25,19 +25,8 @@ require('rnvimr-config')
 require('trouble-config')
 require('nulls-ls-config')
 
---tema
---vim.cmd[[colorscheme nord]]
-
---tema tokyodark
---vim.g.tokyodark_transparent_background = false
---vim.g.tokyodark_enable_italic_comment = true
---vim.g.tokyodark_enable_italic = true
---vim.g.tokyodark_color_gamma = "1.0"
---vim.cmd("colorscheme tokyodark")
-
---tema neon
---vim.cmd[[colorscheme neon]]
---vim.g.neon_style = "Doom"
-
 --moon
-vim.cmd[[colorscheme blue-moon]]
+--vim.cmd[[colorscheme blue-moon]]
+
+--catppuccin
+vim.cmd[[colorscheme catppuccin]]
