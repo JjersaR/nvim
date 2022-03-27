@@ -49,4 +49,4 @@ map("n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<
 mapper("n", "ro", ":ReachOpen buffers<CR>")
 
 -- para comentar lineas
-mapper("n", "<Leader>co", ":CommentToggle<CR>")
+mapper("n", "<Leader>t", ":CommentToggle<CR>")
