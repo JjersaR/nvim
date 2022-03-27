@@ -104,4 +104,11 @@ return require('packer').startup(function()
 	 as = "catppuccin"
  })
 
+ -- buffers
+ use 'toppair/reach.nvim'
+
+ -- scroll en pantalla
+ use 'karb94/neoscroll.nvim'
+
+-- fin de packer  
 end)
