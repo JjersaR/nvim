@@ -110,5 +110,8 @@ return require('packer').startup(function()
  -- scroll en pantalla
  use 'karb94/neoscroll.nvim'
 
+ -- para comentar lineas
+ use "terrortylor/nvim-comment"
+
 -- fin de packer  
 end)
