@@ -76,3 +76,23 @@ require'lspconfig'.jdtls.setup{
   capabilities = capabilities,
   cmd = { 'jdtls' }
 }
+
+--angular
+require'lspconfig'.angularls.setup{
+  capabilities = capabilities,
+}
+
+--sql
+require'lspconfig'.sqlls.setup{
+  capabilities = capabilities
+}
+
+--vuels
+require'lspconfig'.vuels.setup{
+  capabilities = capabilities
+}
+
+-- sintaxis de html
+require'lspconfig'.html.setup {
+  capabilities = capabilities,
+}
