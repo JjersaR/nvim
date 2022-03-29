@@ -6,7 +6,7 @@ require('settings')
 require('keymaps')
 
 -- conf de los plugins
-require('lualine-config')
+require('staline-config')
 require('treesitter-config')
 require('bufferline-config')
 require('tree-config')
