@@ -26,6 +26,7 @@ require('trouble-config')
 require('nulls-ls-config')
 require('reach-config')
 require('comment-config')
+require('rename-config')
 
 --moon
 --vim.cmd[[colorscheme blue-moon]]
