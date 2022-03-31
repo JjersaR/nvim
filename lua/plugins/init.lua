@@ -14,7 +14,7 @@ return require('packer').startup(function()
 
 	--la linea de abajo
 	use {
-	  'nvim-lualine/lualine.nvim',
+    use 'tamton-aquib/staline.nvim',
 	  requires = {'kyazdani42/nvim-web-devicons', opt = true}
 	}
 	
@@ -112,6 +112,13 @@ return require('packer').startup(function()
 
  -- para comentar lineas
  use "terrortylor/nvim-comment"
+
+ -- renombrar
+ use {
+    'filipdutescu/renamer.nvim',
+    branch = 'master',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
 
 -- fin de packer  
 end)
