@@ -1,1 +1,1 @@
-require('lualine').setup()
+
