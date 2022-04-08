@@ -19,8 +19,8 @@ staline.setup {
       'mode', ' ', {'StalineBranch', 'branch'}
       -- branch,
     },
-    mid = {{'StalineName', 'file_name'}},
-    right = {'lsp', ' ','lsp_name', '  ', percentage}
+    mid = {'lsp'},
+    right = {' ','lsp_name', '  ', percentage}
   },
   defaults = {
     true_colors = true, -- LSP highlighing
