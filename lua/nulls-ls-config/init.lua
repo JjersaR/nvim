@@ -12,6 +12,7 @@ local sources = {
   formatting.phpcsfixer, --  "php"
   formatting.prettier, -- "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "css", "scss", "less", "html"
   formatting.sqlformat, -- "sql"
+  formatting.scalafmt, -- scala
 }
 
 null_ls.setup({
