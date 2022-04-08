@@ -96,3 +96,8 @@ require'lspconfig'.vuels.setup{
 require'lspconfig'.html.setup {
   capabilities = capabilities,
 }
+
+-- scala
+require'lspconfig'.metals.setup{
+  capabilities = capabilities,
+}
