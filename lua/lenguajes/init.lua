@@ -101,3 +101,8 @@ require'lspconfig'.html.setup {
 require'lspconfig'.metals.setup{
   capabilities = capabilities,
 }
+
+-- bash
+require'lspconfig'.bashls.setup{
+  capabilities = capabilities,
+}
