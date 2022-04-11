@@ -12,7 +12,7 @@ end
 local time = function()
   return os.date("%a │ %H:%M %x")
 end
-local my_colors = {n = "#9CCFD8", i = "#3E8FB0", c = "#286983", v = "#56959F"}
+local my_colors = {n = "#9CCFD8", i = "#9CCFD8", c = "#9CCFD8", v = "#9CCFD8"}
 staline.setup {
   sections = {
     left = {
