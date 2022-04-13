@@ -14,7 +14,7 @@ local config = {
     '-Dlog.level=ALL',
     '-Xms1g',
     '-jar', '/Library/Java/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
-    '-configuration', '/Library/Java/config_linux/',
+    '-configuration', '/Library/config_linux/',
     '-data', vim.fn.expand('~/.cache/jdtls-workspace') .. workspace_dir,
   },
   root_dir = require('jdtls.setup').find_root({'.git', 'mvnw', 'gradlew'}),
