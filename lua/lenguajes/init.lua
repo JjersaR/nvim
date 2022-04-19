@@ -106,3 +106,8 @@ require'lspconfig'.metals.setup{
 require'lspconfig'.bashls.setup{
   capabilities = capabilities,
 }
+
+-- rust
+require'lspconfig'.rls.setup{
+  capabilities = capabilities,
+}
