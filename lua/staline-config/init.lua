@@ -12,11 +12,11 @@ end
 local time = function()
   return os.date("%a │ %H:%M %x")
 end
-local my_colors = {n = "#9CCFD8", i = "#9CCFD8", c = "#9CCFD8", v = "#9CCFD8", t="#9CCFD8"}
+local my_colors = {n = "#9CCFD8", i = "#9CCFD8", c = "#9CCFD8", v = "#9CCFD8", t = "#9CCFD8"}
 staline.setup {
   sections = {
     left = {
-      'mode', ' ', {'StalineBranch', 'branch'}
+      'mode', ' ', {'StalineBranch', 'file_name', 'branch'}
       -- branch,
     },
     mid = {'lsp'},
@@ -25,8 +25,8 @@ staline.setup {
   defaults = {
     true_colors = true, -- LSP highlighing
     font_active = "none",
-    branch_symbol = " ", -- Change the branch symbol
-    mod_symbol = " ﴖ " -- Change the modified symbol
+    branch_symbol = " ", -- branch symbol
+    mod_symbol = "  " -- modified symbol
   },
   mode_icons = {
     ['n'] = ' ',
