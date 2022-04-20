@@ -120,5 +120,6 @@ return require('packer').startup(function()
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+
 -- fin de packer  
 end)
