@@ -119,7 +119,8 @@ return require('packer').startup(function()
     branch = 'master',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
-
+-- symbols-outline
+use 'simrat39/symbols-outline.nvim'
 
 -- fin de packer  
 end)
