@@ -50,3 +50,6 @@ mapper("n", "ro", ":ReachOpen buffers<CR>")
 
 -- para comentar lineas
 mapper("n", "<Leader>t", ":CommentToggle<CR>")
+
+-- para ver estructura
+mapper("n", "<Leader>so", ":SymbolsOutline<CR>")
