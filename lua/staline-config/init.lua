@@ -16,7 +16,7 @@ local my_colors = {n = "#9CCFD8", i = "#9CCFD8", c = "#9CCFD8", v = "#9CCFD8", t
 staline.setup {
   sections = {
     left = {
-      'mode', ' ', {'StalineBranch', 'file_name', 'branch'}, 'file_size',
+      'mode', {'StalineBranch', 'file_name', 'branch'},
     },
     mid = {'lsp'},
     right = {' ','lsp_name', '  ', percentage}
