@@ -36,8 +36,11 @@ local mappings = {
     n = {'<cmd>Lspsaga diagnostic_jump_next<cr>', "Go To Next Diagnostic"},
     N = {'<cmd>Lspsaga diagnostic_jump_prev<cr>', "Go To Previous Diagnostic"},
     f = {':lua vim.lsp.buf.formatting()<CR>', "Format"},
-
-  },
+    o = { "<Cmd>lua require'jdtls'.organize_imports()<CR>", "Organize Imports" },
+    v = { "<Cmd>lua require('jdtls').extract_variable()<CR>", "Extract Variable" },
+    c = { "<Cmd>lua require('jdtls').extract_constant()<CR>", "Extract Constant" },
+    u = { "<Cmd>JdtUpdateConfig<CR>", "Update Config" },
+    },
   t = { name = "Terminal", t = {":ToggleTerm<CR>", "Split Below"}, f = {toggle_float, "Floating Terminal"}, l = {toggle_lazygit, "LazyGit"} },
   e = {
     name = "Errores",
@@ -45,7 +48,16 @@ local mappings = {
     f = {":TroubleRefresh<CR>", "Actualizar errores"}, 
     d = {":TroubleToggle document_diagnostics<CR>", "Documentacion de errores"}, 
     l = {":TroubleToggle loclist<CR>", "Localizar errores"}, 
-  }
+  },
+  c = {
+    name = "ComProgramming",
+    t = {":CphTest<CR>", "Hacer test"},
+    d = {":CphDelete<CR>", "Borrarlo"},
+    e = {":CphEdit ", "Editar"},
+    r = {":CphRetest<CR>", "Rehacer test"},
+    R = {":CphReceive<CR>", "Receive"},
+    s = {":CphStop<CR>", "Parar"},
+  },
 }
 local opts = {prefix = '<leader>'}
 
