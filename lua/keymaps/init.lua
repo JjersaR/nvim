@@ -21,6 +21,7 @@ mapper("n","qq", ":wq<CR>")
 mapper("n","<Leader>qq", ":q!<CR>")
 mapper("i","jj", "<Esc>")
 mapper("n","0", "^")
+mapper("n","Y", "y$")
 
 --ranger
 mapper("n","fn", ":RnvimrToggle<CR>")
