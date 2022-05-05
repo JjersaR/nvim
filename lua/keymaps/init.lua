@@ -1,16 +1,17 @@
 -- tecla lider
 vim.g.mapleader = ' '
 
+--para moverte entre ventanas
+local map = vim.api.nvim_set_keymap
+map('n', '<C-h>', '<C-w>h', {noremap = true, silent = false})
+map('n', '<C-l>', '<C-w>l', {noremap = true, silent = false})
+map('n', '<C-j>', '<C-w>j', {noremap = true, silent = false})
+map('n', '<C-k>', '<C-w>k', {noremap = true, silent = false})
+
 --función para no teclear lo de la linea 6
 local mapper = function(mode, key, result)
 	vim.api.nvim_set_keymap(mode, key, result, {noremap = true, silent = true})
 end
-
---para moverte entre ventanas
-mapper('n', '<C-h>', '<C-w>h')
-mapper('n', '<C-l>', '<C-w>l')
-mapper('n', '<C-j>', '<C-w>j')
-mapper('n', '<C-k>', '<C-w>k')
 
 --atajos personalizados
 mapper("n","<C-s>", ":w<CR>")
