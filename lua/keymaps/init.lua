@@ -16,8 +16,7 @@ end
 --atajos personalizados
 mapper("n","<C-s>", ":w<CR>")
 mapper("i","<C-s>", "<Esc><Esc>:w<CR>")
-mapper("n","q", ":q<CR>")
-mapper("n","qq", ":wq<CR>")
+mapper("n","<C-q>", ":q<CR>")
 mapper("n","<Leader>qq", ":q!<CR>")
 mapper("i","jj", "<Esc>")
 mapper("n","0", "^")
