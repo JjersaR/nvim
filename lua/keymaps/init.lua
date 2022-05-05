@@ -14,7 +14,8 @@ local mapper = function(mode, key, result)
 end
 
 --atajos personalizados
-mapper("n","w", ":w<CR>")
+mapper("n","<C-s>", ":w<CR>")
+mapper("i","<C-s>", "<Esc><Esc>:w<CR>")
 mapper("n","q", ":q<CR>")
 mapper("n","qq", ":wq<CR>")
 mapper("n","<Leader>qq", ":q!<CR>")
@@ -25,7 +26,6 @@ mapper("n","fn", ":RnvimrToggle<CR>")
 
 --duplicar lineas
 mapper("n","tt", ":t.<CR>")
-mapper("n","P", ":PackerSync<CR>")
 
 --para el arbol
 mapper("n","nt", ":NvimTreeOpen<CR>")
