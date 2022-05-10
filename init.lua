@@ -27,9 +27,10 @@ require('nulls-ls-config')
 require('reach-config')
 require('comment-config')
 require('rename-config')
+require('transparent-config')
 
 --moon
---vim.cmd[[colorscheme blue-moon]]
+-- vim.cmd[[colorscheme blue-moon]]
 
 --catppuccin
 vim.cmd[[colorscheme catppuccin]]
