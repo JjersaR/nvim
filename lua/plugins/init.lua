@@ -119,8 +119,16 @@ return require('packer').startup(function()
     branch = 'master',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
--- symbols-outline
-use 'simrat39/symbols-outline.nvim'
+
+  -- symbols-outline, estructura
+  use 'preservim/tagbar'
+
+  -- cphelper
+  use 'p00f/cphelper.nvim'
+  
+  -- transparente
+  use 'xiyaowong/nvim-transparent'
 
 -- fin de packer  
 end)
+
