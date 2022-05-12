@@ -11,7 +11,6 @@ local sources = {
   formatting.perltidy, -- "perl"
   formatting.phpcsfixer, --  "php"
   formatting.prettier, -- "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "css", "scss", "less", "html"
-  formatting.sqlformat, -- "sql"
   formatting.scalafmt, -- scala
   formatting.rustfmt, -- rust
 }
