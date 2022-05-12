@@ -28,6 +28,7 @@ require('reach-config')
 require('comment-config')
 require('rename-config')
 require('transparent-config')
+require('spectre-config')
 
 --moon
 -- vim.cmd[[colorscheme blue-moon]]
