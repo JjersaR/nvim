@@ -1,4 +1,4 @@
--- acelerar tiempos de lua
+-- acelerar tiempos de neovim
 pcall(require,"impatient")
 
 -- instalar packer
