@@ -66,17 +66,7 @@ local mappings = {
         f = {toggle_float, "Floating Terminal"},
         l = {toggle_lazygit, "LazyGit"}
     },
-    e = {
-        name = "Errores",
-        x = {":TroubleToggle<CR>", "Errores"},
-        f = {":TroubleRefresh<CR>", "Actualizar errores"},
-        d = {
-            ":TroubleToggle document_diagnostics<CR>",
-            "Documentacion de errores"
-        },
-        l = {":TroubleToggle loclist<CR>", "Localizar errores"}
-    },
-    c = {
+        c = {
         name = "ComProgramming",
         t = {":CphTest<CR>", "Hacer test"},
         d = {":CphDelete<CR>", "Borrarlo"},
