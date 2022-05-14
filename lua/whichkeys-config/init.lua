@@ -87,9 +87,7 @@ local mappings = {
     },
     s = {
         name = "Spectre",
-        c = {"<cmd>lua require('spectre').open()<CR>", "Abrir"},
-        w = {"<cmd>lua require('spectre').open_visual({select_word=true})<CR>", "Busca la Palabra"},
-        p = {"<cmd>lua require('spectre').open_file_search()<cr>", "Dentro de Archivo"},
+        w = {"<cmd>lua require('spectre').open_visual({select_word=true})<CR>", "Abrir"},
     }
 }
 local opts = {prefix = '<leader>'}
