@@ -1,3 +1,11 @@
+-- acelerar tiempos de lua
+pcall(require,"impatient")
+
+-- instalar packer
+if require "first_load"() then
+  return
+end
+
 -- los plugins
 require('plugins')
 
@@ -29,8 +37,8 @@ require('rename-config')
 require('transparent-config')
 require('spectre-config')
 
---moon
+-- moon
 -- vim.cmd[[colorscheme blue-moon]]
 
---catppuccin
-vim.cmd[[colorscheme catppuccin]]
+-- catppuccin
+vim.cmd [[colorscheme catppuccin]]
