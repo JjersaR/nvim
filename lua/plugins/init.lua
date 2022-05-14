@@ -3,6 +3,9 @@ return require('packer').startup(function()
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
+    -- tiempo de carga
+    use 'lewis6991/impatient.nvim'
+
     -- tema nord
     use 'shaunsingh/nord.nvim'
     -- tema 2
