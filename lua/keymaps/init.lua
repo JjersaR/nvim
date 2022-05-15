@@ -21,6 +21,9 @@ mapper("i", "jj", "<Esc>")
 mapper("n", "0", "^")
 mapper("n", "Y", "y$")
 
+-- quitar espacios
+vim.cmd[[autocmd BufWritePre * :%s/\s\+$//e]]
+
 -- ranger
 mapper("n", "fn", ":RnvimrToggle<CR>")
 
