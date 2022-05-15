@@ -7,7 +7,6 @@ local sources = {
   formatting.clang_format, -- "c", "cpp", "cs", "java"
   formatting.eslint_d, -- "javascript", "javascriptreact", "typescript", "typescriptreact", "vue"
   formatting.json_tool, -- "json"
-  formatting.lua_format, -- "lua"
   formatting.perltidy, -- "perl"
   formatting.phpcsfixer, --  "php"
   formatting.prettier, -- "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "css", "scss", "less", "html"
