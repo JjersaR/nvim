@@ -115,5 +115,15 @@ return require('packer').startup(function()
     -- spectre
     use {'windwp/nvim-spectre'}
 
-    -- fin de packer  
+    -- para bases de datos
+    use({
+  		"kristijanhusak/vim-dadbod-ui",
+	  	requires = {
+		  	"tpope/vim-dadbod",
+			  "kristijanhusak/vim-dadbod-completion",
+			  "tpope/vim-dotenv",
+		  },
+	  })
+
+    -- fin de packer
 end)
