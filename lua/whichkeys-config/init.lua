@@ -85,16 +85,13 @@ local mappings = {
         S = {":PackerStatus<cr>", "Packer Status"},
         u = {":PackerUpdate<cr>", "Update Plugins"}
     },
-    s = {
-        name = "Spectre",
-        w = {"<cmd>lua require('spectre').open_visual({select_word=true})<CR>", "Abrir"},
-    },
     b = {
       name = "Database",
       o = {":tab DBUI<CR>", "Open"},
       A = {":DBUIAddConnection<CR>", "Add connection"},
       r = {":DBUIRenameBuffer<CR>", "Rename Buffer"},
       i = {":DBUILastQueryInfo<CR>", "Last Query Info"},
+      c = {":tabclose<CR>", "Close"},
     }
 }
 local opts = {prefix = '<leader>'}
