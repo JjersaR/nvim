@@ -59,4 +59,7 @@ mapper("n", "ro", ":ReachOpen buffers<CR>")
 mapper("n", "<Leader>t", ":CommentToggle<CR>")
 
 -- para ver estructura
-mapper("n", "so", ":TagbarToggle<CR>")
+mapper("n", "T", ":TagbarToggle<CR>")
+
+-- para spectre
+mapper("n", "so", "<cmd>lua require('spectre').open()<CR>")
