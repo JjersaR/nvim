@@ -51,7 +51,6 @@ return require('packer').startup(function()
     use 'williamboman/nvim-lsp-installer'
     use {'tami5/lspsaga.nvim'}
     use "jose-elias-alvarez/null-ls.nvim"
-    use 'nvim-lua/lsp_extensions.nvim'
     use {"ray-x/lsp_signature.nvim"}
 
     -- para java
