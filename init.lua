@@ -37,6 +37,8 @@ require('rename-config')
 require('transparent-config')
 require('spectre-config')
 require('dadbod-config')
+require('LSPextension-config')
+require('signature-config')
 
 -- moon
 -- vim.cmd[[colorscheme blue-moon]]
