@@ -125,6 +125,12 @@ return require('packer').startup(function()
 			  "tpope/vim-dotenv",
 		  },
 	  })
+		
+    -- quickrun
+    use {'is0n/jaq-nvim'}
+
+    -- auto guardado
+    use "Pocco81/AutoSave.nvim"
 
     -- fin de packer
 end)
