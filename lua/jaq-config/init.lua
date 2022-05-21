@@ -14,7 +14,7 @@ require('jaq-nvim').setup{
 			cpp = "g++ % -o $fileBase && ./$fileBase",
 			go = "go run %",
 			sh = "sh %",
-      java = "java %",
+      			java = "java %",
 		},
 
 		-- Uses internal commands such as 'source' and 'luafile'
