@@ -92,7 +92,15 @@ local mappings = {
       r = {":DBUIRenameBuffer<CR>", "Rename Buffer"},
       i = {":DBUILastQueryInfo<CR>", "Last Query Info"},
       c = {":tabclose<CR>", "Close"},
-    }
+    },
+    r = {
+      name = "Quickrun",
+      t = {":Jaq terminal<CR>", "Salida"},
+      f = {":Jaq qf<CR>", "Solo salida"},
+      b = {":Jaq bang<CR>", "Abre y Cierra"},
+      F = {":Jaq float<CR>", "Flotante"},
+      T = {":Jaq toggleterm<CR>", "Con edicion"},
+    },
 }
 local opts = {prefix = '<leader>'}
 
