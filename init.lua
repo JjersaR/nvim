@@ -38,6 +38,8 @@ require('transparent-config')
 require('spectre-config')
 require('dadbod-config')
 require('signature-config')
+require('jaq-config')
+require('autoSave-config')
 
 -- moon
 -- vim.cmd[[colorscheme blue-moon]]
