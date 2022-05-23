@@ -13,7 +13,7 @@ local config = {
     '-Dlog.protocol=true',
     '-Dlog.level=ALL',
     '-Xms1g',
-    '-jar', '/Library/Java/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
+    '-jar', '/Library/Java/plugins/org.eclipse.equinox.launcher_*.jar',
     '-configuration', '/Library/config_linux/',
     '-data', vim.fn.expand('~/.cache/jdtls-workspace') .. workspace_dir,
   },
