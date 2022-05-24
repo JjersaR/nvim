@@ -40,6 +40,7 @@ require('dadbod-config')
 require('signature-config')
 require('jaq-config')
 require('autoSave-config')
+require('sqls-config')
 
 -- moon
 -- vim.cmd[[colorscheme blue-moon]]
