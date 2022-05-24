@@ -1,136 +1,139 @@
 return require('packer').startup(function()
-    -- My plugins here
-    -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
+  -- My plugins here
+  -- Packer can manage itself
+  use 'wbthomason/packer.nvim'
 
-    -- tiempo de carga
-    use 'lewis6991/impatient.nvim'
+  -- tiempo de carga
+  use 'lewis6991/impatient.nvim'
 
-    -- tema nord
-    use 'shaunsingh/nord.nvim'
-    -- tema 2
-    use 'tiagovla/tokyodark.nvim'
-    -- tema 3
-    use "rafamadriz/neon"
-    -- tema 4
-    use 'kyazdani42/blue-moon'
+  -- tema nord
+  use 'shaunsingh/nord.nvim'
+  -- tema 2
+  use 'tiagovla/tokyodark.nvim'
+  -- tema 3
+  use "rafamadriz/neon"
+  -- tema 4
+  use 'kyazdani42/blue-moon'
 
-    -- la linea de abajo
-    use {
-        use 'tamton-aquib/staline.nvim',
-        requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  -- la linea de abajo
+  use {
+    use 'tamton-aquib/staline.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+
+  -- la sintaxis
+  use { 'nvim-treesitter/nvim-treesitter', run = ":TSUpdate" }
+
+  -- los buffers
+  use { 'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons' }
+
+  -- navegador de archivos
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons' -- optional, for file icon
     }
+  }
 
-    -- la sintaxis
-    use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}
+  -- telescope
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { { 'nvim-lua/plenary.nvim' } }
+  }
 
-    -- los buffers
-    use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+  -- LSP y autocompletado
+  use 'neovim/nvim-lspconfig'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-vsnip'
+  use 'hrsh7th/vim-vsnip'
+  use 'williamboman/nvim-lsp-installer'
+  use { 'tami5/lspsaga.nvim' }
+  use "jose-elias-alvarez/null-ls.nvim"
+  use { "ray-x/lsp_signature.nvim" }
 
-    -- navegador de archivos
-    use {
-        'kyazdani42/nvim-tree.lua',
-        requires = {
-            'kyazdani42/nvim-web-devicons' -- optional, for file icon
-        }
-    }
+  -- para java
+  use 'mfussenegger/nvim-jdtls'
 
-    -- telescope
-    use {
-        'nvim-telescope/telescope.nvim',
-        requires = {{'nvim-lua/plenary.nvim'}}
-    }
+  -- autopairs
+  use { 'windwp/nvim-autopairs' }
 
-    -- LSP y autocompletado
-    use 'neovim/nvim-lspconfig'
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/nvim-cmp'
-    use 'hrsh7th/cmp-vsnip'
-    use 'hrsh7th/vim-vsnip'
-    use 'williamboman/nvim-lsp-installer'
-    use {'tami5/lspsaga.nvim'}
-    use "jose-elias-alvarez/null-ls.nvim"
-    use {"ray-x/lsp_signature.nvim"}
+  -- which-key
+  use { 'folke/which-key.nvim' }
 
-    -- para java
-    use 'mfussenegger/nvim-jdtls'
+  -- iconos en cmp
+  use 'onsails/lspkind-nvim'
 
-    -- autopairs
-    use {'windwp/nvim-autopairs'}
+  -- terminal
+  use { "akinsho/toggleterm.nvim" }
 
-    -- which-key
-    use {'folke/which-key.nvim'}
+  -- indentado
+  use "lukas-reineke/indent-blankline.nvim"
 
-    -- iconos en cmp
-    use 'onsails/lspkind-nvim'
+  -- ver qué se modificó
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require('gitsigns').setup { current_line_blame = true }
+    end
+  }
+  -- pantalla de inicio
+  use 'glepnir/dashboard-nvim'
 
-    -- terminal
-    use {"akinsho/toggleterm.nvim"}
+  -- ranger
+  use 'kevinhwang91/rnvimr'
 
-    -- indentado
-    use "lukas-reineke/indent-blankline.nvim"
+  -- tema chido
+  use({ "catppuccin/nvim", as = "catppuccin" })
 
-    -- ver qué se modificó
-    use {
-        'lewis6991/gitsigns.nvim',
-        requires = {'nvim-lua/plenary.nvim'},
-        config = function()
-            require('gitsigns').setup {current_line_blame = true}
-        end
-    }
-    -- pantalla de inicio
-    use 'glepnir/dashboard-nvim'
+  -- buffers
+  use 'toppair/reach.nvim'
 
-    -- ranger
-    use 'kevinhwang91/rnvimr'
+  -- scroll en pantalla
+  use 'karb94/neoscroll.nvim'
 
-    -- tema chido
-    use({"catppuccin/nvim", as = "catppuccin"})
+  -- para comentar lineas
+  use "terrortylor/nvim-comment"
 
-    -- buffers
-    use 'toppair/reach.nvim'
+  -- renombrar
+  use {
+    'filipdutescu/renamer.nvim',
+    branch = 'master',
+    requires = { { 'nvim-lua/plenary.nvim' } }
+  }
 
-    -- scroll en pantalla
-    use 'karb94/neoscroll.nvim'
+  -- symbols-outline, estructura
+  use 'preservim/tagbar'
 
-    -- para comentar lineas
-    use "terrortylor/nvim-comment"
+  -- cphelper
+  use 'p00f/cphelper.nvim'
 
-    -- renombrar
-    use {
-        'filipdutescu/renamer.nvim',
-        branch = 'master',
-        requires = {{'nvim-lua/plenary.nvim'}}
-    }
+  -- transparente
+  use 'xiyaowong/nvim-transparent'
 
-    -- symbols-outline, estructura
-    use 'preservim/tagbar'
+  -- spectre
+  use { 'windwp/nvim-spectre' }
 
-    -- cphelper
-    use 'p00f/cphelper.nvim'
+  -- para bases de datos
+  use({
+    "kristijanhusak/vim-dadbod-ui",
+    requires = {
+      "tpope/vim-dadbod",
+      "kristijanhusak/vim-dadbod-completion",
+      "tpope/vim-dotenv",
+    },
+  })
 
-    -- transparente
-    use 'xiyaowong/nvim-transparent'
+  -- quickrun
+  use { 'is0n/jaq-nvim' }
 
-    -- spectre
-    use {'windwp/nvim-spectre'}
+  -- auto guardado
+  use "Pocco81/AutoSave.nvim"
 
-    -- para bases de datos
-    use({
-  		"kristijanhusak/vim-dadbod-ui",
-	  	requires = {
-		  	"tpope/vim-dadbod",
-			  "kristijanhusak/vim-dadbod-completion",
-			  "tpope/vim-dotenv",
-		  },
-	  })
-		
-    -- quickrun
-    use {'is0n/jaq-nvim'}
+  -- sql
+  use 'nanotee/sqls.nvim'
 
-    -- auto guardado
-    use "Pocco81/AutoSave.nvim"
-
-    -- fin de packer
+  -- fin de packer
 end)
