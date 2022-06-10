@@ -2,14 +2,14 @@
 vim.g.mapleader = ' '
 
 local map = vim.api.nvim_set_keymap
-map('n', '<C-h>', '<C-w>h', {noremap = true, silent = false})
-map('n', '<C-l>', '<C-w>l', {noremap = true, silent = false})
-map('n', '<C-j>', '<C-w>j', {noremap = true, silent = false})
-map('n', '<C-k>', '<C-w>k', {noremap = true, silent = false})
+map('n', '<C-h>', '<C-w>h', { noremap = true, silent = false })
+map('n', '<C-l>', '<C-w>l', { noremap = true, silent = false })
+map('n', '<C-j>', '<C-w>j', { noremap = true, silent = false })
+map('n', '<C-k>', '<C-w>k', { noremap = true, silent = false })
 
 -- función para mapear las cosas
 local mapper = function(mode, key, result)
-    vim.api.nvim_set_keymap(mode, key, result, {noremap = true, silent = true})
+  vim.api.nvim_set_keymap(mode, key, result, { noremap = true, silent = true })
 end
 
 -- atajos personalizados
@@ -22,7 +22,7 @@ mapper("n", "0", "^")
 mapper("n", "Y", "y$")
 
 -- quitar espacios
-vim.cmd[[autocmd BufWritePre * :%s/\s\+$//e]]
+vim.cmd [[autocmd BufWritePre * :%s/\s\+$//e]]
 
 -- ranger
 mapper("n", "fn", ":RnvimrToggle<CR>")
@@ -46,11 +46,11 @@ mapper('v', '>', '>gv')
 
 -- para moverse en lspsaga
 map("n", "<C-u>",
-    "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>",
-    {noremap = true, silent = true})
+  "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>",
+  { noremap = true, silent = true })
 map("n", "<C-d>",
-    "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>",
-    {noremap = true, silent = true})
+  "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>",
+  { noremap = true, silent = true })
 
 -- para reach
 mapper("n", "ro", ":ReachOpen buffers<CR>")
@@ -63,3 +63,6 @@ mapper("n", "T", ":TagbarToggle<CR>")
 
 -- para spectre
 mapper("n", "so", "<cmd>lua require('spectre').open()<CR>")
+
+-- ayuda
+mapper("n", "sh", ":CheatSH<CR>")
