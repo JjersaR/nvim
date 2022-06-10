@@ -135,5 +135,8 @@ return require('packer').startup(function()
   -- sql
   use 'nanotee/sqls.nvim'
 
+  -- ayuda lenguaje
+  use {"Djancyp/cheat-sheet"}
+
   -- fin de packer
 end)
