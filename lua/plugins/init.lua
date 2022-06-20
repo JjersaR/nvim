@@ -107,9 +107,6 @@ return require('packer').startup(function()
   -- symbols-outline, estructura
   use 'preservim/tagbar'
 
-  -- cphelper
-  use 'p00f/cphelper.nvim'
-
   -- transparente
   use 'xiyaowong/nvim-transparent'
 
@@ -126,17 +123,8 @@ return require('packer').startup(function()
     },
   })
 
-  -- quickrun
-  use { 'is0n/jaq-nvim' }
-
-  -- auto guardado
-  use "Pocco81/AutoSave.nvim"
-
   -- sql
   use 'nanotee/sqls.nvim'
-
-  -- ayuda lenguaje
-  use {"Djancyp/cheat-sheet"}
 
   -- fin de packer
 end)
