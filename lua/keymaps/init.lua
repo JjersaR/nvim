@@ -63,6 +63,3 @@ mapper("n", "T", ":TagbarToggle<CR>")
 
 -- para spectre
 mapper("n", "so", "<cmd>lua require('spectre').open()<CR>")
-
--- ayuda
-mapper("n", "sh", ":CheatSH<CR>")
