@@ -66,15 +66,6 @@ local mappings = {
         f = {toggle_float, "Floating Terminal"},
         l = {toggle_lazygit, "LazyGit"}
     },
-        c = {
-        name = "ComProgramming",
-        t = {":CphTest<CR>", "Hacer test"},
-        d = {":CphDelete<CR>", "Borrarlo"},
-        e = {":CphEdit ", "Editar"},
-        r = {":CphRetest<CR>", "Rehacer test"},
-        R = {":CphReceive<CR>", "Receive"},
-        s = {":CphStop<CR>", "Parar"}
-    },
     p = {
         name = "Packer",
         r = {":PackerClean<cr>", "Remove Unused Plugins"},
@@ -92,14 +83,6 @@ local mappings = {
       r = {":DBUIRenameBuffer<CR>", "Rename Buffer"},
       i = {":DBUILastQueryInfo<CR>", "Last Query Info"},
       c = {":tabclose<CR>", "Close"},
-    },
-    r = {
-      name = "Quickrun",
-      t = {":Jaq terminal<CR>", "Salida"},
-      f = {":Jaq qf<CR>", "Solo salida"},
-      b = {":Jaq bang<CR>", "Abre y Cierra"},
-      F = {":Jaq float<CR>", "Flotante"},
-      T = {":Jaq toggleterm<CR>", "Con edicion"},
     },
 }
 local opts = {prefix = '<leader>'}
