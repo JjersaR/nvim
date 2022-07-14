@@ -46,7 +46,7 @@ local mappings = {
         N = {
             '<cmd>Lspsaga diagnostic_jump_prev<cr>', "Go To Previous Diagnostic"
         },
-        f = {':lua vim.lsp.buf.formatting()<CR>', "Format"},
+        f = {':lua vim.lsp.buf.format {async = true}<CR>', "Format"},
         o = {
             "<Cmd>lua require'jdtls'.organize_imports()<CR>", "Organize Imports"
         },
