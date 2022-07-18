@@ -41,4 +41,5 @@ require('signature-config')
 require('sqls-config')
 
 -- catppuccin
+vim.g.catppuccin_flavour = "frappe"
 vim.cmd [[colorscheme catppuccin]]
