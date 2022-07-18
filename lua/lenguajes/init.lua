@@ -6,7 +6,7 @@ require'lspconfig'.clangd.setup{
 }
 
 -- para python
-require'lspconfig'.pyright.setup{
+require'lspconfig'.jedi_language_server.setup{
   capabilities = capabilities,
 }
 
@@ -44,18 +44,8 @@ require'lspconfig'.jdtls.setup{
     end
 }
 
---angular
-require'lspconfig'.angularls.setup{
-  capabilities = capabilities,
-}
-
 --sql
 require'lspconfig'.sqlls.setup{
-  capabilities = capabilities
-}
-
---vuels
-require'lspconfig'.vuels.setup{
   capabilities = capabilities
 }
 
@@ -76,5 +66,10 @@ require'lspconfig'.bashls.setup{
 
 -- rust
 require'lspconfig'.rls.setup{
+  capabilities = capabilities,
+}
+
+-- para toml
+require'lspconfig'.taplo.setup{
   capabilities = capabilities,
 }
