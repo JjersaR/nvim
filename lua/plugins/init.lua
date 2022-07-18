@@ -125,6 +125,9 @@ return require('packer').startup(function()
 
   -- sql
   use 'nanotee/sqls.nvim'
+    
+  -- pasar a proyectos
+  use 'charludo/projectmgr.nvim'
 
   -- fin de packer
 end)
