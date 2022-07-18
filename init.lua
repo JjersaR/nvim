@@ -40,8 +40,5 @@ require('dadbod-config')
 require('signature-config')
 require('sqls-config')
 
--- moon
--- vim.cmd[[colorscheme blue-moon]]
-
 -- catppuccin
 vim.cmd [[colorscheme catppuccin]]
