@@ -48,7 +48,9 @@ return require('packer').startup(function()
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
-  use 'williamboman/nvim-lsp-installer'
+  use { "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim"
+  }
   use { 'tami5/lspsaga.nvim' }
   use "jose-elias-alvarez/null-ls.nvim"
   use { "ray-x/lsp_signature.nvim" }
@@ -125,9 +127,12 @@ return require('packer').startup(function()
 
   -- sql
   use 'nanotee/sqls.nvim'
-    
+
   -- pasar a proyectos
   use 'charludo/projectmgr.nvim'
+
+  -- mostrar errores tuneado
+  use "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
 
   -- fin de packer
 end)

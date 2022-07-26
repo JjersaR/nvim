@@ -43,6 +43,8 @@ require('spectre-config')
 require('dadbod-config')
 require('signature-config')
 require('sqls-config')
+require('mason-config')
+require('lines-config')
 
 -- catppuccin
 vim.g.catppuccin_flavour = "mocha"
