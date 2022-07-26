@@ -18,6 +18,7 @@ mapper("i", "<C-s>", "<Esc><Esc>:w<CR>")
 mapper("n", "<C-q>", ":q<CR>")
 mapper("n", "<Leader>qq", ":q!<CR>")
 mapper("i", "jj", "<Esc>")
+mapper("i", "JJ", "<Esc>")
 mapper("n", "0", "^")
 mapper("n", "Y", "y$")
 
