@@ -1,6 +1,7 @@
 local null_ls = require("null-ls")
 
 local formatting = null_ls.builtins.formatting
+local diagnostics = null_ls.builtins.diagnostics
 
 local sources = {
   formatting.black, -- "python"
@@ -12,6 +13,7 @@ local sources = {
   formatting.prettier, -- "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "css", "scss", "less", "html"
   formatting.scalafmt, -- scala
   formatting.rustfmt, -- rust
+  diagnostics.flake8 -- diagnostico de python
 }
 
 null_ls.setup({
