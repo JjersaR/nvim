@@ -128,9 +128,6 @@ return require('packer').startup(function()
   -- sql
   use 'nanotee/sqls.nvim'
 
-  -- pasar a proyectos
-  use 'charludo/projectmgr.nvim'
-
   -- mostrar errores tuneado
   use "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
 
