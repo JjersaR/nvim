@@ -20,7 +20,7 @@ null_ls.setup({
   sources = sources,
   on_attach = function(client)
     if client.supports_method"textDocument/formatting" then
-      vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+      vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
     end
   end,
 })
