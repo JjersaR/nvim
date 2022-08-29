@@ -131,5 +131,11 @@ return require('packer').startup(function()
   -- mostrar errores tuneado
   use "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
 
+  -- extension de clangd
+  use 'p00f/clangd_extensions.nvim'
+
+  -- refactoring
+  use 'ThePrimeagen/refactoring.nvim'
+
   -- fin de packer
 end)

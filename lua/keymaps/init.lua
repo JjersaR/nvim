@@ -64,3 +64,6 @@ mapper("n", "T", ":TagbarToggle<CR>")
 
 -- para spectre
 mapper("n", "so", "<cmd>lua require('spectre').open()<CR>")
+
+-- refactorizar en nuevo archivo
+mapper("v", "<Leader>rb", "[[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>]]")
