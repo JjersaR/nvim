@@ -76,3 +76,8 @@ require'lspconfig'.rls.setup{
 require'lspconfig'.taplo.setup{
   capabilities = capabilities,
 }
+
+-- para meson
+require'lspconfig'.vala_ls.setup{
+  capabilities = capabilities,
+}
