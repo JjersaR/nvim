@@ -80,7 +80,7 @@ return require('packer').startup(function()
     'lewis6991/gitsigns.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
     config = function()
-      require('gitsigns').setup { current_line_blame = true }
+      require('gitsigns').setup{current_line_blame = true}
     end
   }
   -- pantalla de inicio
