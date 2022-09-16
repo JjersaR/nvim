@@ -84,7 +84,7 @@ return require('packer').startup(function()
     end
   }
   -- pantalla de inicio
-  use 'glepnir/dashboard-nvim'
+  use 'goolord/alpha-nvim'
 
   -- ranger
   use 'kevinhwang91/rnvimr'
