@@ -1,89 +1,65 @@
-local present, alpha = pcall(require, "alpha")
+local alpha = require("alpha")
+local dashboard = require("alpha.themes.dashboard")
 
-if not present then
-  return
-end
-
-local function button(sc, txt, keybind)
-  local sc_ = sc:gsub("%s", ""):gsub("SPC", "<leader>")
-
-  local opts = {
-    position = "center",
-    text = txt,
-    shortcut = sc,
-    cursor = 5,
-    width = 36,
-    align_shortcut = "right",
-    hl = "AlphaButtons",
-  }
-
-  if keybind then
-    opts.keymap = { "n", sc_, keybind, { noremap = true, silent = true } }
-  end
-
-  return {
-    type = "button",
-    val = txt,
-    on_press = function()
-      local key = vim.api.nvim_replace_termcodes(sc_, true, false, true) or ""
-      vim.api.nvim_feedkeys(key, "normal", false)
-    end,
-    opts = opts,
-  }
-end
-
--- dynamic header padding
-local fn = vim.fn
-local marginTopPercent = 0.3
-local headerPadding = fn.max { 2, fn.floor(fn.winheight(0) * marginTopPercent) }
-
-local options = {
-
-  header = {
-    type = "text",
-    val = {
-      "   ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣿⣶⣿⣦⣼⣆          ",
-      "    ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦       ",
-      "          ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷    ⠻⠿⢿⣿⣧⣄     ",
-      "           ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀⠄⠢⣀⡀⠈⠙⠿⠄    ",
-      "          ⢠⣿⣿⣿⠈    ⣻⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀   ",
-      "   ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘  ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄  ",
-      "  ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾⠄   ",
-      " ⣠⣿⠿⠛ ⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄  ",
-      " ⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇ ⠛⠻⢷⣄ ",
-      "      ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆     ",
-      "       ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃     ",
-    },
-    opts = {
-      position = "center",
-      hl = "AlphaHeader",
-    },
-  },
-
-  buttons = {
-    type = "group",
-    val = {
-      button("SPC f f", "  Find File  ", ":Telescope find_files<CR>"),
-      button("SPC f o", "  Recent File  ", ":Telescope oldfiles<CR>"),
-      button("SPC f w", "  Find Word  ", ":Telescope live_grep<CR>"),
-      button("SPC b m", "  Bookmarks  ", ":Telescope marks<CR>"),
-      button("SPC e s", "  Settings", ":e $MYVIMRC | :cd %:p:h <CR>"),
-    },
-    opts = {
-      spacing = 1,
-    },
-  },
-
-  headerPaddingTop = { type = "padding", val = headerPadding },
-  headerPaddingBottom = { type = "padding", val = 2 },
+-- Set header
+dashboard.section.header.val = {
+  [[                                                   ]],
+  [[                                              ___  ]],
+  [[                                           ,o88888 ]],
+  [[                                        ,o8888888' ]],
+  [[                  ,:o:o:oooo.        ,8O88Pd8888"  ]],
+  [[              ,.::.::o:ooooOoOoO. ,oO8O8Pd888'"    ]],
+  [[            ,.:.::o:ooOoOoOO8O8OOo.8OOPd8O8O"      ]],
+  [[           , ..:.::o:ooOoOOOO8OOOOo.FdO8O8"        ]],
+  [[          , ..:.::o:ooOoOO8O888O8O,COCOO"          ]],
+  [[         , . ..:.::o:ooOoOOOO8OOOOCOCO"            ]],
+  [[          . ..:.::o:ooOoOoOO8O8OCCCC"o             ]],
+  [[             . ..:.::o:ooooOoCoCCC"o:o             ]],
+  [[             . ..:.::o:o:,cooooCo"oo:o:            ]],
+  [[          `   . . ..:.:cocoooo"'o:o:::'            ]],
+  [[          .`   . ..::ccccoc"'o:o:o:::'             ]],
+  [[         :.:.    ,c:cccc"':.:.:.:.:.'              ]],
+  [[       ..:.:"'`::::c:"'..:.:.:.:.:.'               ]],
+  [[     ...:.'.:.::::"'    . . . . .'                 ]],
+  [[    .. . ....:."' `   .  . . ''                    ]],
+  [[  . . . ...."'                                     ]],
+  [[  .. . ."'                                         ]],
+  [[ .                                                 ]],
+  [[                                                   ]],
 }
 
-alpha.setup {
-  layout = {
-    options.headerPaddingTop,
-    options.header,
-    options.headerPaddingBottom,
-    options.buttons,
-  },
-  opts = {},
+-- Set menu
+dashboard.section.buttons.val = {
+  dashboard.button("m", "  Find File", ":Telescope find_files<CR>"),
+  dashboard.button("n", "  Ranger",     ":RnvimrToggle<CR>"),
+  dashboard.button("t", "🌳 NvimTree",     ":NvimTreeToggle<CR>"),
+  dashboard.button("e", "🔎 Search by name",   "<cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.input('Grep For > ')})<CR>"),
+  dashboard.button("r", "  Recent files", ":lua require'telescope.builtin'.oldfiles{}<CR>", {} ),
+  dashboard.button("p", "✅ PackerSync",   ":PackerSync<CR>"),
+  dashboard.button("s", "⚙️  Settings",     ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),
+  dashboard.button("q", "🛑 Quit NVIM",    ":qa<CR>"),
 }
+
+-- Set footer
+--   NOTE: This is currently a feature in my fork of alpha-nvim (opened PR #21, will update snippet if added to main)
+--   To see test this yourself, add the function as a dependecy in packer and uncomment the footer lines
+--   ```init.lua
+--   return require('packer').startup(function()
+--       use 'wbthomason/packer.nvim'
+--       use {
+--           'goolord/alpha-nvim', branch = 'feature/startify-fortune',
+--           requires = {'BlakeJC94/alpha-nvim-fortune'},
+--           config = function() require("config.alpha") end
+--       }
+--   end)
+--   ```
+-- local fortune = require("alpha.fortune")
+-- dashboard.section.footer.val = fortune()
+
+-- Send config to alpha
+alpha.setup(dashboard.opts)
+
+-- Disable folding on alpha buffer
+vim.cmd([[
+    autocmd FileType alpha setlocal nofoldenable
+]])
