@@ -80,3 +80,8 @@ require'lspconfig'.taplo.setup{
 require'lspconfig'.vala_ls.setup{
   capabilities = capabilities,
 }
+
+-- para docker
+require'lspconfig'.dockerls.setup{
+  capabilities = capabilities
+}
