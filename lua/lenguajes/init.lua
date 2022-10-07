@@ -1,87 +1,107 @@
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local lspFlags = {
+  debounce_text_changes = 150,
+}
+
 --para c, c++ y de más
-require'lspconfig'.clangd.setup{
+require 'lspconfig'.clangd.setup {
   capabilities = capabilities,
+  flags = lspFlags,
 }
 
 -- para python
-require'lspconfig'.jedi_language_server.setup{
+require 'lspconfig'.pyright.setup {
   capabilities = capabilities,
+  flags = lspFlags,
 }
 
 --css
-require'lspconfig'.cssls.setup {
+require 'lspconfig'.cssls.setup {
   capabilities = capabilities,
+  flags = lspFlags,
 }
 
 -- emmet html y css
-require'lspconfig'.emmet_ls.setup{
+require 'lspconfig'.emmet_ls.setup {
   capabilities = capabilities,
+  flags = lspFlags,
 }
 
 --tsserver
-require'lspconfig'.tsserver.setup{
+require 'lspconfig'.tsserver.setup {
   capabilities = capabilities,
+  flags = lspFlags,
 }
 
 --lua
-require'lspconfig'.sumneko_lua.setup{
+require 'lspconfig'.sumneko_lua.setup {
   capabilities = capabilities,
+  flags = lspFlags,
 }
 
 --java
-require'lspconfig'.jdtls.setup{
+require 'lspconfig'.jdtls.setup {
   capabilities = capabilities,
   cmd = { 'jdtls' },
-   settings = {
-      java = {signatureHelp = {enabled = true}, contentProvider = {preferred = 'fernflower'}}
-    },
-    on_init = function(client)
-      if client.config.settings then
-        client.notify('workspace/didChangeConfiguration', {settings = client.config.settings})
-      end
-    end,
+  settings = {
+    java = { signatureHelp = { enabled = true }, contentProvider = { preferred = 'fernflower' } }
+  },
+  on_init = function(client)
+    if client.config.settings then
+      client.notify('workspace/didChangeConfiguration', { settings = client.config.settings })
+    end
+  end,
   root_dir = function(fname)
-    return require'lspconfig'.util.root_pattern('pom.xml', 'gradle.build', '.git', 'meson.build')(fname) or vim.fn.getcwd()
-   end
+    return require 'lspconfig'.util.root_pattern('pom.xml', 'gradle.build', '.git', 'meson.build')(fname) or
+        vim.fn.getcwd()
+  end,
+  flags = lspFlags,
 }
 
 --sql
-require'lspconfig'.sqlls.setup{
-  capabilities = capabilities
+require 'lspconfig'.sqlls.setup {
+  capabilities = capabilities,
+  flags = lspFlags,
 }
 
 -- sintaxis de html
-require'lspconfig'.html.setup {
+require 'lspconfig'.html.setup {
   capabilities = capabilities,
+  flags = lspFlags,
 }
 
 -- scala
-require'lspconfig'.metals.setup{
+require 'lspconfig'.metals.setup {
   capabilities = capabilities,
+  flags = lspFlags,
 }
 
 -- bash
-require'lspconfig'.bashls.setup{
+require 'lspconfig'.bashls.setup {
   capabilities = capabilities,
+  flags = lspFlags,
 }
 
 -- rust
-require'lspconfig'.rls.setup{
+require 'lspconfig'.rls.setup {
   capabilities = capabilities,
+  flags = lspFlags,
 }
 
 -- para toml
-require'lspconfig'.taplo.setup{
+require 'lspconfig'.taplo.setup {
   capabilities = capabilities,
+  flags = lspFlags,
 }
 
 -- para meson
-require'lspconfig'.vala_ls.setup{
+require 'lspconfig'.vala_ls.setup {
   capabilities = capabilities,
+  flags = lspFlags,
 }
 
 -- para docker
-require'lspconfig'.dockerls.setup{
-  capabilities = capabilities
+require 'lspconfig'.dockerls.setup {
+  capabilities = capabilities,
+  flags = lspFlags,
 }
