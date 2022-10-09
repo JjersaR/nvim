@@ -130,9 +130,6 @@ return require('packer').startup(function()
   -- sql
   use 'nanotee/sqls.nvim'
 
-  -- mostrar errores tuneado
-  use "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
-
   -- extension de clangd
   use 'p00f/clangd_extensions.nvim'
 

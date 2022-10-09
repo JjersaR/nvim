@@ -44,7 +44,6 @@ require('dadbod-config')
 require('signature-config')
 require('sqls-config')
 require('mason-config')
-require('lines-config')
 require('clangdExtension-config')
 require('refactoring-config')
 

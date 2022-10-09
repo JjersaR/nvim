@@ -48,3 +48,7 @@ vim.notify = function (msg, ...)
   end
   notify(msg, ...)
 end
+
+-- SETEAR ESPACIOS EN CADA ARCHIVO
+-- vim.cmd [[ autocmd FileType python setlocal softtabstop=2]]
+-- vim.cmd [[ autocmd FileType python setlocal shiftwidth=2]]
