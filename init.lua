@@ -46,6 +46,7 @@ require('sqls-config')
 require('mason-config')
 require('clangdExtension-config')
 require('refactoring-config')
+require('jc-config')
 
 -- catppuccin
 vim.g.catppuccin_flavour = "mocha"

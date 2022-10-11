@@ -1,0 +1,1 @@
+require('jc').setup{}

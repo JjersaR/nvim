@@ -59,6 +59,7 @@ return require('packer').startup(function()
 
   -- para java
   use 'mfussenegger/nvim-jdtls'
+  use 'artur-shaik/jc.nvim'
 
   -- autopairs
   use { 'windwp/nvim-autopairs' }
