@@ -6,7 +6,7 @@ local lspFlags = {
 --para c, c++ y de más
 require 'lspconfig'.clangd.setup {
   capabilities = capabilities,
-  flags = lspFlags,
+  flags = lspFlags
 }
 
 -- para python

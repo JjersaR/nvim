@@ -6,15 +6,6 @@ return require('packer').startup(function()
   -- tiempo de carga
   use 'lewis6991/impatient.nvim'
 
-  -- tema nord
-  use 'shaunsingh/nord.nvim'
-  -- tema 2
-  use 'tiagovla/tokyodark.nvim'
-  -- tema 3
-  use "rafamadriz/neon"
-  -- tema 4
-  use 'kyazdani42/blue-moon'
-
   -- la linea de abajo
   use {
     use 'tamton-aquib/staline.nvim',
