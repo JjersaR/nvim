@@ -6,14 +6,16 @@ local diagnostics = null_ls.builtins.diagnostics
 local sources = {
   formatting.black, -- "python"
   formatting.clang_format, -- "c", "cpp", "cs", "java"
-  formatting.eslint_d, -- "javascript", "javascriptreact", "typescript", "typescriptreact", "vue"
+  -- formatting.eslint_d, -- "javascript", "javascriptreact", "typescript", "typescriptreact", "vue"
   formatting.json_tool, -- "json"
   formatting.perltidy, -- "perl"
   formatting.phpcsfixer, --  "php"
-  formatting.prettier, -- "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "css", "scss", "less", "html"
+  -- formatting.prettier, -- "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "css", "scss", "less", "html"
   formatting.scalafmt, -- scala
   formatting.rustfmt, -- rust
-  diagnostics.flake8 -- diagnostico de python
+  diagnostics.flake8, -- diagnostico de python
+  formatting.djhtml, -- formato para html django
+  diagnostics.djlint, -- diagnostico para html django
 }
 
 null_ls.setup({
