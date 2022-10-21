@@ -50,5 +50,5 @@ vim.notify = function (msg, ...)
 end
 
 -- SETEAR ESPACIOS EN CADA ARCHIVO
--- vim.cmd [[ autocmd FileType python setlocal softtabstop=2]]
--- vim.cmd [[ autocmd FileType python setlocal shiftwidth=2]]
+-- vim.cmd [[ autocmd FileType htmldjango setlocal softtabstop=2]]
+-- vim.cmd [[ autocmd FileType htmldjango setlocal shiftwidth=2]]
