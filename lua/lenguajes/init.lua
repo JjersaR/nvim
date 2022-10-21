@@ -107,3 +107,13 @@ require 'lspconfig'.dockerls.setup {
   capabilities = capabilities,
   flags = lspFlags,
 }
+
+-- para django, astro, edge, eelixir, ruby, vue, svelte
+require 'lspconfig'.tailwindcss.setup {
+  capabilities = capabilities,
+  flags = lspFlags,
+  root_dir = function(fname)
+    return require 'lspconfig'.util.root_pattern('tailwind.config.js', 'tailwind.config.ts', 'postcss.config.js', 'pyproject.toml')(fname) or
+        vim.fn.getcwd()
+  end,
+}
