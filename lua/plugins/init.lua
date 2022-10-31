@@ -129,5 +129,8 @@ return require('packer').startup(function()
   -- refactoring
   use 'ThePrimeagen/refactoring.nvim'
 
+  -- docstring python
+  use {'heavenshell/vim-pydocstring', run = 'make install', FileType = 'python'}
+
   -- fin de packer
 end)

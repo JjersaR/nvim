@@ -21,6 +21,7 @@ mapper("i", "jj", "<Esc>")
 mapper("i", "JJ", "<Esc>")
 mapper("n", "0", "^")
 mapper("n", "Y", "y$")
+mapper("n", '<C-w>', ':bdelete<CR>')
 
 -- quitar espacios
 vim.cmd [[autocmd BufWritePre * :%s/\s\+$//e]]

@@ -15,7 +15,6 @@ local mappings = {
   q = { ":q<CR>", "Salir" },
   w = { ":w<CR>", "Guardar" },
   Q = { ":wq<CR>", "Sav. & Close" },
-  x = { ":bdelete<CR>", "Cerrar" },
   E = { ":e ~/.config/nvim/init.lua<CR>", "Ir a init" },
 
   l = {
@@ -69,6 +68,10 @@ local mappings = {
       C = { ":JCgenerateConstructor<CR>", "Generate Constructor" },
       m = { ":JCgenerateAbstractMethods<CR>", "Generate Abstract Methods" },
     },
+    p = {
+      name = 'Python',
+      d = {':Pydocstring<CR>', 'Docstring'}
+    }
   },
   t = {
     name = "Terminal",
