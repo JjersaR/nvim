@@ -97,6 +97,15 @@ local mappings = {
     i = { ":DBUILastQueryInfo<CR>", "Last Query Info" },
     c = { ":tabclose<CR>", "Close" },
   },
+  f = {
+    name = 'Telescope',
+    f = {"<cmd>lua require('telescope.builtin').find_files()<CR>", 'Find Files'},
+    g = {':Telescope live_grep<CR>', 'Find Words'},
+    b = {':Telescope buffers<CR>', 'Find Buffers'},
+    h = {':Telescope help_tags<CR>', 'Find Command'},
+    s = {':Telescope git_status<CR>', 'Git Status'},
+    d = {':Telescope diagnostics<CR>', 'Diagnostics'}
+  }
 }
 local opts = { prefix = '<leader>' }
 

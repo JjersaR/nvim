@@ -35,13 +35,6 @@ mapper("n", "tt", ":t.<CR>")
 -- para el arbol
 mapper("n", "nt", ":NvimTreeOpen<CR>")
 
--- telescope
-mapper("n", "ff", "<cmd>lua require('telescope.builtin').find_files()<CR>")
-mapper("n", "fg", ":Telescope live_grep<CR>")
-mapper("n", "fb", ":Telescope buffers<CR>")
-mapper("n", "fh", ":Telescope help_tags<CR>")
-mapper("n", "fr", ":Telescope file_browser<CR>")
-
 -- mover lineas
 mapper('v', '<', '<gv')
 mapper('v', '>', '>gv')
@@ -58,7 +51,7 @@ map("n", "<C-d>",
 mapper("n", "ro", ":ReachOpen buffers<CR>")
 
 -- para comentar lineas
-mapper("n", "<Leader>t", ":CommentToggle<CR>")
+mapper("n", "//", ":CommentToggle<CR>")
 
 -- para ver estructura
 mapper("n", "T", ":TagbarToggle<CR>")
