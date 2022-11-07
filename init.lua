@@ -2,11 +2,11 @@
 local _impatient, impatient = pcall(require, "impatient")
 
 if _impatient then
-    impatient.enable_profile()
+  impatient.enable_profile()
 end
 
 -- instalar packer
-if require "first_load"() then
+if require "first_load" () then
   return
 end
 

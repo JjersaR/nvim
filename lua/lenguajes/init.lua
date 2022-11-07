@@ -1,5 +1,13 @@
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
--- update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+local on_attach = function(client, bufnr)
+  if client.server_capabilities.documentFormattingProvider then
+    vim.api.nvim_command [[augroup Format]]
+    vim.api.nvim_command [[autocmd! * <buffer>]]
+    vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+    vim.api.nvim_command [[augroup END]]
+  end
+end
 
 local lspFlags = {
   debounce_text_changes = 150,
@@ -8,37 +16,43 @@ local lspFlags = {
 --para c, c++ y de más
 require 'lspconfig'.clangd.setup {
   capabilities = capabilities,
-  flags = lspFlags
+  flags = lspFlags,
+  on_attach = on_attach,
 }
 
 -- para python
 require 'lspconfig'.pyright.setup {
   capabilities = capabilities,
   flags = lspFlags,
+  on_attach = on_attach,
 }
 
 --css
 require 'lspconfig'.cssls.setup {
   capabilities = capabilities,
   flags = lspFlags,
+  on_attach = on_attach,
 }
 
 -- emmet html y css
 require 'lspconfig'.emmet_ls.setup {
   capabilities = capabilities,
   flags = lspFlags,
+  on_attach = on_attach,
 }
 
 --tsserver
 require 'lspconfig'.tsserver.setup {
   capabilities = capabilities,
   flags = lspFlags,
+  on_attach = on_attach,
 }
 
 --lua
 require 'lspconfig'.sumneko_lua.setup {
   capabilities = capabilities,
   flags = lspFlags,
+  on_attach = on_attach,
 }
 
 --java
@@ -58,62 +72,72 @@ require 'lspconfig'.jdtls.setup {
         vim.fn.getcwd()
   end,
   flags = lspFlags,
+  on_attach = on_attach,
 }
 
 --sql
 require 'lspconfig'.sqlls.setup {
   capabilities = capabilities,
   flags = lspFlags,
+  on_attach = on_attach,
 }
 
 -- sintaxis de html
 require 'lspconfig'.html.setup {
   capabilities = capabilities,
   flags = lspFlags,
+  on_attach = on_attach,
 }
 
 -- scala
 require 'lspconfig'.metals.setup {
   capabilities = capabilities,
   flags = lspFlags,
+  on_attach = on_attach,
 }
 
 -- bash
 require 'lspconfig'.bashls.setup {
   capabilities = capabilities,
   flags = lspFlags,
+  on_attach = on_attach,
 }
 
 -- rust
 require 'lspconfig'.rls.setup {
   capabilities = capabilities,
   flags = lspFlags,
+  on_attach = on_attach,
 }
 
 -- para toml
 require 'lspconfig'.taplo.setup {
   capabilities = capabilities,
   flags = lspFlags,
+  on_attach = on_attach,
 }
 
 -- para meson
 require 'lspconfig'.vala_ls.setup {
   capabilities = capabilities,
   flags = lspFlags,
+  on_attach = on_attach,
 }
 
 -- para docker
 require 'lspconfig'.dockerls.setup {
   capabilities = capabilities,
   flags = lspFlags,
+  on_attach = on_attach,
 }
 
--- para django, astro, edge, eelixir, ruby, vue, svelte
+-- para django
 require 'lspconfig'.tailwindcss.setup {
-  capabilities = capabilities,
-  flags = lspFlags,
+  filetypes = { 'astro', 'astro-markdown', 'django-html', 'htmldjango', 'svelte' },
   root_dir = function(fname)
-    return require 'lspconfig'.util.root_pattern('tailwind.config.js', 'tailwind.config.ts', 'postcss.config.js', 'pyproject.toml')(fname) or
+    return require 'lspconfig'.util.root_pattern('pyproject.toml', '.git')(fname) or
         vim.fn.getcwd()
   end,
+  flags = lspFlags,
+  on_attach = on_attach,
 }
