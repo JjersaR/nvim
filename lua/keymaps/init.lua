@@ -18,7 +18,6 @@ mapper("i", "<C-s>", "<Esc><Esc>:w<CR>")
 mapper("n", "<C-q>", ":q<CR>")
 mapper("n", "<Leader>qq", ":q!<CR>")
 mapper("i", "jj", "<Esc>")
-mapper("i", "JJ", "<Esc>")
 mapper("n", "0", "^")
 mapper("n", "Y", "y$")
 mapper("n", '<C-w>', ':bdelete<CR>')
@@ -38,6 +37,13 @@ mapper("n", "nt", ":NvimTreeOpen<CR>")
 -- mover lineas
 mapper('v', '<', '<gv')
 mapper('v', '>', '>gv')
+
+-- subir las lineas +1
+mapper("v", "J", ":m '>+1<CR>gv=gv")
+mapper("v", "K", ":m '<-2<CR>gv=gv")
+
+-- hacer un ejecutable
+mapper("n", "<Leader>x", "<cmd>!chmod +x %<CR>")
 
 -- para moverse en lspsaga
 map("n", "<C-u>",
