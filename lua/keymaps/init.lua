@@ -42,8 +42,10 @@ mapper('v', '>', '>gv')
 mapper("v", "J", ":m '>+1<CR>gv=gv")
 mapper("v", "K", ":m '<-2<CR>gv=gv")
 
--- hacer un ejecutable
-mapper("n", "<Leader>x", "<cmd>!chmod +x %<CR>")
+-- opciones de pegado
+mapper("n", "<Leader>y", "\"+y")
+mapper("v", "<Leader>y", "\"+y")
+mapper("n", "<Leader>Y", "\"+Y")
 
 -- para moverse en lspsaga
 map("n", "<C-u>",

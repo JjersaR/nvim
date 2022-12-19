@@ -16,6 +16,7 @@ local mappings = {
   w = { ":w<CR>", "Guardar" },
   Q = { ":wq<CR>", "Sav. & Close" },
   E = { ":e ~/.config/nvim/init.lua<CR>", "Ir a init" },
+  x = { "<cmd>!chmod +x %<CR>", "Ejecutable" },
 
   l = {
     name = "LSP",
@@ -70,7 +71,7 @@ local mappings = {
     },
     p = {
       name = 'Python',
-      d = {':Pydocstring<CR>', 'Docstring'}
+      d = { ':Pydocstring<CR>', 'Docstring' }
     }
   },
   t = {
@@ -78,7 +79,7 @@ local mappings = {
     t = { ":ToggleTerm<CR>", "Split Below" },
     f = { toggle_float, "Floating Terminal" },
     l = { toggle_lazygit, "LazyGit" },
-    v = {":ToggleTerm direction=vertical size=100<CR>", "Vertical Terminal"}
+    v = { ":ToggleTerm direction=vertical size=100<CR>", "Vertical Terminal" }
   },
   p = {
     name = "Packer",
@@ -100,12 +101,12 @@ local mappings = {
   },
   f = {
     name = 'Telescope',
-    f = {"<cmd>lua require('telescope.builtin').find_files()<CR>", 'Find Files'},
-    g = {':Telescope live_grep<CR>', 'Find Words'},
-    b = {':Telescope buffers<CR>', 'Find Buffers'},
-    h = {':Telescope help_tags<CR>', 'Find Command'},
-    s = {':Telescope git_status<CR>', 'Git Status'},
-    d = {':Telescope diagnostics<CR>', 'Diagnostics'}
+    f = { "<cmd>lua require('telescope.builtin').find_files()<CR>", 'Find Files' },
+    g = { ':Telescope live_grep<CR>', 'Find Words' },
+    b = { ':Telescope buffers<CR>', 'Find Buffers' },
+    h = { ':Telescope help_tags<CR>', 'Find Command' },
+    s = { ':Telescope git_status<CR>', 'Git Status' },
+    d = { ':Telescope diagnostics<CR>', 'Diagnostics' }
   }
 }
 local opts = { prefix = '<leader>' }
