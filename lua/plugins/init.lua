@@ -132,5 +132,8 @@ return require('packer').startup(function()
   -- docstring python
   use {'heavenshell/vim-pydocstring', run = 'make install', FileType = 'python'}
 
+  -- para que parezca IDE
+  use {'ldelossa/nvim-ide'}
+
   -- fin de packer
 end)

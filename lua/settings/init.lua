@@ -3,8 +3,8 @@ local wo = vim.wo
 local bo = vim.bo
 local opt = vim.opt
 
-vim.api.nvim_set_hl(0, 'CursorLineNR',{fg='#FFA630'})
-vim.api.nvim_set_hl(0, 'LineNr',{fg='#51576d'})
+vim.api.nvim_set_hl(0, 'CursorLineNR', { fg = '#FFA630' })
+vim.api.nvim_set_hl(0, 'LineNr', { fg = '#51576d' })
 vim.cmd('filetype plugin indent on')
 o.shortmess = o.shortmess .. 'c'
 o.whichwrap = 'b,s,<,>,[,],h,l'
@@ -42,7 +42,7 @@ o.expandtab = true
 bo.expandtab = true
 
 local notify = vim.notify
-vim.notify = function (msg, ...)
+vim.notify = function(msg, ...)
   if msg:match("warning: multiple different client offset_encodings detected for buffer, this is not supported yet") then
     return
   end

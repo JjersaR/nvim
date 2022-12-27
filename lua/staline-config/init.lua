@@ -12,14 +12,14 @@ end
 local time = function()
   return os.date("%a │ %H:%M %x")
 end
-local my_colors = {n = "#9CCFD8", i = "#9CCFD8", c = "#9CCFD8", v = "#9CCFD8", t = "#9CCFD8"}
+local my_colors = { n = "#9CCFD8", i = "#9CCFD8", c = "#9CCFD8", v = "#9CCFD8", t = "#9CCFD8" }
 staline.setup {
   sections = {
     left = {
-      'mode', {'StalineBranch', 'file_name'}, {'StalineBranch', 'branch'},
+      'mode', { 'StalineBranch', 'file_name' }, { 'StalineBranch', 'branch' },
     },
-    mid = {'lsp'},
-    right = {' ','lsp_name', '  ', percentage}
+    mid = { 'lsp' },
+    right = { ' ', 'lsp_name', '  ', percentage }
   },
   defaults = {
     true_colors = true, -- LSP highlighing
@@ -51,11 +51,11 @@ staline.setup {
   },
   mode_colors = my_colors, -- Change mode colors
   special_table = {
-    NvimTree = {'File Explorer', ' '},
-    packer = {'Packer', ' '},
-    TelescopePrompt = {'Telescope', ' '}
+    NvimTree = { 'File Explorer', ' ' },
+    packer = { 'Packer', ' ' },
+    TelescopePrompt = { 'Telescope', ' ' },
   },
-  lsp_symbols = {Error = " ", Info = " ", Warn = " ", Hint = " "}
+  lsp_symbols = { Error = " ", Info = " ", Warn = " ", Hint = " " },
 }
 vim.cmd [[hi StalineBranch guifg=#C4A7E7]]
 vim.cmd [[hi StalineName guifg=#EBBCBA]]

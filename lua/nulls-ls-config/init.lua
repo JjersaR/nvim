@@ -7,9 +7,6 @@ local sources = {
   formatting.black, -- "python"
   formatting.clang_format, -- "c", "cpp", "cs", "java"
   -- formatting.eslint_d, -- "javascript", "javascriptreact", "typescript", "typescriptreact", "vue"
-  formatting.json_tool, -- "json"
-  formatting.perltidy, -- "perl"
-  formatting.phpcsfixer, --  "php"
   -- formatting.prettier, -- "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "css", "scss", "less", "html"
   formatting.scalafmt, -- scala
   formatting.rustfmt, -- rust
