@@ -31,9 +31,6 @@ mapper("n", "fn", ":RnvimrToggle<CR>")
 -- duplicar lineas
 mapper("n", "tt", ":t.<CR>")
 
--- para el arbol
-mapper("n", "nt", ":NvimTreeOpen<CR>")
-
 -- mover lineas
 mapper('v', '<', '<gv')
 mapper('v', '>', '>gv')
@@ -41,11 +38,6 @@ mapper('v', '>', '>gv')
 -- subir las lineas +1
 mapper("v", "J", ":m '>+1<CR>gv=gv")
 mapper("v", "K", ":m '<-2<CR>gv=gv")
-
--- opciones de pegado
-mapper("n", "<Leader>y", "\"+y")
-mapper("v", "<Leader>y", "\"+y")
-mapper("n", "<Leader>Y", "\"+Y")
 
 -- para moverse en lspsaga
 map("n", "<C-u>",
@@ -60,9 +52,6 @@ mapper("n", "ro", ":ReachOpen buffers<CR>")
 
 -- para comentar lineas
 mapper("n", "//", ":CommentToggle<CR>")
-
--- para ver estructura
-mapper("n", "T", ":TagbarToggle<CR>")
 
 -- para spectre
 mapper("n", "so", "<cmd>lua require('spectre').open()<CR>")

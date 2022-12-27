@@ -18,14 +18,6 @@ return require('packer').startup(function()
   -- los buffers
   use { 'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons' }
 
-  -- navegador de archivos
-  use {
-    'kyazdani42/nvim-tree.lua',
-    requires = {
-      'kyazdani42/nvim-web-devicons' -- optional, for file icon
-    }
-  }
-
   -- telescope
   use {
     'nvim-telescope/telescope.nvim',
@@ -47,7 +39,7 @@ return require('packer').startup(function()
   use "jose-elias-alvarez/null-ls.nvim"
   use { "ray-x/lsp_signature.nvim" }
   use 'rafamadriz/friendly-snippets'
-  use ({'L3MON4D3/LuaSnip', tag = "v<CurrentMajor>.*"})
+  use({ 'L3MON4D3/LuaSnip', tag = "v<CurrentMajor>.*" })
 
   -- para java
   use 'mfussenegger/nvim-jdtls'
@@ -73,7 +65,7 @@ return require('packer').startup(function()
     'lewis6991/gitsigns.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
     config = function()
-      require('gitsigns').setup{current_line_blame = true}
+      require('gitsigns').setup { current_line_blame = true }
     end
   }
   -- pantalla de inicio
@@ -101,9 +93,6 @@ return require('packer').startup(function()
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
-  -- symbols-outline, estructura
-  use 'preservim/tagbar'
-
   -- transparente
   use 'xiyaowong/nvim-transparent'
 
@@ -130,10 +119,10 @@ return require('packer').startup(function()
   use 'ThePrimeagen/refactoring.nvim'
 
   -- docstring python
-  use {'heavenshell/vim-pydocstring', run = 'make install', FileType = 'python'}
+  use { 'heavenshell/vim-pydocstring', run = 'make install', FileType = 'python' }
 
   -- para que parezca IDE
-  use {'ldelossa/nvim-ide'}
+  use { 'ldelossa/nvim-ide' }
 
   -- fin de packer
 end)
