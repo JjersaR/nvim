@@ -68,8 +68,6 @@ return require('packer').startup(function()
       require('gitsigns').setup { current_line_blame = true }
     end
   }
-  -- pantalla de inicio
-  use 'goolord/alpha-nvim'
 
   -- ranger
   use 'kevinhwang91/rnvimr'
