@@ -104,7 +104,7 @@ require 'lspconfig'.bashls.setup {
 }
 
 -- rust
-require 'lspconfig'.rls.setup {
+require 'lspconfig'.rust_analyzer.setup {
   capabilities = capabilities,
   flags = lspFlags,
   on_attach = on_attach,
