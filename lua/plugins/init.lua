@@ -40,6 +40,7 @@ return require('packer').startup(function()
   use { "ray-x/lsp_signature.nvim" }
   use 'rafamadriz/friendly-snippets'
   use({ 'L3MON4D3/LuaSnip', tag = "v<CurrentMajor>.*" })
+  use { 'rmagatti/goto-preview' }
 
   -- para java
   use 'mfussenegger/nvim-jdtls'

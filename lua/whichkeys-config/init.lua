@@ -72,6 +72,14 @@ local mappings = {
     p = {
       name = 'Python',
       d = { ':Pydocstring<CR>', 'Docstring' }
+    },
+    g = {
+      name = 'gotoPreview',
+      d = { "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", 'Go to Definition' },
+      t = { "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>", 'Go to Type Definition' },
+      i = { "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", 'Go to Implementation' },
+      c = { "<cmd>lua require('goto-preview').close_all_win()<CR>", 'Close all Win' },
+      r = { "<cmd>lua require('goto-preview').goto_preview_references()<CR>", 'Go to References' }
     }
   },
   t = {
