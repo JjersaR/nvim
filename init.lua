@@ -18,6 +18,7 @@ require('settings')
 require('keymaps')
 
 -- conf de los plugins
+require('tree-config')
 require('staline-config')
 require('treesitter-config')
 require('bufferline-config')

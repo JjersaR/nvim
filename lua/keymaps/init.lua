@@ -31,6 +31,10 @@ mapper("n", "fn", ":RnvimrToggle<CR>")
 -- duplicar lineas
 mapper("n", "tt", ":t.<CR>")
 
+-- nvim-tree
+mapper('n', "nt", ":Workspace LeftPanelToggle<CR> :NvimTreeOpen<CR>")
+mapper('n', 'wl', ":NvimTreeClose<CR> :Workspace LeftPanelToggle<CR>")
+
 -- mover lineas
 mapper('v', '<', '<gv')
 mapper('v', '>', '>gv')

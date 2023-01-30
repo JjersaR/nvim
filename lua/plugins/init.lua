@@ -12,6 +12,10 @@ return require('packer').startup(function()
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
+  -- arbol de directorios
+  use { 'nvim-tree/nvim-tree.lua' }
+  use 'nvim-tree/nvim-web-devicons'
+
   -- la sintaxis
   use { 'nvim-treesitter/nvim-treesitter', run = ":TSUpdate" }
 
