@@ -123,5 +123,8 @@ return require('packer').startup(function()
   -- para que parezca IDE
   use { 'ldelossa/nvim-ide' }
 
+  -- magit
+  use { 'tpope/vim-fugitive' }
+
   -- fin de packer
 end)
