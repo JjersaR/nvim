@@ -1,134 +1,134 @@
-return require('packer').startup(function()
-  -- My plugins here
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-  -- tiempo de carga
-  use 'lewis6991/impatient.nvim'
+vim.g.mapleader = " "
+
+require("lazy").setup({
+
+  -- tema
+  { "catppuccin/nvim", name = "catppuccin", lazy = true, priority = 1000 },
 
   -- la linea de abajo
-  use {
-    use 'tamton-aquib/staline.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
+  { 'tamton-aquib/staline.nvim', priority = 1000 },
 
   -- arbol de directorios
-  use { 'nvim-tree/nvim-tree.lua' }
-  use 'nvim-tree/nvim-web-devicons'
+  {
+    'nvim-tree/nvim-tree.lua',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+  },
 
   -- la sintaxis
-  use { 'nvim-treesitter/nvim-treesitter', run = ":TSUpdate" }
+  { 'nvim-treesitter/nvim-treesitter', build = "<cmd>TSUpdate" },
 
-  -- los buffers
-  use { 'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons' }
+  -- buffers
+  { 'akinsho/bufferline.nvim' },
 
   -- telescope
-  use {
+  {
     'nvim-telescope/telescope.nvim',
-    requires = { { 'nvim-lua/plenary.nvim' } }
-  }
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    keys = { "<Leader>f" }
+  },
 
   -- LSP y autocompletado
-  use 'neovim/nvim-lspconfig'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-vsnip'
-  use 'hrsh7th/vim-vsnip'
-  use "williamboman/nvim-lsp-installer"
-  use { "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim"
-  }
-  use { 'tami5/lspsaga.nvim' }
-  use "jose-elias-alvarez/null-ls.nvim"
-  use { "ray-x/lsp_signature.nvim" }
-  use 'rafamadriz/friendly-snippets'
-  use({ 'L3MON4D3/LuaSnip', tag = "v<CurrentMajor>.*" })
-  use { 'rmagatti/goto-preview' }
+  { 'neovim/nvim-lspconfig', keys = { "<Leader>l" } },
+  { 'hrsh7th/cmp-nvim-lsp' },
+  { 'hrsh7th/cmp-buffer' },
+  { 'hrsh7th/nvim-cmp' },
+  { 'hrsh7th/cmp-vsnip' },
+  { 'hrsh7th/vim-vsnip' },
+  { "williamboman/nvim-lsp-installer" },
+  { "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    cmd = "Mason"
+  },
+  { 'tami5/lspsaga.nvim' },
+  { "jose-elias-alvarez/null-ls.nvim" },
+  { "ray-x/lsp_signature.nvim" },
+  { 'rafamadriz/friendly-snippets' },
+  { 'rmagatti/goto-preview', keys = { "<Leader>lg" } },
 
   -- para java
-  use 'mfussenegger/nvim-jdtls'
-  use 'artur-shaik/jc.nvim'
+  { 'mfussenegger/nvim-jdtls', ft = "java" },
+  { 'artur-shaik/jc.nvim', ft = "java" },
 
   -- autopairs
-  use { 'windwp/nvim-autopairs' }
+  { 'windwp/nvim-autopairs' },
 
   -- which-key
-  use { 'folke/which-key.nvim' }
+  { 'folke/which-key.nvim', keys = { "<Leader>" } },
 
   -- iconos en cmp
-  use 'onsails/lspkind-nvim'
+  { 'onsails/lspkind-nvim' },
 
   -- terminal
-  use { "akinsho/toggleterm.nvim" }
+  { "akinsho/toggleterm.nvim", keys = { "<Leader>t" } },
 
   -- indentado
-  use "lukas-reineke/indent-blankline.nvim"
+  { "lukas-reineke/indent-blankline.nvim" },
 
-  -- ver qué se modificó
-  use {
+  -- que se modifica
+  {
     'lewis6991/gitsigns.nvim',
-    requires = { 'nvim-lua/plenary.nvim' },
+    dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
       require('gitsigns').setup { current_line_blame = true }
     end
-  }
+  },
 
   -- ranger
-  use 'kevinhwang91/rnvimr'
+  { 'kevinhwang91/rnvimr', keys = { "fn", "<cmd>RnvimrToggle<CR>" } },
 
-  -- tema chido
-  use({ "catppuccin/nvim", as = "catppuccin" })
-
-  -- buffers
-  use 'toppair/reach.nvim'
-
-  -- scroll en pantalla
-  use 'karb94/neoscroll.nvim'
+  -- windows
+  { 'toppair/reach.nvim', keys = { "ro", "<cmd>ReachOpen buffers<CR>" } },
 
   -- para comentar lineas
-  use "terrortylor/nvim-comment"
+  { "terrortylor/nvim-comment", keys = { { "//", "<cmd>CommentToggle<CR>", desc = 'Comment' } } },
 
   -- renombrar
-  use {
+  {
     'filipdutescu/renamer.nvim',
-    branch = 'master',
-    requires = { { 'nvim-lua/plenary.nvim' } }
-  }
-
-  -- transparente
-  use 'xiyaowong/nvim-transparent'
+    branch = 'master'
+  },
 
   -- spectre
-  use { 'windwp/nvim-spectre' }
+  { 'windwp/nvim-spectre', keys = { "so", "<cmd>lua require('spectre').open()<CR>" } },
 
-  -- para bases de datos
-  use({
+  -- bases de datos
+  {
     "kristijanhusak/vim-dadbod-ui",
-    requires = {
+    dependencies = {
       "tpope/vim-dadbod",
       "kristijanhusak/vim-dadbod-completion",
       "tpope/vim-dotenv",
-    },
-  })
+    }, keys = { "<Leader>b" },
+  },
 
   -- sql
-  use 'nanotee/sqls.nvim'
+  { 'nanotee/sqls.nvim', ft = "sql" },
 
   -- extension de clangd
-  use 'p00f/clangd_extensions.nvim'
+  { 'p00f/clangd_extensions.nvim', ft = "cpp" },
 
-  -- refactoring
-  use 'ThePrimeagen/refactoring.nvim'
+  -- refactorizar
+  { 'ThePrimeagen/refactoring.nvim', keys = { "<Leader>rb", mode = "v" } },
 
   -- docstring python
-  use { 'heavenshell/vim-pydocstring', run = 'make install', FileType = 'python' }
+  { 'heavenshell/vim-pydocstring', build = 'make install', ft = 'python' },
 
-  -- para que parezca IDE
-  use { 'ldelossa/nvim-ide' }
+  -- IDE
+  { 'ldelossa/nvim-ide' },
 
   -- magit
-  use { 'tpope/vim-fugitive' }
-
-  -- fin de packer
-end)
+  { 'tpope/vim-fugitive' },
+})

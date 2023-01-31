@@ -1,15 +1,3 @@
--- acelerar tiempos de neovim
-local _impatient, impatient = pcall(require, "impatient")
-
-if _impatient then
-  impatient.enable_profile()
-end
-
--- instalar packer
-if require "first_load" () then
-  return
-end
-
 -- los plugins
 require('plugins')
 
@@ -37,7 +25,6 @@ require('nulls-ls-config')
 require('reach-config')
 require('comment-config')
 require('rename-config')
-require('transparent-config')
 require('spectre-config')
 require('dadbod-config')
 require('signature-config')

@@ -89,16 +89,6 @@ local mappings = {
     l = { toggle_lazygit, "LazyGit" },
     v = { ":ToggleTerm direction=vertical size=100<CR>", "Vertical Terminal" }
   },
-  p = {
-    name = "Packer",
-    r = { ":PackerClean<cr>", "Remove Unused Plugins" },
-    c = { ":PackerCompile profile=true<cr>", "Recompile Plugins" },
-    i = { ":PackerInstall<cr>", "Install Plugins" },
-    p = { ":PackerProfile<cr>", "Packer Profile" },
-    s = { ":PackerSync<cr>", "Sync Plugins" },
-    S = { ":PackerStatus<cr>", "Packer Status" },
-    u = { ":PackerUpdate<cr>", "Update Plugins" }
-  },
   b = {
     name = "Database",
     o = { ":tab DBUI<CR>", "Open" },
@@ -118,11 +108,9 @@ local mappings = {
   },
   i = {
     name = "ide",
-    e = { ":Workspace Explorer Focus <CR>", "Explorer" },
     n = { ":Workspace TerminalBrowser New<CR>", "New Term" },
     t = { ":Workspace TerminalBrowser Focus<CR>", "Focus Term" },
     o = { ":Workspace Outline Focus<CR>", "Outline Focus" },
-    b = { ":Workspace BufferList Focus <CR>", "Buffer Focus" }
   }
 }
 local opts = { prefix = '<leader>' }

@@ -9,10 +9,13 @@ local percentage = function()
   local index = math.ceil(line_ratio * #chars)
   return chars[index]
 end
+
 local time = function()
   return os.date("%a │ %H:%M %x")
 end
+
 local my_colors = { n = "#9CCFD8", i = "#9CCFD8", c = "#9CCFD8", v = "#9CCFD8", t = "#9CCFD8" }
+
 staline.setup {
   sections = {
     left = {
