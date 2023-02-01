@@ -1,5 +1,5 @@
 -- default components
-local explorer        = require('ide.components.explorer')
+local bufferlist      = require('ide.components.bufferlist')
 local outline         = require('ide.components.outline')
 local callhierarchy   = require('ide.components.callhierarchy')
 local timeline        = require('ide.components.timeline')
@@ -28,7 +28,7 @@ require('ide').setup({
   -- panels defined by groups of components, user is free to redefine the defaults
   -- and/or add additional.
   panel_groups = {
-    explorer = { outline.Name, bookmarks.Name, callhierarchy.Name, terminalbrowser.Name },
+    explorer = { bufferlist.Name, outline.Name, bookmarks.Name, callhierarchy.Name, terminalbrowser.Name },
     terminal = { terminal.Name },
     git = { changes.Name, commits.Name, timeline.Name, branches.Name }
   },

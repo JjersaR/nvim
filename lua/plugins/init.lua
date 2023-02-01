@@ -28,7 +28,7 @@ require("lazy").setup({
   },
 
   -- la sintaxis
-  { 'nvim-treesitter/nvim-treesitter', build = "<cmd>TSUpdate" },
+  { 'nvim-treesitter/nvim-treesitter', build = ":TSUpdate<CR>" },
 
   -- buffers
   { 'akinsho/bufferline.nvim' },
@@ -42,10 +42,11 @@ require("lazy").setup({
 
   -- LSP y autocompletado
   { 'neovim/nvim-lspconfig', keys = { "<Leader>l" } },
-  { 'hrsh7th/cmp-nvim-lsp' },
-  { 'hrsh7th/cmp-buffer' },
-  { 'hrsh7th/nvim-cmp' },
-  { 'hrsh7th/cmp-vsnip' },
+  { 'hrsh7th/nvim-cmp', event = "InsertEnter" },
+  { 'hrsh7th/cmp-nvim-lsp', after = "nvim-cmp" },
+  { 'hrsh7th/cmp-buffer', after = "nvim-cmp" },
+  { 'hrsh7th/cmp-path', after = "nvim-cmp" },
+  { 'hrsh7th/cmp-vsnip', after = "nvim-cmp" },
   { 'hrsh7th/vim-vsnip' },
   { "williamboman/nvim-lsp-installer" },
   { "williamboman/mason.nvim",

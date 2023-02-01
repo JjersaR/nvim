@@ -10,13 +10,8 @@ local feedkey = function(key, mode)
 end
 
 -- Setup nvim-cmp.
-local cmp = require'cmp'
+local cmp = require 'cmp'
 local lspkind = require('lspkind')
-
-local snip_status_ok, luasnip = pcall(require, "luasnip")
-if not snip_status_ok then
-  return
-end
 
 cmp.setup({
   snippet = {
@@ -40,7 +35,7 @@ cmp.setup({
     }),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
 
-        ["<Tab>"] = cmp.mapping(function(fallback)
+    ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
       elseif vim.fn["vsnip#available"](1) == 1 then
@@ -80,7 +75,7 @@ cmp.setup({
 
       -- The function below will be called before any actual modifications from lspkind
       -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
-      before = function (entry, vim_item)
+      before = function(entry, vim_item)
 
         return vim_item
       end
