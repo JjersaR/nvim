@@ -112,7 +112,7 @@ require("lazy").setup({
       "tpope/vim-dadbod",
       "kristijanhusak/vim-dadbod-completion",
       "tpope/vim-dotenv",
-    }, keys = { "<Leader>b" },
+    }, keys = { { "<Leader>b", ":tab DBUI<CR>", desc = "Open" } },
   },
 
   -- sql

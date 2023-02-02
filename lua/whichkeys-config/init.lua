@@ -111,7 +111,15 @@ local mappings = {
     n = { ":Workspace TerminalBrowser New<CR>", "New Term" },
     t = { ":Workspace TerminalBrowser Focus<CR>", "Focus Term" },
     o = { ":Workspace Outline Focus<CR>", "Outline Focus" },
-  }
+  },
+  p = {
+    name = 'Lazy',
+    h = { ":Lazy home<CR>", "Lazy Home" },
+    i = { ":Lazy update<CR>", "Lazy Update" },
+    s = { ":Lazy sync<CR>", "Lazy Sync" },
+    c = { ":Lazy clean<CR>", "Lazy Clean" },
+    p = { ":Lazy profile<CR>", "Lazy Profile" },
+  },
 }
 local opts = { prefix = '<leader>' }
 
