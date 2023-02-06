@@ -13,6 +13,11 @@ end
 local cmp = require 'cmp'
 local lspkind = require('lspkind')
 
+local snip_status_ok, luasnip = pcall(require, "luasnip")
+if not snip_status_ok then
+  return
+end
+
 cmp.setup({
   snippet = {
     -- REQUIRED - you must specify a snippet engine

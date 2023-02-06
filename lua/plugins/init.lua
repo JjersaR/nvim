@@ -37,17 +37,24 @@ require("lazy").setup({
   {
     'nvim-telescope/telescope.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' },
-    keys = { "<Leader>f" }
+    keys = { "<Leader>f", "<cmd>lua require('telescope.builtin').find_files()<CR>" },
+    cmd = 'Telescope',
   },
 
   -- LSP y autocompletado
   { 'neovim/nvim-lspconfig', keys = { "<Leader>l" } },
-  { 'hrsh7th/nvim-cmp', event = "InsertEnter" },
-  { 'hrsh7th/cmp-nvim-lsp', after = "nvim-cmp" },
-  { 'hrsh7th/cmp-buffer', after = "nvim-cmp" },
-  { 'hrsh7th/cmp-path', after = "nvim-cmp" },
-  { 'hrsh7th/cmp-vsnip', after = "nvim-cmp" },
-  { 'hrsh7th/vim-vsnip' },
+  { 'hrsh7th/nvim-cmp', event = "InsertEnter",
+    dependencies = {
+      'hrsh7th/cmp-calc',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-cmdline',
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-vsnip',
+      'hrsh7th/cmp-nvim-lua',
+      'hrsh7th/vim-vsnip',
+    }
+  },
   { "williamboman/nvim-lsp-installer" },
   { "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
@@ -58,6 +65,10 @@ require("lazy").setup({
   { "ray-x/lsp_signature.nvim" },
   { 'rafamadriz/friendly-snippets' },
   { 'rmagatti/goto-preview', keys = { "<Leader>lg" } },
+  {
+    'L3MON4D3/LuaSnip',
+    tag = "v<CurrentMajor>.*",
+  },
 
   -- para java
   { 'mfussenegger/nvim-jdtls', ft = "java" },
@@ -131,5 +142,5 @@ require("lazy").setup({
   { 'ldelossa/nvim-ide' },
 
   -- magit
-  { 'tpope/vim-fugitive' },
+  { 'tpope/vim-fugitive', cmd = { "G", "Git" }, keys = { { "<Leader>g", ":G<CR>" } } },
 })

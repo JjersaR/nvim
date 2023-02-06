@@ -111,6 +111,7 @@ local mappings = {
     n = { ":Workspace TerminalBrowser New<CR>", "New Term" },
     t = { ":Workspace TerminalBrowser Focus<CR>", "Focus Term" },
     o = { ":Workspace Outline Focus<CR>", "Outline Focus" },
+    b = { ":Workspace BufferList Focus <CR>", "Buffer Focus" }
   },
   p = {
     name = 'Lazy',
