@@ -15,6 +15,12 @@ vim.g.mapleader = " "
 
 require("lazy").setup({
 
+  -- tiempo de carga
+  'lewis6991/impatient.nvim',
+
+  -- pantalla de inicio
+  'goolord/alpha-nvim',
+
   -- tema
   { "catppuccin/nvim", name = "catppuccin", lazy = true, priority = 1000 },
 
@@ -25,6 +31,7 @@ require("lazy").setup({
   {
     'nvim-tree/nvim-tree.lua',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
+    keys = { { "nt", ":NvimTreeToggle<CR>", desc = "NvimTree" } }
   },
 
   -- la sintaxis
@@ -37,7 +44,6 @@ require("lazy").setup({
   {
     'nvim-telescope/telescope.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' },
-    keys = { "<Leader>f", "<cmd>lua require('telescope.builtin').find_files()<CR>" },
     cmd = 'Telescope',
   },
 
@@ -67,7 +73,6 @@ require("lazy").setup({
   { 'rmagatti/goto-preview', keys = { "<Leader>lg" } },
   {
     'L3MON4D3/LuaSnip',
-    tag = "v<CurrentMajor>.*",
   },
 
   -- para java
@@ -138,9 +143,9 @@ require("lazy").setup({
   -- docstring python
   { 'heavenshell/vim-pydocstring', build = 'make install', ft = 'python' },
 
-  -- IDE
-  { 'ldelossa/nvim-ide' },
-
   -- magit
   { 'tpope/vim-fugitive', cmd = { "G", "Git" }, keys = { { "<Leader>g", ":G<CR>" } } },
+
+  -- ver estructura
+  { 'preservim/tagbar', keys = { { "T", ":TagbarToggle<CR>" } } },
 })

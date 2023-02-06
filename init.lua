@@ -1,3 +1,10 @@
+-- acelerar tiempos de neovim
+local _impatient, impatient = pcall(require, "impatient")
+
+if _impatient then
+  impatient.enable_profile()
+end
+
 -- los plugins
 require('plugins')
 
@@ -7,6 +14,7 @@ require('keymaps')
 
 -- conf de los plugins
 require('tree-config')
+require('alpha-config')
 require('staline-config')
 require('treesitter-config')
 require('bufferline-config')
@@ -33,7 +41,6 @@ require('mason-config')
 require('clangdExtension-config')
 require('refactoring-config')
 require('jc-config')
-require('ide-config')
 require('gotoPreview-config')
 
 -- catppuccin

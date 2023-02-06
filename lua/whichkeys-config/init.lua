@@ -121,6 +121,9 @@ local mappings = {
     c = { ":Lazy clean<CR>", "Lazy Clean" },
     p = { ":Lazy profile<CR>", "Lazy Profile" },
   },
+  g = {
+    name = "Git", ":G<CR>", "Git status"
+  },
 }
 local opts = { prefix = '<leader>' }
 

@@ -15,8 +15,7 @@ end
 -- atajos personalizados
 mapper("n", "<C-s>", ":w<CR>")
 mapper("i", "<C-s>", "<Esc><Esc>:w<CR>")
-mapper("n", "<C-q>", ":qa<CR>")
-mapper("n", "<Leader>qq", ":q!<CR>")
+mapper("n", "<C-q>", ":q<CR>")
 mapper("i", "jj", "<Esc>")
 mapper("n", "0", "^")
 mapper("n", "Y", "y$")
@@ -32,8 +31,7 @@ mapper("n", "fn", ":RnvimrToggle<CR>")
 mapper("n", "tt", ":t.<CR>")
 
 -- nvim-tree
-mapper('n', "nt", ":Workspace LeftPanelToggle<CR> :NvimTreeOpen<CR>")
-mapper('n', 'wl', ":NvimTreeClose<CR> :Workspace LeftPanelToggle<CR>")
+mapper('n', "nt", ":NvimTreeToggle<CR>")
 
 -- mover lineas
 mapper('v', '<', '<gv')
