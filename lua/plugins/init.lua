@@ -21,6 +21,17 @@ require("lazy").setup({
   -- pantalla de inicio
   'goolord/alpha-nvim',
 
+  -- estructura
+  {
+    'utilyre/barbecue.nvim',
+    name = "barbecue",
+    version = "*",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons", -- optional dependency
+    },
+  },
+
   -- tema
   { "catppuccin/nvim", name = "catppuccin", lazy = true, priority = 1000 },
 
@@ -110,7 +121,7 @@ require("lazy").setup({
   { 'toppair/reach.nvim', keys = { "ro", "<cmd>ReachOpen buffers<CR>" } },
 
   -- para comentar lineas
-  { "terrortylor/nvim-comment", keys = { { "//", "<cmd>CommentToggle<CR>", desc = 'Comment' } } },
+  { "terrortylor/nvim-comment" },
 
   -- renombrar
   {
@@ -147,5 +158,5 @@ require("lazy").setup({
   { 'tpope/vim-fugitive', cmd = { "G", "Git" }, keys = { { "<Leader>g", ":G<CR>" } } },
 
   -- ver estructura
-  { 'preservim/tagbar', keys = { { "T", ":TagbarToggle<CR>" } } },
+  { 'preservim/tagbar' },
 })
