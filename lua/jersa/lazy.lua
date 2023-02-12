@@ -69,8 +69,10 @@ require("lazy").setup({
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-vsnip',
       'hrsh7th/cmp-nvim-lua',
+      'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/vim-vsnip',
-    }
+      'saadparwaiz1/cmp_luasnip',
+    }, lazy = true, config = true
   },
   { "williamboman/nvim-lsp-installer" },
   { "williamboman/mason.nvim",
@@ -91,7 +93,7 @@ require("lazy").setup({
   { 'artur-shaik/jc.nvim', ft = "java" },
 
   -- autopairs
-  { 'windwp/nvim-autopairs' },
+  { 'windwp/nvim-autopairs', lazy = true, config = true },
 
   -- which-key
   { 'folke/which-key.nvim', keys = { "<Leader>" } },
