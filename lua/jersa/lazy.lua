@@ -162,4 +162,6 @@ require("lazy").setup({
   -- ver estructura
   { 'preservim/tagbar' },
 
+  {"kevinhwang91/nvim-ufo", dependencies = {"kevinhwang91/promise-async"}},
+
 })

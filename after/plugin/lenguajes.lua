@@ -13,6 +13,11 @@ local lspFlags = {
     debounce_text_changes = 150,
 }
 
+capabilities.textDocument.foldingRange = {
+  dynamicRegistration = false,
+  lineFoldingOnly = true,
+}
+
 --para c, c++ y de más
 require 'lspconfig'.clangd.setup {
     capabilities = capabilities,

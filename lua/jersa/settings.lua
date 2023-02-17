@@ -40,6 +40,10 @@ o.autoindent = true
 bo.autoindent = true
 o.expandtab = true
 bo.expandtab = true
+opt.foldcolumn = "1"
+opt.foldlevel = 99
+opt.foldlevelstart = -1
+opt.foldenable = true
 
 local notify = vim.notify
 vim.notify = function(msg, ...)
