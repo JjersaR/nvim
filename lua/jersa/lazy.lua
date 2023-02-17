@@ -60,7 +60,7 @@ require("lazy").setup({
 
   -- LSP y autocompletado
   { 'neovim/nvim-lspconfig', keys = { "<Leader>l" } },
-  { 'hrsh7th/nvim-cmp', event = "InsertEnter",
+  { 'hrsh7th/nvim-cmp',
     dependencies = {
       'hrsh7th/cmp-calc',
       'hrsh7th/cmp-buffer',
@@ -72,7 +72,7 @@ require("lazy").setup({
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/vim-vsnip',
       'saadparwaiz1/cmp_luasnip',
-    }, lazy = true, config = true
+    },
   },
   { "williamboman/nvim-lsp-installer" },
   { "williamboman/mason.nvim",
@@ -161,4 +161,5 @@ require("lazy").setup({
 
   -- ver estructura
   { 'preservim/tagbar' },
+
 })

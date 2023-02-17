@@ -1,7 +1,9 @@
-vim.g.completeopt = "menu,menuone,noselect, noinsert"
+vim.g.completeopt = "menu,menuone,noselect,noinsert"
+
+local table = require("table")
 
 local has_words_before = function()
-  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  local line, col = table.unpack(vim.api.nvim_win_get_cursor(0))
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
@@ -10,7 +12,7 @@ local feedkey = function(key, mode)
 end
 
 -- Setup nvim-cmp.
-local cmp = require 'cmp'
+local cmp = require('cmp')
 local lspkind = require('lspkind')
 
 local snip_status_ok, luasnip = pcall(require, "luasnip")
@@ -26,7 +28,7 @@ cmp.setup({
       require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
       -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
       -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
-      -- luasnip.lsp_expand(args.body)
+      luasnip.lsp_expand(args.body)
     end,
   },
   mapping = {
