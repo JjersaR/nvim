@@ -106,13 +106,6 @@ local mappings = {
     s = { ':Telescope git_status<CR>', 'Git Status' },
     d = { ':Telescope diagnostics<CR>', 'Diagnostics' }
   },
-  i = {
-    name = "ide",
-    n = { ":Workspace TerminalBrowser New<CR>", "New Term" },
-    t = { ":Workspace TerminalBrowser Focus<CR>", "Focus Term" },
-    o = { ":Workspace Outline Focus<CR>", "Outline Focus" },
-    b = { ":Workspace BufferList Focus <CR>", "Buffer Focus" }
-  },
   p = {
     name = 'Lazy',
     h = { ":Lazy home<CR>", "Lazy Home" },
