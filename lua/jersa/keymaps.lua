@@ -84,6 +84,19 @@ function Build()
   if vim.bo.filetype == "python" then
     vim.cmd("terminal python %")
   end
+
+  -- execute rust
+  if vim.bo.filetype == "rust" then
+    vim.cmd("terminal cargo run")
+  end
 end
 
 mapper("n", "<C-CR>", ":lua Build()<CR>")
+
+-- moverte estando en terminal
+vim.cmd[[
+tnoremap <C-h> <C-\><C-N><C-w>h
+tnoremap <C-j> <C-\><C-N><C-w>j
+tnoremap <C-k> <C-\><C-N><C-w>k
+tnoremap <C-l> <C-\><C-N><C-w>l
+]]
