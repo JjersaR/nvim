@@ -63,3 +63,27 @@ mapper("n", "T", ":TagbarToggle<CR>")
 
 -- refactorizar en nuevo archivo
 mapper("v", "<Leader>rb", "[[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>]]")
+
+-- runner
+function Build()
+  -- execute cpp
+  if vim.bo.filetype == "cpp" then
+    if vim.fn.isdirectory("build") == 0 then
+      vim.cmd("terminal meson setup build && cd build && ninja && ./exe")
+    else
+      vim.cmd("terminal meson compile -C build && ./build/exe")
+    end
+  end
+
+  -- execute java
+  if vim.bo.filetype == "java" then
+    vim.cmd("terminal gradle run")
+  end
+
+  -- execute python
+  if vim.bo.filetype == "python" then
+    vim.cmd("terminal python %")
+  end
+end
+
+mapper("n", "<C-CR>", ":lua Build()<CR>")
