@@ -36,7 +36,7 @@ require("lazy").setup({
   { "catppuccin/nvim", name = "catppuccin", lazy = true, priority = 1000 },
 
   -- la linea de abajo
-  { 'tamton-aquib/staline.nvim',event = "VeryLazy" },
+  { 'tamton-aquib/staline.nvim',event = {"VeryLazy", "UIEnter"} },
 
   -- arbol de directorios
   {
@@ -50,7 +50,7 @@ require("lazy").setup({
   { 'nvim-treesitter/nvim-treesitter', build = ":TSUpdate<CR>" },
 
   -- buffers
-  { 'akinsho/bufferline.nvim' },
+  { 'akinsho/bufferline.nvim', event = { "UIEnter" }, },
 
   -- telescope
   {
@@ -65,7 +65,6 @@ require("lazy").setup({
     dependencies = {
       'hrsh7th/cmp-calc',
       'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-cmdline',
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-vsnip',
@@ -73,6 +72,7 @@ require("lazy").setup({
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/vim-vsnip',
       'saadparwaiz1/cmp_luasnip',
+      "rafamadriz/friendly-snippets",
     },
   },
   { "williamboman/nvim-lsp-installer" },
@@ -81,7 +81,7 @@ require("lazy").setup({
     cmd = "Mason"
   },
   { 'tami5/lspsaga.nvim' },
-  { "jose-elias-alvarez/null-ls.nvim" },
+  { "jose-elias-alvarez/null-ls.nvim", event = { "UIEnter" } },
   { "ray-x/lsp_signature.nvim" },
   { 'rafamadriz/friendly-snippets' },
   { 'rmagatti/goto-preview', keys = { "<Leader>lg" } },
