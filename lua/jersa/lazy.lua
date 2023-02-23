@@ -19,7 +19,7 @@ require("lazy").setup({
   'lewis6991/impatient.nvim',
 
   -- pantalla de inicio
-  'goolord/alpha-nvim',
+  {'goolord/alpha-nvim', event = "BufEnter" },
 
   -- estructura
   {
@@ -36,13 +36,14 @@ require("lazy").setup({
   { "catppuccin/nvim", name = "catppuccin", lazy = true, priority = 1000 },
 
   -- la linea de abajo
-  { 'tamton-aquib/staline.nvim', priority = 1000 },
+  { 'tamton-aquib/staline.nvim',event = "VeryLazy" },
 
   -- arbol de directorios
   {
     'nvim-tree/nvim-tree.lua',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    keys = { { "nt", ":NvimTreeToggle<CR>", desc = "NvimTree" } }
+    keys = { { "nt", ":NvimTreeToggle<CR>", desc = "NvimTree" } },
+    cmd = { "NvimTreeToggle", "NvimTreeFindFile" }
   },
 
   -- la sintaxis
@@ -59,7 +60,7 @@ require("lazy").setup({
   },
 
   -- LSP y autocompletado
-  { 'neovim/nvim-lspconfig', keys = { "<Leader>l" } },
+  { 'neovim/nvim-lspconfig', keys = { "<Leader>l" }, event = { "BufReadPre", "BufNewFile" } },
   { 'hrsh7th/nvim-cmp',
     dependencies = {
       'hrsh7th/cmp-calc',
@@ -93,10 +94,10 @@ require("lazy").setup({
   { 'artur-shaik/jc.nvim', ft = "java" },
 
   -- autopairs
-  { 'windwp/nvim-autopairs', lazy = true, config = true },
+  { 'windwp/nvim-autopairs', event = "InsertEnter", config = true },
 
   -- which-key
-  { 'folke/which-key.nvim', keys = { "<Leader>" } },
+  { 'folke/which-key.nvim', keys = { "<Leader>" }, event = "VimEnter" },
 
   -- iconos en cmp
   { 'onsails/lspkind-nvim' },
@@ -105,7 +106,7 @@ require("lazy").setup({
   { "akinsho/toggleterm.nvim", keys = { "<Leader>t" } },
 
   -- indentado
-  { "lukas-reineke/indent-blankline.nvim" },
+  { "lukas-reineke/indent-blankline.nvim", event = "BufReadPre" },
 
   -- que se modifica
   {
@@ -123,7 +124,7 @@ require("lazy").setup({
   { 'toppair/reach.nvim', keys = { "ro", "<cmd>ReachOpen buffers<CR>" } },
 
   -- para comentar lineas
-  { "terrortylor/nvim-comment" },
+  { "terrortylor/nvim-comment", event = "VeryLazy" },
 
   -- renombrar
   {
@@ -157,7 +158,7 @@ require("lazy").setup({
   { 'heavenshell/vim-pydocstring', build = 'make install', ft = 'python' },
 
   -- magit
-  { 'tpope/vim-fugitive', cmd = { "G", "Git" }, keys = { { "<Leader>g", ":G<CR>" } } },
+  { 'tpope/vim-fugitive', cmd = { "G", "Git" }, keys = { { "<Leader>g", ":G<CR>" } }, lazy = false },
 
   -- ver estructura
   { 'preservim/tagbar' },
