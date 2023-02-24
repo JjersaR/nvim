@@ -157,9 +157,6 @@ require("lazy").setup({
   -- docstring python
   { 'heavenshell/vim-pydocstring', build = 'make install', ft = 'python' },
 
-  -- magit
-  { 'tpope/vim-fugitive', cmd = { "G", "Git" }, keys = { { "<Leader>g", ":G<CR>" } }, lazy = false },
-
   -- ver estructura
   { 'preservim/tagbar' },
 
