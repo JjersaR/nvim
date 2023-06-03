@@ -81,11 +81,11 @@ require 'lspconfig'.jdtls.setup {
 }
 
 --sql
-require 'lspconfig'.sqlls.setup {
-    capabilities = capabilities,
-    flags = lspFlags,
-    on_attach = on_attach,
-}
+-- require 'lspconfig'.sqlls.setup {
+--     capabilities = capabilities,
+--     flags = lspFlags,
+--     on_attach = on_attach,
+-- }
 
 -- sintaxis de html
 require 'lspconfig'.html.setup {
