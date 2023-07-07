@@ -32,26 +32,6 @@ require 'lspconfig'.pyright.setup {
     on_attach = on_attach,
 }
 
---css
-require 'lspconfig'.cssls.setup {
-    capabilities = capabilities,
-    flags = lspFlags,
-    on_attach = on_attach,
-}
-
--- emmet html y css
-require 'lspconfig'.emmet_ls.setup {
-    capabilities = capabilities,
-    flags = lspFlags,
-    on_attach = on_attach,
-}
-
---tsserver
-require 'lspconfig'.tsserver.setup {
-    capabilities = capabilities,
-    flags = lspFlags,
-    on_attach = on_attach,
-}
 
 --lua
 require 'lspconfig'.lua_ls.setup {
@@ -76,20 +56,6 @@ require 'lspconfig'.jdtls.setup {
       return require 'lspconfig'.util.root_pattern('pom.xml', 'gradle.build', '.git', 'meson.build')(fname) or
           vim.fn.getcwd()
     end,
-    flags = lspFlags,
-    on_attach = on_attach,
-}
-
---sql
--- require 'lspconfig'.sqlls.setup {
---     capabilities = capabilities,
---     flags = lspFlags,
---     on_attach = on_attach,
--- }
-
--- sintaxis de html
-require 'lspconfig'.html.setup {
-    capabilities = capabilities,
     flags = lspFlags,
     on_attach = on_attach,
 }
