@@ -1,0 +1,137 @@
+return require('packer').startup(function()
+  -- My plugins here
+  -- Packer can manage itself
+  use 'wbthomason/packer.nvim'
+
+  -- pantalla de inicio
+  use 'goolord/alpha-nvim'
+
+  -- tiempo de carga
+  use 'lewis6991/impatient.nvim'
+
+  -- la linea de abajo
+  use {
+    use 'tamton-aquib/staline.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+
+  -- arbol de directorios
+  use { 'nvim-tree/nvim-tree.lua' }
+  use 'nvim-tree/nvim-web-devicons'
+
+  -- la sintaxis
+  use { 'nvim-treesitter/nvim-treesitter', run = ":TSUpdate" }
+
+  -- los buffers
+  use { 'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons' }
+
+  -- telescope
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { { 'nvim-lua/plenary.nvim' } }
+  }
+
+  -- LSP y autocompletado
+  use 'neovim/nvim-lspconfig'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-vsnip'
+  use 'hrsh7th/vim-vsnip'
+  use "williamboman/nvim-lsp-installer"
+  use { "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim"
+  }
+  use { 'tami5/lspsaga.nvim' }
+  use "jose-elias-alvarez/null-ls.nvim"
+  use { "ray-x/lsp_signature.nvim" }
+  use 'rafamadriz/friendly-snippets'
+  use({ 'L3MON4D3/LuaSnip', tag = "v<CurrentMajor>.*" })
+  use { 'rmagatti/goto-preview' }
+
+  -- para java
+  use 'mfussenegger/nvim-jdtls'
+  use 'artur-shaik/jc.nvim'
+
+  -- autopairs
+  use { 'windwp/nvim-autopairs' }
+
+  -- which-key
+  use { 'folke/which-key.nvim' }
+
+  -- iconos en cmp
+  use 'onsails/lspkind-nvim'
+
+  -- terminal
+  use { "akinsho/toggleterm.nvim" }
+
+  -- indentado
+  use "lukas-reineke/indent-blankline.nvim"
+
+  -- ver qué se modificó
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require('gitsigns').setup { current_line_blame = true }
+    end
+  }
+
+  -- ranger
+  use 'kevinhwang91/rnvimr'
+
+  -- tema
+  use({ "catppuccin/nvim", as = "catppuccin" })
+
+  -- buffers
+  use 'toppair/reach.nvim'
+
+  -- scroll en pantalla
+  use 'karb94/neoscroll.nvim'
+
+  -- para comentar lineas
+  use "terrortylor/nvim-comment"
+
+  -- renombrar
+  use {
+    'filipdutescu/renamer.nvim',
+    branch = 'master',
+    requires = { { 'nvim-lua/plenary.nvim' } }
+  }
+
+  -- transparente
+  use 'xiyaowong/nvim-transparent'
+
+  -- spectre
+  use { 'windwp/nvim-spectre' }
+
+  -- para bases de datos
+  use({
+    "kristijanhusak/vim-dadbod-ui",
+    requires = {
+      "tpope/vim-dadbod",
+      "kristijanhusak/vim-dadbod-completion",
+      "tpope/vim-dotenv",
+    },
+  })
+
+  -- sql
+  use 'nanotee/sqls.nvim'
+
+  -- extension de clangd
+  use 'p00f/clangd_extensions.nvim'
+
+  -- refactoring
+  use 'ThePrimeagen/refactoring.nvim'
+
+  -- magit
+  use { 'tpope/vim-fugitive' }
+
+  -- estructura
+  use { 'preservim/tagbar' }
+
+  -- folding
+  use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+
+  -- fin de packer
+end)

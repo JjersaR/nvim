@@ -1,5 +1,5 @@
 require 'nvim-treesitter.configs'.setup {
-    ensure_installed = { "help", "cpp", "lua", "rust", "java", "bash", "python", "css", "html", "javascript", "sql", "scala", "toml", "meson", "dockerfile", "htmldjango" },
+    ensure_installed = { "cpp", "lua", "rust", "java", "bash", "python", "css", "html", "javascript", "sql", "scala", "toml", "meson", "dockerfile", "htmldjango" },
     sync_install = false,
     ignore_install = { "" },
     highlight = {

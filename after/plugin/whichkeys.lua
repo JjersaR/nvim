@@ -68,10 +68,7 @@ local mappings = {
       h = { ":JCgenerateHashCodeAndEquals<CR>", "Generate Hash and Equals" },
       C = { ":JCgenerateConstructor<CR>", "Generate Constructor" },
       m = { ":JCgenerateAbstractMethods<CR>", "Generate Abstract Methods" },
-    },
-    p = {
-      name = 'Python',
-      d = { ':Pydocstring<CR>', 'Docstring' }
+      M = { ":!mvn clean compile && java -jar $(ls target/*.jar)", "Mvn run" },
     },
     g = {
       name = 'gotoPreview',
@@ -107,12 +104,14 @@ local mappings = {
     d = { ':Telescope diagnostics<CR>', 'Diagnostics' }
   },
   p = {
-    name = 'Lazy',
-    h = { ":Lazy home<CR>", "Lazy Home" },
-    i = { ":Lazy update<CR>", "Lazy Update" },
-    s = { ":Lazy sync<CR>", "Lazy Sync" },
-    c = { ":Lazy clean<CR>", "Lazy Clean" },
-    p = { ":Lazy profile<CR>", "Lazy Profile" },
+    name = 'Packer',
+    r = { ":PackerClean<cr>", "Remove Unused Plugins" },
+    c = { ":PackerCompile profile=true<cr>", "Recompile Plugins" },
+    i = { ":PackerInstall<cr>", "Install Plugins" },
+    p = { ":PackerProfile<cr>", "Packer Profile" },
+    s = { ":PackerSync<cr>", "Sync Plugins" },
+    S = { ":PackerStatus<cr>", "Packer Status" },
+    u = { ":PackerUpdate<cr>", "Update Plugins" }
   },
 }
 local opts = { prefix = '<leader>' }
