@@ -36,7 +36,7 @@ dashboard.section.buttons.val = {
   dashboard.button("e", "🔎 Search by name",
     "<cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.input('Grep For > ')})<CR>"),
   dashboard.button("r", "  Recent files", ":lua require'telescope.builtin'.oldfiles{}<CR>", {}),
-  dashboard.button("p", "✅ LazySync", ":Lazy sync<CR>"),
+  dashboard.button("p", "✅ PackerSync", ":PackerSync<CR>"),
   dashboard.button("s", "⚙️  Settings", ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),
   dashboard.button("q", "🛑 Quit NVIM", ":qa<CR>"),
 }
