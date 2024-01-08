@@ -1,4 +1,5 @@
 local wk = require("which-key")
+local rest= require("rest-nvim")
 
 local Terminal = require('toggleterm.terminal').Terminal
 local toggle_float = function()
@@ -17,7 +18,6 @@ local mappings = {
   Q = { ":wq<CR>", "Sav. & Close" },
   E = { ":e ~/.config/nvim/init.lua<CR>", "Ir a init" },
   x = { "<cmd>!chmod +x %<CR>", "Ejecutable" },
-
   l = {
     name = "LSP",
     i = { ":LspInfo<cr>", "Connected Language Servers" },
@@ -47,7 +47,16 @@ local mappings = {
       '<cmd>Lspsaga diagnostic_jump_prev<cr>', "Go To Previous Diagnostic"
     },
     f = { ':lua vim.lsp.buf.format {async = true}<CR>', "Format" },
-    j = {
+    g = {
+      name = 'gotoPreview',
+      d = { "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", 'Go to Definition' },
+      t = { "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>", 'Go to Type Definition' },
+      i = { "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", 'Go to Implementation' },
+      c = { "<cmd>lua require('goto-preview').close_all_win()<CR>", 'Close all Win' },
+      r = { "<cmd>lua require('goto-preview').goto_preview_references()<CR>", 'Go to References' }
+    }
+  },
+  j = {
       name = "Java",
       o = {
         "<Cmd>lua require'jdtls'.organize_imports()<CR>", "Organize Imports"
@@ -68,16 +77,14 @@ local mappings = {
       h = { ":JCgenerateHashCodeAndEquals<CR>", "Generate Hash and Equals" },
       C = { ":JCgenerateConstructor<CR>", "Generate Constructor" },
       m = { ":JCgenerateAbstractMethods<CR>", "Generate Abstract Methods" },
-      M = { ":!mvn clean compile && java -jar $(ls target/*.jar)", "Mvn run" },
-    },
-    g = {
-      name = 'gotoPreview',
-      d = { "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", 'Go to Definition' },
-      t = { "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>", 'Go to Type Definition' },
-      i = { "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", 'Go to Implementation' },
-      c = { "<cmd>lua require('goto-preview').close_all_win()<CR>", 'Close all Win' },
-      r = { "<cmd>lua require('goto-preview').goto_preview_references()<CR>", 'Go to References' }
-    }
+  },
+  m = {
+    name = "Maven",
+    r = {":TermExec direction=float cmd='mvn spring-boot:run'<CR>", "Run"},
+    c = {":TermExec direction=float cmd='mvn clean'<CR>", "Clean"},
+    i = {":TermExec direction=float cmd='mvn clean install'<CR>", "Clean and Install Dep"},
+    d = {":TermExec direction=float cmd='mvn spring-boot:dependency-tree'<CR>", "Dep. analysis report"},
+    I = {":TermExec direction=float cmd='mvn spring-boot:info'<CR>", "Aplication Info"},
   },
   t = {
     name = "Terminal",
@@ -104,15 +111,19 @@ local mappings = {
     d = { ':Telescope diagnostics<CR>', 'Diagnostics' }
   },
   p = {
-    name = 'Packer',
-    r = { ":PackerClean<cr>", "Remove Unused Plugins" },
-    c = { ":PackerCompile profile=true<cr>", "Recompile Plugins" },
-    i = { ":PackerInstall<cr>", "Install Plugins" },
-    p = { ":PackerProfile<cr>", "Packer Profile" },
-    s = { ":PackerSync<cr>", "Sync Plugins" },
-    S = { ":PackerStatus<cr>", "Packer Status" },
-    u = { ":PackerUpdate<cr>", "Update Plugins" }
+    name = 'Lazy',
+    h = { ":Lazy home<CR>", "Lazy Home" },
+    i = { ":Lazy update<CR>", "Lazy Update" },
+    s = { ":Lazy sync<CR>", "Lazy Sync" },
+    c = { ":Lazy clean<CR>", "Lazy Clean" },
+    p = { ":Lazy profile<CR>", "Lazy Profile" },
   },
+  r = {
+    name = 'Rest',
+    n = {rest.run, "Run"},
+    l = {rest.last, "Last"},
+    p = {function() rest_nvim.run(true) end, "Curl Command"},
+  }
 }
 local opts = { prefix = '<leader>' }
 

@@ -1,137 +1,169 @@
-return require('packer').startup(function()
-  -- My plugins here
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-  -- pantalla de inicio
-  use 'goolord/alpha-nvim'
+vim.g.mapleader = " "
+
+require("lazy").setup({
 
   -- tiempo de carga
-  use 'lewis6991/impatient.nvim'
+  'lewis6991/impatient.nvim',
+
+  -- transparencia
+  'xiyaowong/transparent.nvim',
+
+  -- pantalla de inicio
+  {'goolord/alpha-nvim', event = "BufEnter" },
+
+  -- estructura
+  {
+    'utilyre/barbecue.nvim',
+    name = "barbecue",
+    version = "*",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons", -- optional dependency
+    }, enabled = false
+  },
+
+  -- tema
+  { "catppuccin/nvim", name = "catppuccin", lazy = true, priority = 1000 },
 
   -- la linea de abajo
-  use {
-    use 'tamton-aquib/staline.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
+  { 'tamton-aquib/staline.nvim',event = {"VeryLazy", "UIEnter"} },
 
   -- arbol de directorios
-  use { 'nvim-tree/nvim-tree.lua' }
-  use 'nvim-tree/nvim-web-devicons'
+  {
+    'nvim-tree/nvim-tree.lua',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    keys = { { "nt", ":NvimTreeToggle<CR>", desc = "NvimTree" } },
+    cmd = { "NvimTreeToggle", "NvimTreeFindFile" }
+  },
 
   -- la sintaxis
-  use { 'nvim-treesitter/nvim-treesitter', run = ":TSUpdate" }
+  { 'nvim-treesitter/nvim-treesitter', build = ":TSUpdate<CR>" },
 
-  -- los buffers
-  use { 'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons' }
+  -- buffers
+  { 'akinsho/bufferline.nvim', event = { "UIEnter" }, },
 
   -- telescope
-  use {
+  {
     'nvim-telescope/telescope.nvim',
-    requires = { { 'nvim-lua/plenary.nvim' } }
-  }
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    cmd = 'Telescope',
+  },
 
   -- LSP y autocompletado
-  use 'neovim/nvim-lspconfig'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-vsnip'
-  use 'hrsh7th/vim-vsnip'
-  use "williamboman/nvim-lsp-installer"
-  use { "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim"
-  }
-  use { 'tami5/lspsaga.nvim' }
-  use "jose-elias-alvarez/null-ls.nvim"
-  use { "ray-x/lsp_signature.nvim" }
-  use 'rafamadriz/friendly-snippets'
-  use({ 'L3MON4D3/LuaSnip', tag = "v<CurrentMajor>.*" })
-  use { 'rmagatti/goto-preview' }
+  { 'neovim/nvim-lspconfig', keys = { "<Leader>l" }, event = { "BufReadPre", "BufNewFile" } },
+  { 'hrsh7th/nvim-cmp',
+    dependencies = {
+      'hrsh7th/cmp-calc',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-vsnip',
+      'hrsh7th/cmp-nvim-lua',
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/vim-vsnip',
+      'saadparwaiz1/cmp_luasnip',
+      "rafamadriz/friendly-snippets",
+    },
+  },
+  { "williamboman/nvim-lsp-installer" },
+  { "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    cmd = "Mason"
+  },
+  { 'tami5/lspsaga.nvim' },
+  { "jose-elias-alvarez/null-ls.nvim", event = { "UIEnter" } },
+  { "ray-x/lsp_signature.nvim" },
+  { 'rafamadriz/friendly-snippets' },
+  { 'rmagatti/goto-preview', keys = { "<Leader>lg" } },
+  {
+    'L3MON4D3/LuaSnip',
+  },
 
   -- para java
-  use 'mfussenegger/nvim-jdtls'
-  use 'artur-shaik/jc.nvim'
+  { 'mfussenegger/nvim-jdtls', ft = "java" },
+  { 'artur-shaik/jc.nvim', ft = "java" },
 
   -- autopairs
-  use { 'windwp/nvim-autopairs' }
+  { 'windwp/nvim-autopairs', event = "InsertEnter", config = true },
 
   -- which-key
-  use { 'folke/which-key.nvim' }
+  { 'folke/which-key.nvim', keys = { "<Leader>" }, event = "VimEnter" },
 
   -- iconos en cmp
-  use 'onsails/lspkind-nvim'
+  { 'onsails/lspkind-nvim' },
 
   -- terminal
-  use { "akinsho/toggleterm.nvim" }
+  { "akinsho/toggleterm.nvim", keys = { "<Leader>t" } },
 
   -- indentado
-  use "lukas-reineke/indent-blankline.nvim"
+  { "lukas-reineke/indent-blankline.nvim", event = "BufReadPre" },
 
-  -- ver qué se modificó
-  use {
+  -- que se modifica
+  {
     'lewis6991/gitsigns.nvim',
-    requires = { 'nvim-lua/plenary.nvim' },
+    dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
       require('gitsigns').setup { current_line_blame = true }
     end
-  }
+  },
 
   -- ranger
-  use 'kevinhwang91/rnvimr'
+  { 'kevinhwang91/rnvimr', keys = { "fn", "<cmd>RnvimrToggle<CR>" } },
 
-  -- tema
-  use({ "catppuccin/nvim", as = "catppuccin" })
-
-  -- buffers
-  use 'toppair/reach.nvim'
-
-  -- scroll en pantalla
-  use 'karb94/neoscroll.nvim'
+  -- windows
+  { 'toppair/reach.nvim', keys = { "ro", "<cmd>ReachOpen buffers<CR>" } },
 
   -- para comentar lineas
-  use "terrortylor/nvim-comment"
+  { "terrortylor/nvim-comment", event = "VeryLazy" },
 
   -- renombrar
-  use {
+  {
     'filipdutescu/renamer.nvim',
-    branch = 'master',
-    requires = { { 'nvim-lua/plenary.nvim' } }
-  }
-
-  -- transparente
-  use 'xiyaowong/nvim-transparent'
+    branch = 'master'
+  },
 
   -- spectre
-  use { 'windwp/nvim-spectre' }
+  { 'windwp/nvim-spectre', keys = { "so", "<cmd>lua require('spectre').open()<CR>" } },
 
-  -- para bases de datos
-  use({
+  -- bases de datos
+  {
     "kristijanhusak/vim-dadbod-ui",
-    requires = {
+    dependencies = {
       "tpope/vim-dadbod",
       "kristijanhusak/vim-dadbod-completion",
       "tpope/vim-dotenv",
-    },
-  })
+    }, keys = { { "<Leader>b", ":tab DBUI<CR>", desc = "Open" } },
+  },
 
   -- sql
-  use 'nanotee/sqls.nvim'
+  { 'nanotee/sqls.nvim', ft = "sql" },
 
   -- extension de clangd
-  use 'p00f/clangd_extensions.nvim'
+  { 'p00f/clangd_extensions.nvim', ft = "cpp" },
 
-  -- refactoring
-  use 'ThePrimeagen/refactoring.nvim'
+  -- refactorizar
+  { 'ThePrimeagen/refactoring.nvim', keys = { "<Leader>rb", mode = "v" } },
 
-  -- magit
-  use { 'tpope/vim-fugitive' }
-
-  -- estructura
-  use { 'preservim/tagbar' }
+  -- ver estructura
+  { 'preservim/tagbar' },
 
   -- folding
-  use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+  {"kevinhwang91/nvim-ufo", dependencies = {"kevinhwang91/promise-async"}},
 
-  -- fin de packer
-end)
+  -- peticiones http
+  {"NTBBloodbath/rest.nvim", ft = "http"},
+
+})
