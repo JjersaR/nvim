@@ -15,5 +15,7 @@ require("buffer_manager").setup({
           key = "<C-h>",
           command = "split"
         }
-      },
+    },
+  short_file_names = true,
+  short_term_names = true,
 })
