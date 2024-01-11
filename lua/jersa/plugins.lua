@@ -53,7 +53,8 @@ require("lazy").setup({
   { 'nvim-treesitter/nvim-treesitter', build = ":TSUpdate<CR>" },
 
   -- buffers
-  { 'akinsho/bufferline.nvim', event = { "UIEnter" }, },
+  { 'akinsho/bufferline.nvim', event = { "UIEnter" },enabled = false },
+  { 'j-morano/buffer_manager.nvim' },
 
   -- telescope
   {
@@ -165,5 +166,8 @@ require("lazy").setup({
 
   -- peticiones http
   {"NTBBloodbath/rest.nvim", ft = "http"},
+
+  -- oil
+  {'stevearc/oil.nvim'}
 
 })

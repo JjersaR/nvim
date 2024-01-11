@@ -18,6 +18,7 @@ local mappings = {
   Q = { ":wq<CR>", "Sav. & Close" },
   E = { ":e ~/.config/nvim/init.lua<CR>", "Ir a init" },
   x = { "<cmd>!chmod +x %<CR>", "Ejecutable" },
+  b = { ":lua require('buffer_manager.ui').toggle_quick_menu()<CR>", "Buffers" },
   l = {
     name = "LSP",
     i = { ":LspInfo<cr>", "Connected Language Servers" },
@@ -81,8 +82,8 @@ local mappings = {
   m = {
     name = "Maven",
     r = {":TermExec direction=float cmd='mvn spring-boot:run'<CR>", "Run"},
-    c = {":TermExec direction=float cmd='mvn clean'<CR>", "Clean"},
-    i = {":TermExec direction=float cmd='mvn clean install'<CR>", "Clean and Install Dep"},
+    c = {":!mvn clean<CR>", "Clean"},
+    i = {":!mvn clean install<CR>", "Clean and Install Dep"},
     d = {":TermExec direction=float cmd='mvn spring-boot:dependency-tree'<CR>", "Dep. analysis report"},
     I = {":TermExec direction=float cmd='mvn spring-boot:info'<CR>", "Aplication Info"},
   },
@@ -93,7 +94,7 @@ local mappings = {
     l = { toggle_lazygit, "LazyGit" },
     v = { ":ToggleTerm direction=vertical size=100<CR>", "Vertical Terminal" }
   },
-  b = {
+  d = {
     name = "Database",
     o = { ":tab DBUI<CR>", "Open" },
     A = { ":DBUIAddConnection<CR>", "Add connection" },
@@ -123,7 +124,12 @@ local mappings = {
     n = {rest.run, "Run"},
     l = {rest.last, "Last"},
     p = {function() rest_nvim.run(true) end, "Curl Command"},
-  }
+  },
+  o = {
+    name = "Oil",
+    o = {":Oil --float<CR>", "Open"},
+    e = {":Oil --float", "Edit path"},
+  },
 }
 local opts = { prefix = '<leader>' }
 
