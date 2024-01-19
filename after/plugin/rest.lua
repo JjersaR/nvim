@@ -24,7 +24,7 @@ require("rest-nvim").setup({
     show_headers = true,
     -- table of curl `--write-out` variables or false if disabled
     -- for more granular control see Statistics Spec
-    show_statistics = false,
+    show_statistics = true,
     -- executables or functions for formatting response body [optional]
     -- set them to false if you want to disable them
     formatters = {

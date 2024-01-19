@@ -105,9 +105,6 @@ tnoremap <C-l> <C-\><C-N><C-w>l
 vim.cmd[[
 nnoremap <silent><TAB> :lua require("buffer_manager.ui").nav_next()<CR>
 nnoremap <silent><S-TAB> :lua require("buffer_manager.ui").nav_prev()<CR>
-
-tnoremap <silent><TAB> <C-\><C-N><C-w>:lua require("buffer_manager.ui").nav_next()<CR>
-tnoremap <silent><S-TAB> <C-\><C-N><C-w>:lua require("buffer_manager.ui").nav_prev()<CR>
 ]]
 -- mover los buffers
 vim.api.nvim_command([[

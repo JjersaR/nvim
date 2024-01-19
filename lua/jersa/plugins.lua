@@ -168,6 +168,14 @@ require("lazy").setup({
   {"NTBBloodbath/rest.nvim", ft = "http"},
 
   -- oil
-  {'stevearc/oil.nvim'}
+  {'stevearc/oil.nvim'},
+
+  -- templates
+  {'otavioschwanck/new-file-template.nvim'},
+
+  -- session
+  {"gennaro-tedesco/nvim-possession", dependencies = {"ibhagwan/fzf-lua"}},
+  -- fzf
+  {"junegunn/fzf", build = "./install --bin"}
 
 })

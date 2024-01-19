@@ -1,5 +1,6 @@
 local wk = require("which-key")
 local rest= require("rest-nvim")
+local possession = require("nvim-possession")
 
 local Terminal = require('toggleterm.terminal').Terminal
 local toggle_float = function()
@@ -122,14 +123,20 @@ local mappings = {
   r = {
     name = 'Rest',
     n = {rest.run, "Run"},
-    l = {rest.last, "Last"},
-    p = {function() rest_nvim.run(true) end, "Curl Command"},
+    l = {rest.last, "Last"}
   },
   o = {
     name = "Oil",
     o = {":Oil --float<CR>", "Open"},
     e = {":Oil --float", "Edit path"},
   },
+  s = {
+    name = "Session",
+    l = {possession.list, "List"},
+    n = {possession.new, "New"},
+    u = {possession.update, "Update"},
+    d = {possession.delete, "Delete"}
+  }
 }
 local opts = { prefix = '<leader>' }
 
