@@ -31,8 +31,7 @@ dashboard.section.header.val = {
 -- Set menu
 dashboard.section.buttons.val = {
   dashboard.button("m", "  Find File", ":Telescope find_files<CR>"),
-  dashboard.button("n", "  Ranger", ":RnvimrToggle<CR>"),
-  dashboard.button("t", "🌳 NvimTree", ":NvimTreeToggle<CR>"),
+  dashboard.button("t", "🌳 Files", ":lua MiniFiles.open()<CR>"),
   dashboard.button("e", "🔎 Search by name",
     "<cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.input('Grep For > ')})<CR>"),
   dashboard.button("r", "  Recent files", ":lua require'telescope.builtin'.oldfiles{}<CR>", {}),
@@ -41,23 +40,6 @@ dashboard.section.buttons.val = {
   dashboard.button("q", "🛑 Quit NVIM", ":qa<CR>"),
 }
 
--- Set footer
---   NOTE: This is currently a feature in my fork of alpha-nvim (opened PR #21, will update snippet if added to main)
---   To see test this yourself, add the function as a dependecy in packer and uncomment the footer lines
---   ```init.lua
---   return require('packer').startup(function()
---       use 'wbthomason/packer.nvim'
---       use {
---           'goolord/alpha-nvim', branch = 'feature/startify-fortune',
---           requires = {'BlakeJC94/alpha-nvim-fortune'},
---           config = function() require("config.alpha") end
---       }
---   end)
---   ```
--- local fortune = require("alpha.fortune")
--- dashboard.section.footer.val = fortune()
-
--- Send config to alpha
 alpha.setup(dashboard.opts)
 
 -- Disable folding on alpha buffer

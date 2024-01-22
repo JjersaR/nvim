@@ -24,14 +24,12 @@ mapper("n", '<C-w>', ':bdelete<CR>')
 -- quitar espacios
 vim.cmd [[autocmd BufWritePre * :%s/\s\+$//e]]
 
--- ranger
-mapper("n", "fn", ":RnvimrToggle<CR>")
-
 -- duplicar lineas
 mapper("n", "tt", ":t.<CR>")
 
--- nvim-tree
-mapper('n', "nt", ":NvimTreeToggle<CR>")
+-- Files
+-- mapper('n', "nt", ":NvimTreeToggle<CR>")
+mapper('n', "nt", ":lua MiniFiles.open()<CR>")
 
 -- mover lineas
 mapper('v', '<', '<gv')

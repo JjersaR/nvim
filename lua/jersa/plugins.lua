@@ -46,8 +46,10 @@ require("lazy").setup({
     'nvim-tree/nvim-tree.lua',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     keys = { { "nt", ":NvimTreeToggle<CR>", desc = "NvimTree" } },
-    cmd = { "NvimTreeToggle", "NvimTreeFindFile" }
+    cmd = { "NvimTreeToggle", "NvimTreeFindFile" },
+    enabled = false
   },
+  { 'echasnovski/mini.files', version = '*' },
 
   -- la sintaxis
   { 'nvim-treesitter/nvim-treesitter', build = ":TSUpdate<CR>" },
@@ -121,9 +123,6 @@ require("lazy").setup({
     end
   },
 
-  -- ranger
-  { 'kevinhwang91/rnvimr', keys = { "fn", "<cmd>RnvimrToggle<CR>" } },
-
   -- windows
   { 'toppair/reach.nvim', keys = { "ro", "<cmd>ReachOpen buffers<CR>" } },
 
@@ -167,15 +166,7 @@ require("lazy").setup({
   -- peticiones http
   {"NTBBloodbath/rest.nvim", ft = "http"},
 
-  -- oil
-  {'stevearc/oil.nvim'},
-
   -- templates
   {'otavioschwanck/new-file-template.nvim'},
-
-  -- session
-  {"gennaro-tedesco/nvim-possession", dependencies = {"ibhagwan/fzf-lua"}},
-  -- fzf
-  {"junegunn/fzf", build = "./install --bin"}
 
 })
