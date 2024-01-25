@@ -24,17 +24,6 @@ require("lazy").setup({
   -- pantalla de inicio
   {'goolord/alpha-nvim', event = "BufEnter" },
 
-  -- estructura
-  {
-    'utilyre/barbecue.nvim',
-    name = "barbecue",
-    version = "*",
-    dependencies = {
-      "SmiteshP/nvim-navic",
-      "nvim-tree/nvim-web-devicons", -- optional dependency
-    }, enabled = false
-  },
-
   -- tema
   { "catppuccin/nvim", name = "catppuccin", lazy = true, priority = 1000 },
 
@@ -42,20 +31,12 @@ require("lazy").setup({
   { 'tamton-aquib/staline.nvim',event = {"VeryLazy", "UIEnter"} },
 
   -- arbol de directorios
-  {
-    'nvim-tree/nvim-tree.lua',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    keys = { { "nt", ":NvimTreeToggle<CR>", desc = "NvimTree" } },
-    cmd = { "NvimTreeToggle", "NvimTreeFindFile" },
-    enabled = false
-  },
   { 'echasnovski/mini.files', version = '*' },
 
   -- la sintaxis
   { 'nvim-treesitter/nvim-treesitter', build = ":TSUpdate<CR>" },
 
   -- buffers
-  { 'akinsho/bufferline.nvim', event = { "UIEnter" },enabled = false },
   { 'j-morano/buffer_manager.nvim' },
 
   -- telescope
@@ -87,7 +68,6 @@ require("lazy").setup({
     cmd = "Mason"
   },
   { 'tami5/lspsaga.nvim' },
-  { "jose-elias-alvarez/null-ls.nvim", event = { "UIEnter" } },
   { "ray-x/lsp_signature.nvim" },
   { 'rafamadriz/friendly-snippets' },
   { 'rmagatti/goto-preview', keys = { "<Leader>lg" } },
@@ -123,9 +103,6 @@ require("lazy").setup({
     end
   },
 
-  -- windows
-  { 'toppair/reach.nvim', keys = { "ro", "<cmd>ReachOpen buffers<CR>" } },
-
   -- para comentar lineas
   { "terrortylor/nvim-comment", event = "VeryLazy" },
 
@@ -153,9 +130,6 @@ require("lazy").setup({
 
   -- extension de clangd
   { 'p00f/clangd_extensions.nvim', ft = "cpp" },
-
-  -- refactorizar
-  { 'ThePrimeagen/refactoring.nvim', keys = { "<Leader>rb", mode = "v" } },
 
   -- ver estructura
   { 'preservim/tagbar' },

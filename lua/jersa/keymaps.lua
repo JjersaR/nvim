@@ -28,7 +28,6 @@ vim.cmd [[autocmd BufWritePre * :%s/\s\+$//e]]
 mapper("n", "tt", ":t.<CR>")
 
 -- Files
--- mapper('n', "nt", ":NvimTreeToggle<CR>")
 mapper('n', "nt", ":lua MiniFiles.open()<CR>")
 
 -- mover lineas
@@ -47,20 +46,14 @@ map("n", "<C-d>",
   "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>",
   { noremap = true, silent = true })
 
--- para reach
-mapper("n", "ro", ":ReachOpen buffers<CR>")
-
 -- para comentar lineas
 mapper("n", "//", ":CommentToggle<CR>")
 
 -- para spectre
-mapper("n", "so", "<cmd>lua require('spectre').open()<CR>")
+mapper("n", "so", ":Spectre<CR>")
 
 -- ver estructura
 mapper("n", "T", ":TagbarToggle<CR>")
-
--- refactorizar en nuevo archivo
-mapper("v", "<Leader>rb", "[[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>]]")
 
 -- runner
 function Build()
@@ -98,14 +91,3 @@ tnoremap <C-j> <C-\><C-N><C-w>j
 tnoremap <C-k> <C-\><C-N><C-w>k
 tnoremap <C-l> <C-\><C-N><C-w>l
 ]]
--- buffers
--- moverte con Tab y S-Tab
-vim.cmd[[
-nnoremap <silent><TAB> :lua require("buffer_manager.ui").nav_next()<CR>
-nnoremap <silent><S-TAB> :lua require("buffer_manager.ui").nav_prev()<CR>
-]]
--- mover los buffers
-vim.api.nvim_command([[
-autocmd FileType buffer_manager vnoremap J :m '>+1<CR>gv=gv
-autocmd FileType buffer_manager vnoremap K :m '<-2<CR>gv=gv
-]])
