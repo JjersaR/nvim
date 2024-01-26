@@ -75,6 +75,9 @@ require("lazy").setup({
     'L3MON4D3/LuaSnip',
   },
 
+  -- formato
+  {'stevearc/conform.nvim'},
+
   -- para java
   { 'mfussenegger/nvim-jdtls', ft = "java" },
   { 'artur-shaik/jc.nvim', ft = "java" },
@@ -113,7 +116,7 @@ require("lazy").setup({
   },
 
   -- spectre
-  { 'windwp/nvim-spectre', keys = { "so", "<cmd>lua require('spectre').open()<CR>" } },
+  { 'windwp/nvim-spectre' },
 
   -- bases de datos
   {
@@ -124,12 +127,6 @@ require("lazy").setup({
       "tpope/vim-dotenv",
     }, keys = { { "<Leader>b", ":tab DBUI<CR>", desc = "Open" } },
   },
-
-  -- sql
-  { 'nanotee/sqls.nvim', ft = "sql" },
-
-  -- extension de clangd
-  { 'p00f/clangd_extensions.nvim', ft = "cpp" },
 
   -- ver estructura
   { 'preservim/tagbar' },

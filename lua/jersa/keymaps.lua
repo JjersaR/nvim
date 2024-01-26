@@ -49,9 +49,6 @@ map("n", "<C-d>",
 -- para comentar lineas
 mapper("n", "//", ":CommentToggle<CR>")
 
--- para spectre
-mapper("n", "so", ":Spectre<CR>")
-
 -- ver estructura
 mapper("n", "T", ":TagbarToggle<CR>")
 
