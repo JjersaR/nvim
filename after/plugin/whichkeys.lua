@@ -61,26 +61,18 @@ local mappings = {
 	},
 	j = {
 		name = "Java",
-		o = {
-			"<Cmd>lua require'jdtls'.organize_imports()<CR>",
-			"Organize Imports",
-		},
-		v = {
-			"<Cmd>lua require('jdtls').extract_variable()<CR>",
-			"Extract Variable",
-		},
-		c = {
-			"<Cmd>lua require('jdtls').extract_constant()<CR>",
-			"Extract Constant",
-		},
-		u = { "<Cmd>JdtUpdateConfig<CR>", "Update Config" },
+		o = { ":JCimportsOrganize<CR>", "Organize Imports" },
+		v = { ":JCrefactorExtractVar<CR>", "Extract Variable" },
+		m = { ":JCrefactorExtractMethod<CR>", "Extract Method" },
+		u = { ":JCutilUpdateConfig<CR>", "Update Config" },
 		t = { ":JCgenerateToString<CR>", "Generate toString" },
 		s = { ":JCgenerateAccessorGetter<CR>", "Generate Setter" },
 		g = { ":JCgenerateAccessorGetter<CR>", "Generate Getter" },
 		a = { ":JCgenerateAccessorSetterGetter<CR>", "Generate Getter and Setter" },
 		h = { ":JCgenerateHashCodeAndEquals<CR>", "Generate Hash and Equals" },
 		C = { ":JCgenerateConstructor<CR>", "Generate Constructor" },
-		m = { ":JCgenerateAbstractMethods<CR>", "Generate Abstract Methods" },
+		c = { ":JCgenerateConstructorDefault<CR>", "Generate Constructor Default" },
+		M = { ":JCgenerateAbstractMethods<CR>", "Generate Abstract Methods" },
 	},
 	m = {
 		name = "Maven",
@@ -126,6 +118,11 @@ local mappings = {
 		name = "Rest",
 		n = { rest.run, "Run" },
 		l = { rest.last, "Last" },
+	},
+	T = {
+		name = "Test",
+		r = { ":lua require('neotest').run.run()<CR>", "Test Run" },
+		f = { "lua require('neotest').run.run(vim.fn.expand('%'))<CR>", "Run file" },
 	},
 }
 local opts = { prefix = "<leader>" }

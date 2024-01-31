@@ -1,18 +1,40 @@
 local utils = require("new-file-template.utils")
 
 local function base_template(full_path, filename)
+	local pack = full_path:match("src/main/java/(.+)$"):gsub("/", ".")
+	local name = filename:gsub("%..+$", "")
+	local entity_type = name:sub(1, 1) == "I" and name:sub(2, 2):match("%u") and "interface" or "class"
 
-  local pack = full_path:match('src/main/java/(.+)$'):gsub('/', '.')
-  local name = filename:gsub("%..+$", "")
-  local entity_type = name:sub(1, 1) == 'I' and name:sub(2, 2):match('%u') and 'interface' or 'class'
+	if not pack then
+		pack = ""
+	end
 
-  if not pack then
-    pack = ''
-  end
-
-  return [[
+	return [[
 package ]] .. pack .. [[;\n
 public ]] .. entity_type .. [[ ]] .. name .. [[ {\n|cursor|\n}]]
+end
+
+local function test_template(full_path, filename)
+	local pack = full_path:match("src/test/java/(.+)$"):gsub("/", ".")
+	local name = filename:gsub("%..+$", "")
+
+	if not pack then
+		pack = ""
+	end
+
+	return [[
+package ]] .. pack .. [[;\n
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+public class ]] .. name .. [[ {
+
+  @Test
+  void |cursor|(){\n}
+
+}]]
 end
 
 --- @param opts table
@@ -21,9 +43,10 @@ end
 ---   - `relative_path` (string): The relative path of the new file, e.g., "lua/new-file-template/templates/init.lua".
 ---   - `filename` (string): The filename of the new file, e.g., "init.lua".
 return function(opts)
-  local template = {
-    { pattern = ".*", content = base_template },
-  }
+	local template = {
+		{ pattern = ".*", content = base_template },
+		{ pattern = "*Test.*", content = test_template },
+	}
 
 	return utils.find_entry(template, opts)
 end
