@@ -105,6 +105,7 @@ local mappings = {
 		h = { ":Telescope help_tags<CR>", "Find Command" },
 		s = { ":Telescope git_status<CR>", "Git Status" },
 		d = { ":Telescope diagnostics<CR>", "Diagnostics" },
+		p = { ":Telescope projects<CR>", "Projects" },
 	},
 	p = {
 		name = "Lazy",

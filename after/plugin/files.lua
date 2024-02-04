@@ -1,6 +1,12 @@
-require("mini.files").setup({
-	windows = {
-		preview = true,
-		width_preview = 70,
+require("oil").setup({
+	columns = {
+		"icon",
+		-- "permissions",
+		-- "size",
+		-- "mtime",
+	},
+	win_options = {
+		number = false,
+		relativenumber = false,
 	},
 })

@@ -31,11 +31,7 @@ require("lazy").setup({
 	{ "tamton-aquib/staline.nvim", event = { "VeryLazy", "UIEnter" } },
 
 	-- arbol de directorios
-	{
-		"echasnovski/mini.files",
-		version = "*",
-		keys = { { "nt", ":lua MiniFiles.open()<CR>", desc = "Files" } },
-	},
+	{ "stevearc/oil.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
 
 	-- la sintaxis
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
@@ -153,4 +149,7 @@ require("lazy").setup({
 		dependencies = { "rcasia/neotest-java" },
 		keys = { { "<Leader>T", ":lua require('neotest').run.run()<CR>", desc = "Run Test" } },
 	},
+
+	-- proyectos
+	{ "ahmedkhalf/project.nvim" },
 })

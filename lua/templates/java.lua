@@ -15,7 +15,7 @@ public ]] .. entity_type .. [[ ]] .. name .. [[ {\n|cursor|\n}]]
 end
 
 local function test_template(full_path, filename)
-	local pack = full_path:match("src/test/java/(.+)$"):gsub("/", ".")
+	local pack = full_path:match("/src/test/java/(.+)$"):gsub("/", ".")
 	local name = filename:gsub("%..+$", "")
 
 	if not pack then
@@ -24,7 +24,6 @@ local function test_template(full_path, filename)
 
 	return [[
 package ]] .. pack .. [[;\n
-
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -45,7 +44,7 @@ end
 return function(opts)
 	local template = {
 		{ pattern = ".*", content = base_template },
-		{ pattern = "*Test.*", content = test_template },
+		{ pattern = ".*Test%.*", content = test_template },
 	}
 
 	return utils.find_entry(template, opts)

@@ -28,7 +28,7 @@ vim.cmd([[autocmd BufWritePre * :%s/\s\+$//e]])
 mapper("n", "tt", ":t.<CR>")
 
 -- Files
-mapper("n", "nt", ":lua MiniFiles.open()<CR>")
+mapper("n", "nt", ":Oil --float<CR>")
 
 -- mover lineas
 mapper("v", "<", "<gv")
