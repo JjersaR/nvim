@@ -14,28 +14,6 @@ package ]] .. pack .. [[;\n
 public ]] .. entity_type .. [[ ]] .. name .. [[ {\n|cursor|\n}]]
 end
 
-local function test_template(full_path, filename)
-	local pack = full_path:match("/src/test/java/(.+)$"):gsub("/", ".")
-	local name = filename:gsub("%..+$", "")
-
-	if not pack then
-		pack = ""
-	end
-
-	return [[
-package ]] .. pack .. [[;\n
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-
-@SpringBootTest
-public class ]] .. name .. [[ {
-
-  @Test
-  void |cursor|(){\n}
-
-}]]
-end
-
 --- @param opts table
 ---   A table containing the following fields:
 ---   - `full_path` (string): The full path of the new file, e.g., "lua/new-file-template/templates/init.lua".
@@ -44,7 +22,6 @@ end
 return function(opts)
 	local template = {
 		{ pattern = ".*", content = base_template },
-		{ pattern = ".*Test%.*", content = test_template },
 	}
 
 	return utils.find_entry(template, opts)
