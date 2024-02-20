@@ -127,8 +127,9 @@ require("lazy").setup({
 			"tpope/vim-dadbod",
 			"kristijanhusak/vim-dadbod-completion",
 			"tpope/vim-dotenv",
+			lazy = true,
 		},
-		keys = { { "<Leader>do", ":tab DBUI<CR>", desc = "Open" } },
+		cmd = { "DBUI", "DBUIToggle", "DBUIAddConnection", "DBUIFindBuffer" },
 	},
 
 	-- ver estructura
