@@ -53,6 +53,9 @@ mapper("n", "//", ":CommentToggle<CR>")
 -- ver estructura
 mapper("n", "T", ":TagbarToggle<CR>")
 
+-- abrir terminal
+mapper("n", "<C-t>", ":TmanCmd<CR>")
+
 -- runner
 function Build()
 	-- execute cpp
@@ -89,3 +92,9 @@ tnoremap <C-j> <C-\><C-N><C-w>j
 tnoremap <C-k> <C-\><C-N><C-w>k
 tnoremap <C-l> <C-\><C-N><C-w>l
 ]])
+
+-- comandos para merge
+mapper("n", "<C-Left>", ":MergetoolDiffExchangeLeft<CR>")
+mapper("n", "<C-Right>", ":MergetoolDiffExchangeRight<CR>")
+mapper("n", "<C-Down>", ":MergetoolDiffExchangeDown<CR>")
+mapper("n", "<C-Up>", ":MergetoolDiffExchangeUp<CR>")

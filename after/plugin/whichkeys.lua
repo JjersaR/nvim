@@ -88,6 +88,7 @@ local mappings = {
 		f = { toggle_float, "Floating Terminal" },
 		l = { toggle_lazygit, "LazyGit" },
 		v = { ":ToggleTerm direction=vertical size=100<CR>", "Vertical Terminal" },
+		m = { ":MergetoolToggle<CR>", "Merge Conflict" },
 	},
 	d = {
 		name = "Database",

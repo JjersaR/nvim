@@ -94,6 +94,7 @@ require("lazy").setup({
 
 	-- terminal
 	{ "akinsho/toggleterm.nvim", keys = { "<Leader>t" } },
+	{ "Bhanukamax/tman.nvim" },
 
 	-- indentado
 	{ "lukas-reineke/indent-blankline.nvim", event = "BufReadPre" },
@@ -106,6 +107,7 @@ require("lazy").setup({
 			require("gitsigns").setup({ current_line_blame = true })
 		end,
 	},
+	{ "samoshkin/vim-mergetool" },
 
 	-- para comentar lineas
 	{ "terrortylor/nvim-comment", keys = { { "//", ":CommentToggle<CR>", desc = "commet" } } },
