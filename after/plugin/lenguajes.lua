@@ -46,6 +46,12 @@ require("lspconfig").jdtls.setup({
 	flags = lspFlags,
 })
 
+-- javascript
+require("lspconfig").tsserver.setup({
+	capabilities = capabilities,
+	flags = lspFlags,
+})
+
 -- rust
 require("lspconfig").rust_analyzer.setup({
 	capabilities = capabilities,
