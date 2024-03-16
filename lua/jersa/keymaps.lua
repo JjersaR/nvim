@@ -54,7 +54,7 @@ mapper("n", "//", ":CommentToggle<CR>")
 mapper("n", "T", ":TagbarToggle<CR>")
 
 -- abrir terminal
-mapper("n", "<C-t>", ":TmanCmd<CR>")
+mapper("n", "<C-c>", ":TmanCmd<CR>")
 
 -- runner
 function Build()

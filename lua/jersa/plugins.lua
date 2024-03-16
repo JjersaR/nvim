@@ -155,4 +155,7 @@ require("lazy").setup({
 
 	-- proyectos
 	{ "ahmedkhalf/project.nvim" },
+
+	-- diagnostic javascript
+	{ "MunifTanjim/eslint.nvim", ft = "js" },
 })

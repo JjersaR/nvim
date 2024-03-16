@@ -3,6 +3,7 @@ require("conform").setup({
 		lua = { "stylua" },
 		java = { "google-java-format" },
 		python = { "black" },
+		javascript = { "eslint_d" },
 	},
 	format_on_save = {
 		lsp_fallback = true,
