@@ -1,5 +1,16 @@
 require("nvim-treesitter.configs").setup({
-	ensure_installed = { "cpp", "lua", "java", "python", "toml", "meson", "dockerfile" },
+	ensure_installed = {
+		"cpp",
+		"lua",
+		"java",
+		"python",
+		"meson",
+		"dockerfile",
+		"javascript",
+		"html",
+		"http",
+		"hurl",
+	},
 	sync_install = false,
 	ignore_install = { "" },
 	highlight = {
@@ -11,3 +22,5 @@ require("nvim-treesitter.configs").setup({
 		enable = true,
 	},
 })
+
+require("nvim-ts-autotag").setup({})

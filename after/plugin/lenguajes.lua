@@ -9,6 +9,23 @@ capabilities.textDocument.foldingRange = {
 	lineFoldingOnly = true,
 }
 
+-- linter para java y javascript
+require("lspconfig").sonarlint.setup({
+	filetypes = {
+		"java",
+		"javascript",
+	},
+	server = {
+		cmd = {
+			"sonarlint-language-server",
+			"-stdio",
+			"-analyzers",
+			vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarjava.jar"),
+			vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarjs.jar"),
+		},
+	},
+})
+
 --para c, c++ y de más
 require("lspconfig").clangd.setup({
 	capabilities = capabilities,

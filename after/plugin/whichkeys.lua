@@ -1,5 +1,5 @@
 local wk = require("which-key")
-local rest = require("rest-nvim")
+-- local rest = require("rest-nvim")
 
 local Terminal = require("toggleterm.terminal").Terminal
 local toggle_float = function()
@@ -116,11 +116,11 @@ local mappings = {
 		c = { ":Lazy clean<CR>", "Lazy Clean" },
 		p = { ":Lazy profile<CR>", "Lazy Profile" },
 	},
-	r = {
-		name = "Rest",
-		n = { rest.run, "Run" },
-		l = { rest.last, "Last" },
-	},
+	-- r = {
+	-- 	name = "Rest",
+	-- 	n = { rest.run, "Run" },
+	-- 	l = { rest.last, "Last" },
+	-- },
 	T = {
 		name = "Test",
 		r = { ":lua require('neotest').run.run()<CR>", "Test Run" },

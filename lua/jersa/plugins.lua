@@ -85,6 +85,7 @@ require("lazy").setup({
 
 	-- autopairs
 	{ "windwp/nvim-autopairs", event = { "BufWrite" }, config = true },
+	{ "windwp/nvim-ts-autotag" },
 
 	-- which-key
 	{ "folke/which-key.nvim", keys = { "<Leader>" }, event = "VimEnter" },
@@ -141,7 +142,7 @@ require("lazy").setup({
 	{ "kevinhwang91/nvim-ufo", dependencies = { "kevinhwang91/promise-async" } },
 
 	-- peticiones http
-	{ "NTBBloodbath/rest.nvim", ft = "http" },
+	{ "jellydn/hurl.nvim", dependencies = { "MunifTanjim/nui.nvim" }, ft = "http" },
 
 	-- templates
 	{ "otavioschwanck/new-file-template.nvim" },
@@ -149,7 +150,7 @@ require("lazy").setup({
 	-- test para java
 	{
 		"nvim-neotest/neotest",
-		dependencies = { "rcasia/neotest-java" },
+		dependencies = { "rcasia/neotest-java", "nvim-neotest/nvim-nio" },
 		keys = { { "<Leader>T", ":lua require('neotest').run.run()<CR>", desc = "Run Test" } },
 	},
 

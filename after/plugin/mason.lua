@@ -17,6 +17,7 @@ require("mason-lspconfig").setup({
 		"pyright",
 		"black",
 		"flake8",
+		"sonarlint-language-server",
 	},
 	automatic_installation = false,
 })
