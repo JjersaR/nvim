@@ -31,7 +31,7 @@ require("lazy").setup({
 	{ "tamton-aquib/staline.nvim", event = { "VeryLazy", "UIEnter" } },
 
 	-- arbol de directorios
-	{ "stevearc/oil.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
+	{ "simonmclean/triptych.nvim", dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons" } },
 
 	-- la sintaxis
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },

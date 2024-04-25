@@ -31,7 +31,7 @@ dashboard.section.header.val = {
 -- Set menu
 dashboard.section.buttons.val = {
 	dashboard.button("m", "  Find File", ":Telescope find_files<CR>"),
-	dashboard.button("t", "🌳 Files", ":Oil --float<CR>"),
+	dashboard.button("t", "🌳 Files", ":Triptych<CR>"),
 	dashboard.button(
 		"e",
 		"🔎 Search by name",

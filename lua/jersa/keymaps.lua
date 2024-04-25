@@ -21,14 +21,11 @@ mapper("n", "0", "^")
 mapper("n", "Y", "y$")
 mapper("n", "<C-w>", ":bdelete<CR>")
 
--- quitar espacios
-vim.cmd([[autocmd BufWritePre * :%s/\s\+$//e]])
-
 -- duplicar lineas
 mapper("n", "tt", ":t.<CR>")
 
 -- Files
-mapper("n", "nt", ":Oil --float<CR>")
+mapper("n", "nt", ":Triptych<CR>")
 
 -- mover lineas
 mapper("v", "<", "<gv")
@@ -57,32 +54,6 @@ mapper("n", "T", ":TagbarToggle<CR>")
 mapper("n", "<C-c>", ":TmanCmd<CR>")
 
 -- runner
-function Build()
-	-- execute cpp
-	if vim.bo.filetype == "cpp" then
-		if vim.fn.isdirectory("build") == 0 then
-			vim.cmd("terminal meson setup build && cd build && ninja && ./exe")
-		else
-			vim.cmd("terminal meson compile -C build && ./build/exe")
-		end
-	end
-
-	-- execute java
-	if vim.bo.filetype == "java" then
-		vim.cmd("terminal gradle run")
-	end
-
-	-- execute python
-	if vim.bo.filetype == "python" then
-		vim.cmd("terminal python %")
-	end
-
-	-- execute rust
-	if vim.bo.filetype == "rust" then
-		vim.cmd("terminal cargo run")
-	end
-end
-
 mapper("n", "<C-CR>", ":lua Build()<CR>")
 
 -- moverte estando en terminal
