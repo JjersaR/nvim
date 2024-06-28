@@ -26,7 +26,7 @@ o.showmode = false
 o.writebackup = false
 o.updatetime = 300
 o.hlsearch = false
-o.scrolloff = 0
+o.scrolloff = 20
 o.sidescrolloff = 5
 o.mouse = "a"
 wo.wrap = false
@@ -47,10 +47,10 @@ opt.foldenable = true
 
 local notify = vim.notify
 vim.notify = function(msg, ...)
-	if
-		msg:match("warning: multiple different client offset_encodings detected for buffer, this is not supported yet")
-	then
-		return
-	end
-	notify(msg, ...)
+  if
+      msg:match("warning: multiple different client offset_encodings detected for buffer, this is not supported yet")
+  then
+    return
+  end
+  notify(msg, ...)
 end
