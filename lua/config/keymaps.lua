@@ -14,11 +14,16 @@ map("n", "nt", ":Triptych<CR>", { desc = "Files", silent = true })
 map("n", "<Leader>ft", ":ToggleTerm direction=float<CR>", { desc = "Terminal", silent = true })
 
 -- maven
-map("n", "<Leader>m", "", { desc = "Maven" })
-map("n", "<Leader>mr", ":TermExec direction=float cmd='mvn spring-boot:run'<CR>", { desc = "Maven Spring Boot Run" })
-map("n", "<Leader>mR", ":TermExec direction=float cmd='mvn run'<CR>", { desc = "Maven Run" })
-map("n", "<Leader>mc", ":!mvn clean<CR>", { desc = "Maven Clean" })
-map("n", "<Leader>mi", ":!mvn clean install -DskipTests<CR>", { desc = "Maven Clean Install" })
-map("n", "<Leader>md", ":!mvn dependency:go-offline<CR>", { desc = "Maven Install Dependencies" })
-map("n", "<Leader>mu", ":JdtUpdateConfig<CR>", { desc = "Update Config" })
-map("n", "<Leader>mp", ":!mvn clean package<CR>", { desc = "Package (.jar)" })
+map("n", "<Leader>m", "", { desc = " Maven" })
+map(
+  "n",
+  "<Leader>mr",
+  ":TermExec direction=float cmd='mvn spring-boot:run'<CR>",
+  { desc = " Maven Spring Boot Run" }
+)
+map("n", "<Leader>mR", ":TermExec direction=float cmd='mvn run'<CR>", { desc = " Maven Run" })
+map("n", "<Leader>mc", ":!mvn clean<CR>", { desc = " Maven Clean" })
+map("n", "<Leader>mi", ":!mvn clean install<CR>", { desc = " Maven Clean Install" })
+map("n", "<Leader>md", ":!mvn dependency:go-offline<CR>", { desc = " Maven List Dependencies" })
+map("n", "<Leader>mu", ":JdtUpdateConfig<CR>", { desc = " Update Config" })
+map("n", "<Leader>mp", ":!mvn clean package<CR>", { desc = " Package (.jar)" })
