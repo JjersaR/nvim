@@ -1,22 +1,22 @@
 return {
-  "j-morano/buffer_manager.nvim",
+  "leath-dub/snipe.nvim",
   keys = {
-    { "<Leader>b", ":lua require('buffer_manager.ui').toggle_quick_menu()<CR>", desc = "Buffer", silent = true },
+    {
+      "gb",
+      function()
+        require("snipe").open_buffer_menu()
+      end,
+      desc = "Open Snipe buffer menu",
+    },
   },
   config = function()
-    require("buffer_manager").setup({
-      select_menu_item_commands = {
-        v = {
-          key = "<C-v>",
-          command = "vsplit",
-        },
-        h = {
-          key = "<C-h>",
-          command = "split",
-        },
+    require("snipe").setup({
+      ui = {
+        position = "center",
       },
-      short_file_names = true,
-      short_term_names = true,
+    })
+    require("snipe").open_buffer_menu({
+      max_path_width = 3,
     })
   end,
 }
