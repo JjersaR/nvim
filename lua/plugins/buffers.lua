@@ -4,7 +4,7 @@ return {
     {
       "gb",
       function()
-        require("snipe").open_buffer_menu()
+        require("snipe").open_buffer_menu({ max_path_width = 3 })
       end,
       desc = "Open Snipe buffer menu",
     },
@@ -14,9 +14,6 @@ return {
       ui = {
         position = "center",
       },
-    })
-    require("snipe").open_buffer_menu({
-      max_path_width = 3,
     })
   end,
 }
