@@ -56,6 +56,9 @@ return {
               enabled = "all",
             },
           },
+          codeLens = {
+            enabled = true,
+          },
         },
       },
     }
