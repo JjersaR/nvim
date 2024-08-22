@@ -59,6 +59,14 @@ return {
           codeLens = {
             enabled = true,
           },
+          configuration = {
+            runtimes = {
+              {
+                name = "JavaSE-21",
+                path = "/usr/lib/jvm/java-21-openjdk/",
+              },
+            },
+          },
         },
       },
     }
