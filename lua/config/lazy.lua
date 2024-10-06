@@ -17,6 +17,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.tailwind" }, -- HTML y CSS
     { import = "lazyvim.plugins.extras.lang.typescript" }, -- JavaScript y TypeScript
     { import = "lazyvim.plugins.extras.linting.eslint" }, -- lint
+    { import = "lazyvim.plugins.extras.editor.overseer" }, -- runner task
     -- import/override with your plugins
     { import = "plugins" },
   },

@@ -27,3 +27,30 @@ map("n", "<Leader>mi", ":!mvn clean install<CR>", { desc = " Maven Clean Inst
 map("n", "<Leader>md", ":!mvn dependency:go-offline<CR>", { desc = " Maven List Dependencies" })
 map("n", "<Leader>mu", ":JdtUpdateConfig<CR>", { desc = " Update Config" })
 map("n", "<Leader>mp", ":!mvn clean package<CR>", { desc = " Package (.jar)" })
+
+-- git conflict
+map("n", "<Leader>gC", "", { desc = "Git Conflicts" })
+map("n", "<Leader>gCo", ":GitConflictChooseOurs<CR>", { desc = "Choose Ours" })
+map("n", "<Leader>gCt", ":GitConflictChooseTheirs<CR>", { desc = "Choose Theirs" })
+map("n", "<Leader>gCb", ":GitConflictChooseBoth<CR>", { desc = "Choose Both" })
+map("n", "<Leader>gCn", ":GitConflictChooseNone<CR>", { desc = "Choose None" })
+map("n", "<Leader>gCN", ":GitConflictNextConflict<CR>", { desc = "Next Conflict" })
+map("n", "<Leader>gCp", ":GitConflictPrevConflict<CR>", { desc = "Previous Conflict" })
+map("n", "<Leader>gCl", ":GitConflictPrevConflict<CR>", { desc = "List Conflict" })
+
+-- Spectre (Search in project)
+map("n", "<Leader>S", "", { desc = "Spectre" })
+map("n", "<Leader>St", "<cmd>lua require('spectre').toggle()<CR>", { desc = "Toggle Spectre" })
+map(
+  "n",
+  "<Leader>Sw",
+  "<cmd>lua require('spectre').open_visual({select_word=true})<CR>",
+  { desc = "Search current word" }
+)
+map("v", "<Leader>SW", "<esc><cmd>lua require('spectre').open_visual()<CR>", { desc = "Search current word" })
+map(
+  "n",
+  "<Leader>Sp",
+  "<cmd>lua require('spectre').open_file_search({select_word=true})<CR>",
+  { desc = "Search on current file" }
+)
