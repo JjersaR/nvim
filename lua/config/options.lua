@@ -4,3 +4,5 @@
 
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 24
+vim.opt.autoread = true
+vim.opt.swapfile = false
