@@ -1,19 +1,12 @@
 return {
-  "leath-dub/snipe.nvim",
-  keys = {
-    {
-      "gb",
-      function()
-        require("snipe").open_buffer_menu({ max_path_width = 3 })
-      end,
-      desc = "Open Snipe buffer menu",
-    },
+  "EL-MASTOR/bufferlist.nvim",
+  lazy = true,
+  keys = { { "gb", ":BufferList<CR>", desc = "Open bufferlist" } },
+  dependencies = "nvim-tree/nvim-web-devicons",
+  cmd = "BufferList",
+  opts = {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
   },
-  config = function()
-    require("snipe").setup({
-      ui = {
-        position = "center",
-      },
-    })
-  end,
 }
