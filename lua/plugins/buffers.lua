@@ -1,7 +1,7 @@
 return {
   "EL-MASTOR/bufferlist.nvim",
   lazy = true,
-  keys = { { "gb", ":BufferList<CR>", desc = "Open bufferlist" } },
+  keys = { { "gb", ":BufferList<CR>", desc = "Open bufferlist", silent = true } },
   dependencies = "nvim-tree/nvim-web-devicons",
   cmd = "BufferList",
   opts = {
