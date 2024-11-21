@@ -10,7 +10,7 @@ return {
           local client = vim.tbl_get(message.opts, "progress", "client")
           if client == "jdtls" then
             local content = vim.tbl_get(message.opts, "progress", "message")
-            return content == "Validate documents"
+            return content == "Validate Documents"
           end
 
           return false

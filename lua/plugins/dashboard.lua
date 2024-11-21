@@ -3,9 +3,6 @@ return {
   priority = 1000,
   lazy = false,
   opts = {
-    bigfile = { enabled = false },
-    bufdelete = { enabled = false },
-    notifier = { enabled = false },
     dashboard = {
       enabled = true,
       preset = {
@@ -38,6 +35,9 @@ return {
         { section = "startup" },
       },
     },
+    bigfile = { enabled = false },
+    bufdelete = { enabled = false },
+    notifier = { enabled = false },
     debug = { enabled = false },
     git = { enabled = false },
     gitbrowse = { enabled = false },

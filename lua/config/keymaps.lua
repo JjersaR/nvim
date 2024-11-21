@@ -11,7 +11,6 @@ map("n", "Y", "y$", { desc = "Copy line end" })
 map("n", "<C-w>", ":bdelete<CR>", { desc = "Delete Buffer" })
 map("n", "tt", ":t.<CR>", { desc = "duplicate lines" })
 map("n", "nt", ":Triptych<CR>", { desc = "Files", silent = true })
-map("n", "<Leader>ft", ":ToggleTerm direction=float<CR>", { desc = "Terminal", silent = true })
 
 -- maven
 map("n", "<Leader>m", "", { desc = " Maven" })

@@ -12,7 +12,7 @@ require("lazy").setup({
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins", opts = { colorscheme = "oldworld" } },
     { import = "lazyvim.plugins.extras.lang.java" }, -- Java y Spring Boot
-    { import = "lazyvim.plugins.extras.coding.codeium" }, -- IA
+    { import = "lazyvim.plugins.extras.ai.codeium" }, -- IA
     { import = "lazyvim.plugins.extras.lang.docker" }, -- Docker
     { import = "lazyvim.plugins.extras.lang.tailwind" }, -- HTML y CSS
     { import = "lazyvim.plugins.extras.lang.typescript" }, -- JavaScript y TypeScript
