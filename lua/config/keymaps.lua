@@ -53,3 +53,7 @@ map(
   "<cmd>lua require('spectre').open_file_search({select_word=true})<CR>",
   { desc = "Search on current file" }
 )
+
+-- buffers
+map("n", "<TAB>", "<Cmd>BufferNext<CR>", { silent = true })
+map("n", "<M-TAB>", "<Cmd>BufferPrevious<CR>", { silent = true })
