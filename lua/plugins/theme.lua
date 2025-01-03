@@ -1,5 +1,5 @@
 return {
-  "mellow-theme/mellow.nvim",
+  "dgox16/oldworld.nvim",
   lazy = false,
   priority = 1000,
 }
