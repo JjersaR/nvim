@@ -15,4 +15,5 @@ return {
       inlay_hints = { enabled = false },
     },
   },
+  { "nvim-telescope/telescope.nvim", enabled = false },
 }
