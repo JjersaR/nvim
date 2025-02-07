@@ -10,7 +10,6 @@ map("n", "0", "^", { desc = "Line start" })
 map("n", "Y", "y$", { desc = "Copy line end" })
 map("n", "<C-w>", ":bdelete<CR>", { desc = "Delete Buffer" })
 map("n", "tt", ":t.<CR>", { desc = "duplicate lines" })
-map("n", "nt", ":Triptych<CR>", { desc = "Files", silent = true })
 
 -- maven
 map("n", "<Leader>m", "", { desc = " Maven" })
@@ -36,23 +35,6 @@ map("n", "<Leader>gCn", ":GitConflictChooseNone<CR>", { desc = "Choose None" })
 map("n", "<Leader>gCN", ":GitConflictNextConflict<CR>", { desc = "Next Conflict" })
 map("n", "<Leader>gCp", ":GitConflictPrevConflict<CR>", { desc = "Previous Conflict" })
 map("n", "<Leader>gCl", ":GitConflictPrevConflict<CR>", { desc = "List Conflict" })
-
--- Spectre (Search in project)
-map("n", "<Leader>S", "", { desc = "Spectre" })
-map("n", "<Leader>St", "<cmd>lua require('spectre').toggle()<CR>", { desc = "Toggle Spectre" })
-map(
-  "n",
-  "<Leader>Sw",
-  "<cmd>lua require('spectre').open_visual({select_word=true})<CR>",
-  { desc = "Search current word" }
-)
-map("v", "<Leader>SW", "<esc><cmd>lua require('spectre').open_visual()<CR>", { desc = "Search current word" })
-map(
-  "n",
-  "<Leader>Sp",
-  "<cmd>lua require('spectre').open_file_search({select_word=true})<CR>",
-  { desc = "Search on current file" }
-)
 
 -- buffers
 map("n", "<TAB>", "<Cmd>BufferNext<CR>", { silent = true })
