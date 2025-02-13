@@ -35,6 +35,11 @@ return {
         { section = "startup" },
       },
     },
+    picker = {
+      layout = {
+        fullscreen = true,
+      },
+    },
     bigfile = { enabled = false },
     bufdelete = { enabled = false },
     notifier = { enabled = true },
