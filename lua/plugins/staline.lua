@@ -36,7 +36,8 @@ return {
       local deleted = tonumber(result:match("(%d+) deletions?")) or 0
       local modified = tonumber(result:match("(%d+) files? changed")) or 0
 
-      return string.format("+%d ~%d -%d", added, modified, deleted)
+      local git_info = string.format("[F]%d [I]%d [D]%d", modified, added, deleted)
+      return "%#StalineName#" .. git_info .. "%#Normal#"
     end
 
     local my_colors = { n = "#9CCFD8", i = "#9CCFD8", c = "#9CCFD8", v = "#9CCFD8", t = "#9CCFD8" }
