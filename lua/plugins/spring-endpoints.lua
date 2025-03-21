@@ -1,5 +1,5 @@
 return {
-  "JjersaR/spring-endpoints",
+  "JjersaR/spring-endpoint",
   dependencies = {
     { "nvim-telescope/telescope.nvim", lazy = false },
   },
