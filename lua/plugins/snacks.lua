@@ -37,7 +37,14 @@ return {
     },
     picker = {
       layout = {
-        fullscreen = true,
+        fullscreen = false,
+      },
+      source = {
+        files = {
+          exclude = {
+            "**/target/*",
+          },
+        },
       },
     },
     bigfile = { enabled = false },

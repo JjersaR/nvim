@@ -21,7 +21,9 @@ local function controller_template(full_path, filename)
   return [[
 package ]] .. package .. [[;
 
-import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("api/]] .. api_name .. [[")
