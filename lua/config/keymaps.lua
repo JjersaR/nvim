@@ -35,3 +35,23 @@ map("n", "<Leader>gCn", ":GitConflictChooseNone<CR>", { desc = "Choose None" })
 map("n", "<Leader>gCN", ":GitConflictNextConflict<CR>", { desc = "Next Conflict" })
 map("n", "<Leader>gCp", ":GitConflictPrevConflict<CR>", { desc = "Previous Conflict" })
 map("n", "<Leader>gCl", ":GitConflictPrevConflict<CR>", { desc = "List Conflict" })
+
+-- buscar en el visual
+vim.keymap.set("x", "/", "<Esc>/\\%V")
+
+-- Automaticamente agregar semicolon or comma al final de la linea en insert y en normal
+vim.keymap.set("i", ";;", "<ESC>A;")
+vim.keymap.set("i", ",,", "<ESC>A,")
+vim.keymap.set("n", ";;", "A;<ESC>")
+vim.keymap.set("n", ",,", "A,<ESC>")
+
+-- Move lines of text up and down
+-- Normal Mode
+vim.keymap.set("n", "<C-Down>", ":m .+1<CR>==")
+vim.keymap.set("n", "<C-Up>", ":m .-2<CR>==")
+-- Insert Mode
+vim.keymap.set("i", "<C-Down>", "<esc>:m .+1<CR>==gi")
+vim.keymap.set("i", "<C-Up>", "<esc>:m .-2<CR>==gi")
+-- Visual Mode
+vim.keymap.set("v", "<C-Down>", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "<C-Up>", ":m '<-2<CR>gv=gv")
