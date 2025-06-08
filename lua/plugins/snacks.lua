@@ -42,7 +42,7 @@ return {
       source = {
         files = {
           exclude = {
-            "**/target/*",
+            "*.class",
           },
         },
       },

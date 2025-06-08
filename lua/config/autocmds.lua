@@ -21,3 +21,29 @@ vim.api.nvim_create_autocmd("TermOpen", {
     vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { buffer = 0, silent = true })
   end,
 })
+
+-- Función para ejecutar el comando de Maven
+local function run_maven_reload()
+  -- Cambia este comando por el que necesites para recargar la configuración de Spring Boot
+  local command = "mvn clean install -DskipTests"
+  vim.fn.jobstart(command, {
+    on_stdout = function(_, data)
+      if data then
+        vim.api.nvim_out_write(table.concat(data, "\n") .. "\n")
+      end
+    end,
+    on_stderr = function(_, data)
+      if data then
+        vim.api.nvim_err_write(table.concat(data, "\n") .. "\n")
+      end
+    end,
+  })
+end
+
+-- Autocomando para detectar cambios en pom.xml o application.yml
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = { "pom.xml", "application.yml" },
+  callback = function()
+    run_maven_reload()
+  end,
+})
