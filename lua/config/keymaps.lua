@@ -35,11 +35,11 @@ vim.keymap.set("n", ",,", "A,<ESC>")
 
 -- Move lines of text up and down
 -- Normal Mode
-vim.keymap.set("n", "<C-Down>", ":m .+1<CR>==<CR>")
-vim.keymap.set("n", "<C-Up>", ":m .-2<CR>==<CR>")
+vim.keymap.set("n", "<C-j>", ":m .+1<CR>==", { silent = true })
+vim.keymap.set("n", "<C-k>", ":m .-2<CR>==", { silent = true })
 -- Insert Mode
-vim.keymap.set("i", "<C-Down>", "<esc>:m .+1<CR>==gi<CR>")
-vim.keymap.set("i", "<C-Up>", "<esc>:m .-2<CR>==gi<CR>")
+vim.keymap.set("i", "<C-j>", "<Esc>:m .+1<CR>==gi", { silent = true })
+vim.keymap.set("i", "<C-k>", "<Esc>:m .-2<CR>==gi", { silent = true })
 -- Visual Mode
-vim.keymap.set("v", "<C-Down>", ":m '>+1<CR>gv=gv<CR>")
-vim.keymap.set("v", "<C-Up>", ":m '<-2<CR>gv=gv<CR>")
+vim.keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv", { silent = true })
+vim.keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv", { silent = true })
