@@ -18,4 +18,5 @@ return {
   { "saghen/blink.cmp", enabled = false },
   --{ "hrsh7th/nvim-cmp", enabled = false },
   { "ibhagwan/fzf-lua", enabled = false },
+  { "zeioth/garbage-day.nvim", enabled = false },
 }

@@ -12,19 +12,7 @@ map("n", "<C-w>", ":bdelete<CR>", { desc = "Delete Buffer" })
 map("n", "tt", ":t.<CR>", { desc = "duplicate lines" })
 
 -- maven
-map("n", "<Leader>m", "", { desc = " Maven" })
-map(
-  "n",
-  "<Leader>mr",
-  ":TermExec direction=float cmd='mvn spring-boot:run'<CR>",
-  { desc = " Maven Spring Boot Run" }
-)
-map("n", "<Leader>mR", ":TermExec direction=float cmd='mvn run'<CR>", { desc = " Maven Run" })
-map("n", "<Leader>mc", ":!mvn clean<CR>", { desc = " Maven Clean" })
-map("n", "<Leader>mi", ":!mvn clean install<CR>", { desc = " Maven Clean Install" })
-map("n", "<Leader>md", ":!mvn dependency:go-offline<CR>", { desc = " Maven List Dependencies" })
-map("n", "<Leader>mu", ":JdtUpdateConfig<CR>", { desc = " Update Config" })
-map("n", "<Leader>mp", ":!mvn clean package<CR>", { desc = " Package (.jar)" })
+map("n", "<Leader>m", ":Maven<CR>", { desc = " Maven" })
 
 -- git conflict
 map("n", "<Leader>gC", "", { desc = "Git Conflicts" })
@@ -47,11 +35,11 @@ vim.keymap.set("n", ",,", "A,<ESC>")
 
 -- Move lines of text up and down
 -- Normal Mode
-vim.keymap.set("n", "<C-Down>", ":m .+1<CR>==")
-vim.keymap.set("n", "<C-Up>", ":m .-2<CR>==")
+vim.keymap.set("n", "<C-Down>", ":m .+1<CR>==<CR>")
+vim.keymap.set("n", "<C-Up>", ":m .-2<CR>==<CR>")
 -- Insert Mode
-vim.keymap.set("i", "<C-Down>", "<esc>:m .+1<CR>==gi")
-vim.keymap.set("i", "<C-Up>", "<esc>:m .-2<CR>==gi")
+vim.keymap.set("i", "<C-Down>", "<esc>:m .+1<CR>==gi<CR>")
+vim.keymap.set("i", "<C-Up>", "<esc>:m .-2<CR>==gi<CR>")
 -- Visual Mode
-vim.keymap.set("v", "<C-Down>", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "<C-Up>", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "<C-Down>", ":m '>+1<CR>gv=gv<CR>")
+vim.keymap.set("v", "<C-Up>", ":m '<-2<CR>gv=gv<CR>")
