@@ -8,4 +8,9 @@ return {
       -- Your configuration here
     })
   end,
+  opts = {
+    keymaps = {
+      vim.keymap.set({ "n", "t" }, "<leader>ll", "<Cmd>LvimSpace<CR>"),
+    },
+  },
 }
