@@ -50,7 +50,7 @@ return {
           { "StalineBranch", "branch" },
         },
         mid = { "lsp" },
-        right = { git_status, " ", "lsp_name", "  ", percentage },
+        right = { git_status, "  ", percentage },
       },
       defaults = {
         true_colors = true, -- LSP highlighing
