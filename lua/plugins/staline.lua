@@ -74,7 +74,6 @@ return {
     staline.setup({
       sections = {
         left = {
-          "mode",
           function()
             return get_lvim_space_display() or ""
           end,
@@ -93,28 +92,6 @@ return {
         font_active = "none",
         branch_symbol = " ", -- branch symbol
         mod_symbol = "  ", -- modified symbol
-      },
-      mode_icons = {
-        ["n"] = " ",
-        ["no"] = " ",
-        ["nov"] = " ",
-        ["noV"] = " ",
-        ["niI"] = " ",
-        ["niR"] = " ",
-        ["niV"] = " ",
-        ["i"] = " ",
-        ["ic"] = " ",
-        ["ix"] = " ",
-        ["s"] = " ",
-        ["S"] = " ",
-        ["v"] = " ",
-        ["V"] = " ",
-        [""] = " ",
-        ["r"] = " ",
-        ["r?"] = " ",
-        ["R"] = " ",
-        ["c"] = "גּ ",
-        ["t"] = " ",
       },
       mode_colors = my_colors, -- Change mode colors
       special_table = {

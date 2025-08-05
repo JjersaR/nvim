@@ -2,10 +2,10 @@ return {
   "voldikss/vim-floaterm",
   config = function()
     vim.g.floaterm_wintype = "float"
-    vim.g.floaterm_height = 0.7
+    vim.g.floaterm_height = 0.9
     vim.g.floaterm_width = 0.9
     vim.g.floaterm_autoclose = 1
-    vim.g.floaterm_title = "─($1/$2)─Terminal─"
+    vim.g.floaterm_title = "─($1/$2)──"
     vim.g.floaterm_borderchars = "─│─│╭╮╯╰"
   end,
   lazy = true,

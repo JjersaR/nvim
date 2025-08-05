@@ -21,16 +21,17 @@ local function controller_template(full_path, filename)
   return [[
 package ]] .. package .. [[;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import lombok.RequiredArgsConstructor;
+
 @RestController
-@RequestMapping("api/]] .. api_name .. [[")
+@RequiredArgsConstructor
+@RequestMapping("/api/]] .. api_name .. [[")
 public class ]] .. class_name .. [[ {
 
-  @Autowired
-  private |cursor|
+  private final |cursor|;
 
 }]]
 end
@@ -43,14 +44,15 @@ local function service_template(full_path, filename)
   return [[
 package ]] .. package .. [[;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import lombok.RequiredArgsConstructor;
+
 @Service
+@RequiredArgsConstructor
 public class ]] .. class_name .. [[ {
 
-  @Autowired
-  private |cursor|
+  private final |cursor|;
 }]]
 end
 
@@ -58,7 +60,6 @@ end
 local function repository_template(full_path, filename)
   local class_name = get_class_name(filename)
   local package = get_package(full_path)
-  local entity_name = class_name:gsub("Repository$", "")
 
   return [[
 package ]] .. package .. [[;
