@@ -40,52 +40,16 @@ return {
       return "%#StalineName#" .. git_info .. "%#Normal#"
     end
 
-    local function get_lvim_space_display()
-      local status_ok, lvim_space = pcall(require, "lvim-space.pub")
-      if not status_ok then
-        return nil -- No mostrar nada si el plugin no está cargado
-      end
-
-      local tab_info = lvim_space.get_tab_info()
-      local active_tab = nil
-
-      -- Buscar el tab activo
-      for _, tab in ipairs(tab_info.tabs or {}) do
-        if tab.active then
-          active_tab = tab.name
-          break
-        end
-      end
-
-      -- Solo retornar texto si hay workspace Y tab activo
-      if tab_info.workspace_name and active_tab then
-        return string.format(
-          "%%#StalineSpaceWS#%s %%#StalineSpaceWS#> %s%%#Normal# %%#StalineSpaceWS#>%%#Normal#",
-          tab_info.workspace_name,
-          active_tab
-        )
-      end
-
-      return nil -- Ocultar sección si falta información
-    end
-
     local my_colors = { n = "#9CCFD8", i = "#9CCFD8", c = "#9CCFD8", v = "#9CCFD8", t = "#9CCFD8" }
 
     staline.setup({
       sections = {
         left = {
-          function()
-            return get_lvim_space_display() or ""
-          end,
           { "StalineBranch", "file_name" },
           { "StalineBranch", "branch" },
         },
         mid = { "lsp" },
-        right = {
-          git_status,
-          "  ",
-          percentage,
-        },
+        right = { git_status, " ", "lsp_name", "  ", percentage },
       },
       defaults = {
         true_colors = true, -- LSP highlighing

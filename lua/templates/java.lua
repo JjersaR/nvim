@@ -74,6 +74,22 @@ public interface ]] .. class_name .. [[ extends JpaRepository<|cursor|, Long> {
 }]]
 end
 
+-- Plantilla para Mapper
+local function mapper_template(full_path, filename)
+  local class_name = get_class_name(filename)
+  local package = get_package(full_path)
+
+  return [[
+package ]] .. package .. [[;
+
+import org.mapstruct.Mapper;
+
+@Mapper(componentModel = "spring")
+public interface ]] .. class_name .. [[ {
+  |cursor|
+}]]
+end
+
 -- Plantilla base para otros archivos .java
 local function base_template(full_path, filename)
   local class_name = get_class_name(filename)
@@ -97,6 +113,7 @@ return function(opts)
     { pattern = ".*Controller%.java", content = controller_template },
     { pattern = ".*Service%.java", content = service_template },
     { pattern = ".*Repository%.java", content = repository_template },
+    { pattern = ".*Mapper%.java", content = mapper_template },
     { pattern = ".*%.java", content = base_template },
   }
 
