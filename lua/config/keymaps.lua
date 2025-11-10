@@ -10,6 +10,7 @@ map("n", "0", "^", { desc = "Line start" })
 map("n", "Y", "y$", { desc = "Copy line end" })
 map("n", "<C-w>", ":bdelete<CR>", { desc = "Delete Buffer" })
 map("n", "tt", ":t.<CR>", { desc = "duplicate lines" })
+map("n", "<TAB>", "<cmd>bNext<CR>", { desc = "Next buffer" })
 
 -- maven
 map("n", "<Leader>m", ":Maven<CR>", { desc = " Maven" })
