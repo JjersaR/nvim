@@ -2,7 +2,7 @@ local utils = require("new-file-template.utils")
 
 -- Genera el paquete basado en el path del archivo
 local function get_package(full_path)
-  local pack = full_path:match("src/main/java/(.+)$")
+  local pack = full_path:match("src/main/java/(.+)$") or full_path:match("src/test/java/(.+)$")
   return pack and pack:gsub("/", ".") or ""
 end
 

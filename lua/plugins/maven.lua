@@ -6,13 +6,11 @@ return {
     "MunifTanjim/nui.nvim",
   },
   opts = {},
-  -- keys = {
-  --   {
-  --     "<Leader>M",
-  --     function()
-  --       require("maven").toggle_projects_view()
-  --     end,
-  --     desc = "Maven",
-  --   },
-  -- },
+  keys = {
+    {
+      "<Leader>m",
+      ":Maven<CR>",
+      desc = " Maven",
+    },
+  },
 }
