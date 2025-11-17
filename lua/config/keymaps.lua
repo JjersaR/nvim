@@ -12,9 +12,6 @@ map("n", "<C-w>", ":bdelete<CR>", { desc = "Delete Buffer" })
 map("n", "tt", ":t.<CR>", { desc = "duplicate lines" })
 map("n", "<TAB>", "<cmd>bNext<CR>", { desc = "Next buffer" })
 
--- maven
-map("n", "<Leader>m", ":Maven<CR>", { desc = " Maven" })
-
 -- git conflict
 map("n", "<Leader>gC", "", { desc = "Git Conflicts" })
 map("n", "<Leader>gCo", ":GitConflictChooseOurs<CR>", { desc = "Choose Ours" })
