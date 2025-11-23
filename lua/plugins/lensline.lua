@@ -39,7 +39,7 @@ return {
             prefix = " ", -- prefix before lens content
             placement = "inline", -- "above" | "inline" - where to render lenses (consider prefix = "" for inline)
             use_nerdfont = true, -- enable nerd font icons in built-in providers
-            render = "focused", -- "all" | "focused" (only active window's focused function)
+            render = "all", -- "all" | "focused" (only active window's focused function)
           },
         },
         -- You can define additional profiles here and switch between them at runtime

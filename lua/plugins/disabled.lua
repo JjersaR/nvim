@@ -19,4 +19,5 @@ return {
   -- { "hrsh7th/nvim-cmp", enabled = false },
   { "zeioth/garbage-day.nvim", enabled = false },
   { "folke/flash.nvim", enabled = false },
+  { "simonmclean/triptych.nvim", enabled = false },
 }
