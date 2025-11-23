@@ -92,8 +92,8 @@ return {
       views = {
         finder = {
           close_on_select = true,
-          confirm_simple = false,
-          default_explorer = false,
+          confirm_simple = true,
+          default_explorer = true,
           delete_to_trash = false,
           git_status = {
             enabled = true,
@@ -109,9 +109,9 @@ return {
             },
           },
           icon = {
-            directory_collapsed = nil,
-            directory_empty = nil,
-            directory_expanded = nil,
+            directory_collapsed = " ",
+            directory_empty = " ",
+            directory_expanded = " ",
           },
           indentscope = {
             enabled = true,
