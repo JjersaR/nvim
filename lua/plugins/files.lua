@@ -120,7 +120,7 @@ return {
           },
           mappings = {
             ["q"] = "CloseView",
-            ["<CR>"] = "Select",
+            ["l"] = "Select",
             ["<C-t>"] = "SelectTab",
             ["|"] = "SelectVSplit",
             ["-"] = "SelectSplit",
