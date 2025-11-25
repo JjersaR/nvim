@@ -76,3 +76,11 @@ vim.api.nvim_create_autocmd("CursorMoved", {
     end
   end,
 })
+
+-- Actualización automática del código cuando un archivo cambia externamente
+vim.api.nvim_create_augroup("AutoRead", { clear = true })
+
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
+  group = "AutoRead",
+  command = "checktime",
+})
