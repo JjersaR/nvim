@@ -20,5 +20,4 @@ return {
   { "zeioth/garbage-day.nvim", enabled = false },
   { "folke/flash.nvim", enabled = false },
   { "simonmclean/triptych.nvim", enabled = false },
-  { "oribarilan/lensline.nvim", enabled = false },
 }
