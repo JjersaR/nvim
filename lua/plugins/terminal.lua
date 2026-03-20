@@ -17,5 +17,6 @@ return {
     { "<F10>", mode = { "n", "t" }, "<cmd>FloatermToggle<cr>", desc = "Toggle terminal" },
     { "<F11>", mode = { "n", "t" }, "<cmd>FloatermPrev<cr>", desc = "Prev terminal" },
     { "<F12>", mode = { "n", "t" }, "<cmd>FloatermNext<cr>", desc = "Next terminal" },
+    { "<Leader>le", mode = { "n", "t" }, "<cmd>FloatermNew lazydocker<cr>", desc = "Docker" },
   },
 }
