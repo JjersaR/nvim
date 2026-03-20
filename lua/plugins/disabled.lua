@@ -1,4 +1,10 @@
 return {
+  {
+    "folke/snacks.nvim",
+    keys = {
+      { "<Leader>,", false },
+    },
+  },
   { "nvim-lualine/lualine.nvim", enabled = false },
   {
     "akinsho/bufferline.nvim",
@@ -20,4 +26,5 @@ return {
   { "zeioth/garbage-day.nvim", enabled = false },
   { "folke/flash.nvim", enabled = false },
   { "simonmclean/triptych.nvim", enabled = false },
+  { "Wansmer/symbol-usage.nvim", enabled = false },
 }

@@ -18,21 +18,6 @@ return {
 
       -- Picker configuration
       picker = "telescope", -- "telescope", "vim_ui_select" ("snacks" in development)
-
-      -- UI configuration
-      ui = {
-        show_icons = true, -- Show method icons
-        show_method = true, -- Show method text (GET, POST, etc.)
-
-        -- Method colors (highlight groups)
-        method_colors = {
-          GET = "TelescopeResultsNumber",
-          POST = "TelescopeResultsConstant",
-          PUT = "TelescopeResultsKeyword",
-          DELETE = "TelescopeResultsSpecialChar",
-          PATCH = "TelescopeResultsFunction",
-        },
-      },
     })
   end,
 }
