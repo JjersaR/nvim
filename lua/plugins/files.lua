@@ -82,7 +82,7 @@ return {
     dependencies = { "nvim-mini/mini.icons" },
     branch = "stable", -- Use stable branch for production
     keys = {
-      { "nt", ":Fyler<CR>", desc = "Files", silent = true },
+      { "nf", ":Fyler<CR>", desc = "Files", silent = true },
     },
     opts = {
       hooks = {},
@@ -93,7 +93,7 @@ return {
         finder = {
           close_on_select = true,
           confirm_simple = true,
-          default_explorer = true,
+          default_explorer = false,
           delete_to_trash = false,
           git_status = {
             enabled = true,
@@ -137,7 +137,7 @@ return {
           },
           follow_current_file = true,
           watcher = {
-            enabled = false,
+            enabled = true,
           },
           win = {
             border = vim.o.winborder == "" and "single" or vim.o.winborder,
@@ -209,5 +209,70 @@ return {
         },
       },
     },
+  },
+  {
+    "Eutrius/Otree.nvim",
+    lazy = false,
+    dependencies = {
+      -- Optional: Enhanced file operations
+      "stevearc/oil.nvim",
+      -- Optional: Icon support
+      { "nvim-mini/mini.icons", opts = {} },
+      -- "nvim-tree/nvim-web-devicons",
+    },
+    keys = {
+      { "nt", ":Otree<CR>", desc = "Files", silent = true },
+    },
+    config = function()
+      require("Otree").setup({
+        win_size = 50,
+        git_signs = true,
+        lsp_signs = true,
+        oil = "float",
+        ignore_paterns = {},
+        keymaps = {
+          ["q"] = "actions.close_win",
+        },
+        icons = {
+          title = " ",
+          default_file = "",
+          default_directory = "",
+          empty_dir = " ",
+          trash = " ",
+          keymap = "⌨ ",
+          oil = " ",
+        },
+      })
+      require("oil").setup({
+        default_file_explorer = false,
+        skip_confirm_for_simple_edits = true,
+        delete_to_trash = true,
+        win_options = {
+          wrap = false,
+          signcolumn = "no",
+          cursorcolumn = false,
+          foldcolumn = "0",
+          spell = false,
+          list = false,
+          conceallevel = 3,
+          concealcursor = "nvic",
+          relativenumber = false,
+          number = false,
+        },
+        lsp_file_methods = {
+          -- Enable or disable LSP file operations
+          enabled = true,
+          -- Time to wait for LSP file operations to complete before skipping
+          timeout_ms = 1000,
+          -- Set to true to autosave buffers that are updated with LSP willRenameFiles
+          -- Set to "unmodified" to only save unmodified buffers
+          autosave_changes = true,
+        },
+        watch_for_changes = true,
+        keymaps = {
+          ["q"] = { "actions.close", mode = "n" },
+        },
+      })
+    end,
   },
 }

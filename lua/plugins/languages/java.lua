@@ -65,6 +65,10 @@ return {
                 name = "JavaSE-21",
                 path = "/usr/lib/jvm/java-21-openjdk/",
               },
+              {
+                name = "JavaSE-25",
+                path = "/usr/lib/jvm/java-25-openjdk/",
+              },
             },
           },
         },

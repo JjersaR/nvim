@@ -27,4 +27,5 @@ return {
   { "folke/flash.nvim", enabled = false },
   { "simonmclean/triptych.nvim", enabled = false },
   { "Wansmer/symbol-usage.nvim", enabled = false },
+  { "A7Lavinraj/fyler.nvim", enabled = false },
 }
